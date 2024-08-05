@@ -1,0 +1,211 @@
+\begin{ex}
+Let $r$ be a nonzero rational and $x$ an irrational real number. Suppose for sake of contradiction that $r + x$ is rational. Then $x = (r + x) - r$ is rational, a contradiction. Similarly, supposing for sake of contradiction that $rx$ is rational, we see that $x = r^{-1}(rx)$ is rational. This is a contradiction, and so both $r + x$ and $rx$ are irrational.
+\end{ex}
+
+\begin{ex}
+Suppose for sake of contradiction that there is $p \in \QQ$ such that $p^2 = 12$. Then there are integers $m, n$ with $n \not = 0$ and which are not both divisible by 3, such that $p = m/n$. Thus \[\left(\frac{m}{n}\right)^2 = 12,\] so \[m^2 = 12n^2,\] and then 3 divides $m^2$. Thus 3 divides $m$ since 3 is prime, and so $12n^2$ is divisible by 9. But 3 is prime and 12 has only one factor of 3 in its factorization, so 3 divides $n^2$. Thus 3 divides $n$, contradicting the choice of $m$ and $n$. Hence no such $p$ exists.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+Since $E$ is nonempty, there is some $x \in E$. Then $\alpha \leq x$ and $x \leq \beta$, so $\alpha \leq \beta$.
+\end{ex}
+
+\begin{ex}
+We show that $\alpha = -\sup(-A)$ is the greatest lower bound of $A$. If $x \in A$, then $-x \in -A$ and so $-x \leq \sup(-A)$. Hence $\alpha \leq x$, and so $\alpha$ is a lower bound of $A$. If $\alpha < \beta$, then $-\beta < -\alpha = \sup(-A)$ and so $-\beta$ is not an upper bound of $-A$. Thus there is $x \in A$ such that $-\beta < -x$, and so $x < \beta$. Thus $\beta$ is not a lower bound of $A$, and so $\alpha = \inf A$ as desired.
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item We have that $b^m$ and $b^p$ are positive reals, so $(b^m)^{1/n}$ and $(b^p)^{1/q}$ are well-defined positive reals by Theorem 1.21. We also have that
+\begin{align*}
+((b^m)^{1/n})^{nq} & = (((b^m)^{1/n})^n)^q\\
+& = (b^m)^q\\
+& = b^{mq}
+\end{align*}
+and
+\begin{align*}
+((b^p)^{1/q})^{nq} & = (((b^p)^{1/q})^q)^n\\
+& = (b^p)^n\\
+& = b^{pn}.
+\end{align*}
+But $r = m/n = p/q$ implies that $mq = pn$, and so \[((b^m)^{1/n})^{nq} = ((b^p)^{1/q})^{nq}.\] By the uniqueness statement in Theorem 1.21, \[(b^m)^{1/n} = (b^p)^{1/q}.\] Hence \[b^r := (b^m)^{1/n}\] is well-defined. We note also that if $n = 1$, $b^r = (b^m)^{1/1} = b^m$ and so this definition is compatible with usual exponentiation with integer powers.
+
+\item Let $m, n, p, q$ be integers such that $n, q > 0$ with $r = m/n$ and $s = p/q$. By the definition in part (a),
+\begin{align*}
+(b^rb^s)^{nq} & = ((b^m)^{1/n}(b^p)^{1/q})^{nq}\\
+& = (((b^m)^{1/n})^n)^q(((b^p)^{1/q})^q)^n\\
+& = (b^m)^q(b^p)^n\\
+& = b^{mq}b^{pn}\\
+& = b^{mq + pn}.
+\end{align*}
+On the other hand, \[r + s = \frac{m}{n} + \frac{p}{q} = \frac{mq + pn}{nq}\] with $nq > 0$, so
+\begin{align*}
+(b^{r + s})^{nq} & = ((b^{mq + pn})^{1/(nq)})^{nq}\\
+& = b^{mq + pn}.
+\end{align*}
+Hence \[(b^rb^s)^{nq} = (b^{r+s})^{nq}.\] Since $b^rb^s$ and $b^{r + s}$ are positive reals, the uniqueness statement in Theorem 1.21 yields $b^{r + s} = b^rb^s$ as desired.
+
+\item Since $b^r \in B(x)$, to prove $b^r = \sup B(r)$ it suffices to show that $b^r$ is an upper bound of $B(x)$. Let $t \in \QQ$ with $t \leq r$. If $m, n, p, q$ are integers with $n, q > 0$ with $r = m/n$ and $t = p/q$, then $t \leq r$ implies $pn \leq mq$. Then
+\begin{align*}
+(b^t)^{nq} & = ((b^p)^{1/q})^{nq}\\
+& = (((b^p)^{1/q})^q)^n\\
+& = b^{pn}\\
+& \leq b^{mq}\\
+& = (((b^m)^{1/n})^n)^q\\
+& = ((b^m)^{1/n})^{nq}\\
+& = (b^r)^{nq}
+\end{align*}
+where $b^{pn} \leq b^{mq}$ follows by induction from $1 < b$. Thus $b^t \leq b^r$ since $nq$ is a positive integer, proving the claim.
+
+[TODO]
+
+\item We wish to show that $b^xb^y = \sup B(x + y)$. If $v \in \QQ$ such that $v \leq x + y$, let $t$ be any rational for which $v - y \leq t \leq x$, by Theorem 1.20(b). Then $t \leq x$ and $v-t \leq y$, with $t, v - t \in \QQ$. Hence $t \in B(x)$ and $v-t \in B(y)$, so $b^t \leq b^x$ and $b^{v-t} \leq b^y$ by the definition of $b^x$ and $b^y$ in part (c). Then by part (b), \[b^v = b^tb^{v-t} \leq b^xb^y\] so $b^xb^y$ is an upper bound of $B(x + y)$. On the other hand, suppose $\beta < b^xb^y$. Then $\beta(b^y)^{-1} < b^x$, so $\beta(b^y)^{-1}$ is not an upper bound of $B(x)$. Hence there is $t \in \QQ$ such that $t \leq x$ and $\beta(b^y)^{-1} < b^t$. Then $\beta < b^tb^y$, so $(b^t)^{-1}\beta < b^y$. Hence $(b^t)^{-1}\beta$ is not an upper bound of $B(y)$, so there is $s \in \QQ$ with $s \leq y$ such that $(b^t)^{-1}\beta < b^s$. Then $\beta < b^tb^s = b^{t+s}$, by part (b). But $t + s \in \QQ$ with $t + s < x + y$, and so $\beta$ is not an upper bound of $B(x + y)$. Hence we have shown that $b^xb^y$ is the least upper bound of $B(x+y)$, as desired.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item We prove the claim by induction on $n$. For $n = 1$, we clearly have an equality. If $n \in \NN$, we have from $b > 1$ that $b^n > 1$ and so $b(b^n-1) > b^n-1$. Thus if $b^n-1 \geq n(b-1)$, we have
+\begin{align*}
+b^{n+1} - 1 & = b(b^n - 1) + (b-1)\\
+& > (b^n-1) + (b-1)\\
+& \geq n(b-1) + (b-1)\\
+& = (n+1)(b-1),
+\end{align*}
+proving the claim.
+
+\item If $b^{1/n} \leq 1$, then $b = (b^{1/n})^n \leq 1$, a contradiction. Thus $b^{1/n} > 1$, and so by part (a), \[b - 1 = (b^{1/n})^n - 1 \geq n(b^{1/n} - 1)\] for all positive integers $n$.
+
+\item We saw in part (b) that $b^{1/n} > 1$ for all positive integers $n$. Thus $b^{1/n} - 1 > 0$, and so by part (b), we have for any positive integer $n > (b-1)/(t-1)$ that \[b - 1\geq n(b^{1/n} - 1) > \frac{b-1}{t-1}(b^{1/n} - 1).\] Then since $b -1 > 0$ and $t - 1 > 0$, rearranging yields \[t - 1 > b^{1/n} - 1.\] Hence $b^{1/n} < t$.
+
+\item From $b^w < y$ and $b^w > 0$, we have $(b^w)^{-1}y > 1$. Thus by part (c), if $n$ is a positive integer with \[n > \frac{b - 1}{(b^w)^{-1}y - 1},\] then \[b^{1/n} < (b^w)^{-1}y.\] Thus since $b^w > 0$, \[b^{w + 1/n} < y\] for sufficiently large $n$, by Exercise 1.6(d). (We note that by Theorem 1.20(a), such sufficiently large $n$ exist.)
+
+\item If $b^w > y$, then $y^{-1}b^w > 1$ as $y > 0$. Hence by part (c), if $n$ is a positive integer for which \[n > \frac{b - 1}{y^{-1}b^w - 1},\] we have \[b^{1/n} < y^{-1}b^w.\] Then from $y > 0$, \[yb^{1/n} < b^w.\] We have by Exercise 1.6(b) that \[b^{w - 1/n}b^{1/n} = b^w,\] and so \[b^{w - 1/n} = b^w(b^{1/n})^{-1} > y,\] proving the claim. (Again, by Theorem 1.20(a), such sufficiently large $n$ exist.)
+
+\item We first show that $b^x$ is a strictly increasing function of $x$, as this will be used throughout and in part (g). Indeed, let $x_1 < x_2$. Then $x_2 - x_1 > 0$, and so by Theorem 1.20(b), there exists a positive rational $r$ such that $r \leq x_2 - x_1$. Let $m, n$ be integers for which $n > 0$ and $r = m/n$. Then $m = rn$ is positive. By the definitions in Exercise 1.6(a, c), we have that $(b^m)^{1/n} \leq b^{x_2-x_1}$. From $b > 1$, we have that $b^m > 1$ and thus also $(b^m)^{1/n} > 1$. Hence $1 < b^{x_2-x_1}$, so $b^{x_1} < b^{x_2}$ as desired.
+
+If $n$ is a positive integer for which $n(b-1) > 1/y - 1$ (such an $n$ exists by Theorem 1.20(a) since $b > 1$), then by part (a), \[b^n - 1 \geq n(b-1) > 1/y - 1.\] Hence $1/y < b^n$, so $b^{-n} < y$. Thus $-n \in A$, so $A$ is nonempty. On the other hand, if $n$ is a positive integer such that $n(b-1) \geq y-1$, \[b^n - 1 \geq n(b-1) \geq y - 1\] by part (a). Thus if $w \geq n$, $b^w \geq b^n \geq y$ and so $w \not \in A$. Hence $A$ is bounded above. Then $x = \sup A$ exists.
+
+Now suppose for sake of contradiction that $b^x \not = y$. If $b^x < y$, then by part (d), $b^{x + 1/n} < y$ for some positive integer $n$. Since $x < x + 1/n$, this contradicts that $x$ is an upper bound of $A$. Otherwise, $b^x > y$ and so by part (e), $b^{x - 1/n} > y$ for some positive integer $n$. Then if $w > x - 1/n$, we have $b^w > b^{x - 1/n} > y$ and thus $w \not \in A$. Hence $x - 1/n$ is an upper bound of $A$ with $x - 1/n < x$, a contradiction. Thus $b^x = y$ as desired.
+
+\item Suppose $x_1$ and $x_2$ are distinct reals. WLOG, $x_1 < x_2$. Then since $b^x$ is a strictly increasing function of $x$ (as shown in part (f)), $b^{x_1} < b^{x_2}$ and so there is a unique $x$ for which $b^x = y$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Suppose for sake of contradiction that there is an order $<$ on $\CC$ under which $\CC$ is an ordered field. Then by Proposition 1.18(d), we have that $1 > 0$ and $-1 > 0$ since $1 = 1^2$ and $-1 = i^2$. Thus by Proposition 1.18(a), $1 > 0$ and $1 < 0$, a contradiction.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+We have that $|u| \leq |w|$ by Theorem 1.33(d), so $|w| + u \geq 0$ and $|w| - u \geq 0$. Then by the Corollary to Theorem 1.21,
+\begin{align*}
+z^2 & = \left(\left(\frac{|w| + u}{2}\right)^{1/2} + \left(\frac{|w| - u}{2}\right)^{1/2}i\right)^2\\
+& = \frac{|w| + u}{2} + 2\left(\frac{|w| + u}{2}\right)^{1/2}\left(\frac{|w| - u}{2}\right)^{1/2}i - \frac{|w| - u}{2}\\
+& = u + 2\left(\frac{|w|^2 - u^2}{4}\right)^{1/2}i\\
+& = u + |v|i.
+\end{align*}
+Thus if $v \geq 0$, we have $z^2 = w$, and if $v \leq 0$, then $z^2 = \bar{w}$. In the latter case, we have \[(\bar{z})^2 = \bar{(z^2)} = \bar{\bar{w}} = w\] by Theorem 1.31(b).
+
+If $z$ is a nonzero complex number with $z^2 = 0$, then $z$ has a multiplicative inverse in $\CC$ and so $z = 0$, a contradiction. Thus $0$ has only one complex square root, $0$. Now let $w$ be a nonzero complex number. By the argument above, there exists $z \in \CC$ such that $z^2 = w$. Since $w \not = 0$, we have that $z \not = 0$ and so $z \not = -z$. Thus since $(-z)^2 = z^2 = w$, we have that $w$ has at least two complex square roots. But if $z_1, z_2 \in \CC$ such that $z_1^2 = z_2^2$, then $(z_1-z_2)(z_1+z_2) = 0$ and so $z_2 = \pm z_1$. Hence $w$ has exactly two complex square roots, proving the claim.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+We prove the claim by induction on $n$. For $n = 1$, we have a trivial equality. Now suppose that the claim is proven for any collection of $n$ complex numbers (with $n \in \NN$), and let $z_1, \ldots, z_{n+1} \in \CC$. Then by Theorem 1.33(e),
+\begin{align*}
+|z_1 + z_2 + \cdots + z_{n+1}| & = |(z_1 + z_2 + \cdots + z_n) + z_{n+1}|\\
+& \leq |z_1 + z_2 + \cdots + z_n| + |z_{n+1}|\\
+& \leq |z_1| + |z_2| + \cdots + |z_{n+1}|,
+\end{align*}
+which proves the claim.
+\end{ex}
+
+\begin{ex}
+We have by Theorem 1.33(e) that \[|x| = |(x-y) + y| \leq |x-y| + |y|\] and \[|y| = |x + (-x + y)| \leq |x| + |x-y|.\] Rearranging, \[|x| - |y| \leq |x-y|\] and \[-|x| + |y| \leq |x-y|.\] Since $||x| - |y|| = |x| - |y|$ or $-|x| + |y|$, it thus follows that \[||x| - |y|| \leq |x-y|.\]
+\end{ex}
+
+\begin{ex}
+We have by Theorem 1.31(a) that
+\begin{align*}
+|1 + z|^2 + |1-z|^2 & = (1 + z)\bar{(1 + z)} + (1 - z)\bar{(1 - z)}\\
+& = (1 + z)(1 + \bar{z}) + (1 - z)(1 - \bar{z})\\
+& = 1 + (z + \bar{z}) + z\bar{z} + 1 - (z + \bar{z}) + z\bar{z}\\
+& = 2 + |z|^2.
+\end{align*}
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item [TODO]
+
+\item Let $2r = d$. For $z \in \RR^k$, we have
+\begin{align*}
+|2z - (x+y)|^2 & = (2z - (x + y))\cdot(2z - (x+y))\\
+& = (2z)\cdot(2z) - (2z)\cdot(x+y) - (x+y)\cdot(2z) + (x+y)\cdot(x+y)\\
+& = 4z\cdot z - 4z\cdot x - 4z\cdot y + x\cdot x + 2x\cdot y + y\cdot y
+\end{align*}
+[TODO]
+
+\item Suppose that $z \in \RR^k$ such that \[|z-x| = |z-y| = r.\] Then by Theorem 1.37(f),
+\begin{align*}
+d & = |x - y|\\
+& = |y - x|\\
+& \leq |y - z| + |z - x|\\
+& = |z - x| + |z - y|
+& = 2r,
+\end{align*}
+Thus $d \leq 2r$, and so if $2r < d$, no such $z$ exist.
+\end{enumerate}
+[TODO: $k = 2$ or 1]
+\end{ex}
+
+\begin{ex}
+The proof of this equality is essentially identical to Exercise 1.14: for $x, y \in \RR^k$, we have
+\begin{align*}
+|x + y|^2 + |x - y|^2 & = (x + y)\cdot(x + y) + (x - y)\cdot(x - y)\\
+& = x\cdot x + (x\cdot y + y\cdot x) + y\cdot y + x\cdot x - (x\cdot y + y\cdot x) + y\cdot y\\
+& = 2|x|^2 + 2|y|^2.
+\end{align*}
+This is the classical parallelogram identity (``the sum of the squares of the diagonals of a parallelogram equals the sum of the squares of its side lengths'') applied to a parallelogram lying in $\RR^k$ with vertices at 0, $x$, $y$, and $x + y$.
+\end{ex}
+
+\begin{ex}
+Suppose first that $k \geq 2$ and $x \in \RR^k$. If $x = 0$, let $y$ be any nonzero vector in $\RR^k$. Then $y \not = 0$ but $x\cdot y = 0$. Otherwise $x \not = 0$, and assume WLOG that $x_1 \not = 0$. Then let \[y = (-x_2, x_1, 0, \ldots, 0).\] Since $x_1 \not = 0$, we have that $y \not = 0$. Moreover, \[x\cdot y = (x_1)(-x-2) + (x_2)(x_1) + (x_3)(0) + \cdots + (x_k)(0) = 0\] as desired.
+
+Now suppose that $k = 1$, so $x \in \RR$. If $y \in \RR$ is nonzero with $x\cdot y = 0$, then $xy = 0$ (in the sense of real multiplication) and thus $x = 0$ as $y$ has a multiplicative inverse. Since there exist nonzero real numbers (e.g., 1), we thus have that the claim fails for $k = 1$.
+\end{ex}
+
+\begin{ex}
+If $a = b$, then $|x - a| = 2|x - b|$ if and only if $|x - a| = 0$, that is, $x = a$. If there exist $c \in \RR^k$ and $r > 0$ as in the problem statement, then $c - (r, 0, \ldots, 0)$ and $c + (r, 0, \ldots, 0)$ are distinct values of $x$ satisfying $|x - a| = 2|x - b|$, a contradiction. Thus we assume that $a \not = b$.
+
+As in the hint, let $c = (4b-a)/3$ and $r = 2|b-a|/3$. Then $c \in \RR^k$, and $r > 0$ since $a \not = b$. Then
+\begin{align*}
+9|x - c|^2 & = \left|3x - (4b-a)\right|^2\\
+& = (3x - (4b-a))\cdot(3x - (4b-a))\\
+& = (3x)\cdot(3x) - (3x)\cdot(4b-a) - (4b-a)\cdot(3x) + (4b-a)\cdot(4b-a)\\
+& = 9x\cdot x - 24x\cdot b - 6x\cdot a + 16b\cdot b - 8b\cdot a + a\cdot a\\
+& = 3(4(x\cdot x - 2x\cdot b + b\cdot b) - (x\cdot x - 2x\cdot a + a\cdot a)) + 4(b\cdot b - 2b\cdot a + a\cdot a)\\
+& = 3(4|x-b|^2 - |x-a|^2) + 4|b-a|^2\\
+& = 3(4|x-b|^2 - |x-a|^2) + 9r^2.
+\end{align*}
+Hence $9|x-c|^2 = 9r^2$ if and only if $4|x-b|^2 - |x-a|^2 = 0$, that is, $|x-a| = 2|x-b|$ if and only if $|x-c| = r$.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}

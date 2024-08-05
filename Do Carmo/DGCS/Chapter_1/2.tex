@@ -1,0 +1,46 @@
+\begin{ex}
+Define $\alpha: \RR \to \RR$ by $\alpha(t) = (\sin t, -\cos t)$. Then $\alpha$ is differentiable since $\sin$ and $\cos$ are differentiable, and we have \[\alpha(0) = (\sin 0, -\cos 0) = (0, 1).\] For all $t \in \RR$, \[\|\alpha(t)\| = \sqrt{\sin^2 t + \cos^2 t} = 1,\] so the trace of $\alpha$ lies in the unit circle in $\RR^2$. Moreover, for all $t \in \RR$ we have that \[\alpha'(t) = (\cos t, \sin t)\] so $\alpha$ traverses the unit circle clockwise. If $(x, y) \in \RR^2$ with $x^2 + y^2 = 1$, let \[t = \begin{cases}
+\pi + \arctan\frac{x}{y} & \text{if } y > 0\\
+-\arctan\frac{x}{y} & \text{if } y < 0\\
+\frac{\pi}{2} & \text{if } (x, y) = (1, 0)\\
+-\frac{\pi}{2} & \text{if } (x, y) = (-1, 0).
+\end{cases}\] Then we may verify that in each case, $\alpha(t) = (x, y)$:
+\begin{enumerate}[label = (\roman*)]
+\item If $y > 0$, then $t \in (\pi/2, 3\pi/2)$ with $\tan t = -x/y$ and so 
+\begin{align*}
+\alpha(t) & = (\sin t, -\cos t)\\
+& = \left(\frac{x/y}{\sqrt{1 + (-x/y)^2}}, -\frac{-1}{\sqrt{1 + (-x/y)^2}}\right)\\
+& = \left(\frac{x/y}{1/y}, \frac{1}{1/y}\right)\\
+& = (x, y).
+\end{align*}
+
+\item If $y < 0$, then $t \in (-\pi/2, \pi/2)$ with $\tan t = -x/y$, so
+\begin{align*}
+\alpha(t) & = (\sin t, -\cos t)\\
+& = \left(\frac{-x/y}{\sqrt{1 + (-x/y)^2}}, -\frac{1}{\sqrt{1 + (-x/y)^2}}\right)\\
+& = \left(\frac{-x/y}{-1/y}, -\frac{1}{-1/y}\right)\\
+& = (x, y).
+\end{align*}
+
+\item If $(x, y) = (1, 0)$, then $t = \pi/2$ yields \[\alpha(t) = \left(\sin\frac{\pi}{2}, -\cos\frac{\pi}{2}\right) = (1, 0) = (x, y).\]
+
+\item If $(x, y) = (-1, 0)$, then $t = -\pi/2$ and so \[\alpha(t) = \left(\sin\left(-\frac{\pi}{2}\right), -\cos\left(-\frac{\pi}{2}\right)\right) = (-1, 0) = (x, y).\]
+\end{enumerate}
+Hence the trace of $\alpha$ is exactly the unit circle in $\RR^2$.
+\end{ex}
+
+\begin{ex}
+We are given that $t_0$ attains the minimum of the differentiable function $t \mapsto \|\alpha(t)\|^2 = \alpha(t)\cdot\alpha(t)$. Then \[\frac{d}{dt}\bigg|_{t = t_0}\|\alpha(t)\|^2 = 2\alpha(t_0)\cdot\alpha'(t_0)\] vanishes. Thus from $\alpha(t_0), \alpha'(t_0) \not = 0$, we have that $\alpha(t_0)$ is geometrically orthogonal to $\alpha'(t_0)$.
+\end{ex}
+
+\begin{ex}
+If $\alpha''(t) = 0$ for all $t \in I$, we have that the tangent vector $\alpha'(t)$ is constant. Let $v$ be this constant. Then for any $t_0 \in I$, \[\alpha(t) = \alpha(t_0) + \int_{t_0}^t\alpha'(t)\,dt = \alpha(t_0) + \int_{t_0}^t v\,dt = \alpha(t_0) + (t-t_0)v\] for all $t \in I$. Thus $\alpha$ is a straight line with constant velocity.
+\end{ex}
+
+\begin{ex}
+Observe that \[\frac{d}{dt}(\alpha(t)\cdot v) = \alpha'(t)\cdot v = 0\] for all $t \in I$. Then $\alpha(t)\cdot v$ is constant, so since $\alpha(0)\cdot v = 0$ we conclude that $\alpha(t)\cdot v = 0$ for all $t \in I$. Then $\alpha(t)$ is orthogonal to $v$ for all $t \in I$ as long as $\alpha(t) \not = 0$.
+\end{ex}
+
+\begin{ex}
+We have that $t \mapsto \|\alpha(t)\|^2 = \alpha(t)\cdot\alpha(t)$ is differentiable with \[\frac{d}{dt}\|\alpha(t)\|^2 = 2\alpha(t)\cdot\alpha'(t),\] and $\|\alpha(t)\|^2$ is constant if and only if $\|\alpha(t)\|$ is constant. Thus $\|\alpha(t)\|$ is constant if and only if $\alpha(t)\cdot\alpha'(t) = 0$ for all $t \in I$. Moreover, $\|\alpha(t)\|$ is nonzero for all $t \in I$ if and only if $\alpha(t) \not = 0$ for all $t \in I$, and so from $\alpha'(t) \not = 0$ for all $t \in I$ we conclude that $\|\alpha(t)\|$ is a nonzero constant if and only if $\alpha(t)$ is orthogonal to $\alpha'(t)$ for all $t \in I$.
+\end{ex}

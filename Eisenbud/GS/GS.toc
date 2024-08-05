@@ -1,0 +1,9 @@
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Free Resolutions and Hilbert Functions}}{4}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{First Examples of Free Resolutions}}{5}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Points in $\mathbf {P}^2$}}{6}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Castelnuovo-Mumford Regularity}}{7}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{The Regularity of Projective Curves}}{8}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{Linear Series and 1-Generic Matrices}}{9}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Linear Complexes and the Linear Syzygy Theorem}}{10}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Curves of High Degree}}{11}{chapter.8}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Clifford Index and Canonical Embedding}}{12}{chapter.9}%

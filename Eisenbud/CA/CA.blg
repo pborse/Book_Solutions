@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'CA.blg'
+[80] biber-darwin:340> INFO - === Thu Dec 14, 2023, 12:50:22
+[97] Biber.pm:418> INFO - Reading 'CA.bcf'
+[208] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[224] bbl.pm:654> INFO - Writing 'CA.bbl' with encoding 'UTF-8'
+[225] bbl.pm:757> INFO - Output to CA.bbl
+[225] Biber.pm:130> WARN - The file 'CA.bcf' does not contain any citations!
+[225] Biber.pm:132> INFO - WARNINGS: 1

@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'FA.blg'
+[83] biber-darwin:340> INFO - === Wed Feb 21, 2024, 22:36:45
+[100] Biber.pm:418> INFO - Reading 'FA.bcf'
+[213] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[229] bbl.pm:654> INFO - Writing 'FA.bbl' with encoding 'UTF-8'
+[229] bbl.pm:757> INFO - Output to FA.bbl
+[230] Biber.pm:130> WARN - The file 'FA.bcf' does not contain any citations!
+[230] Biber.pm:132> INFO - WARNINGS: 1

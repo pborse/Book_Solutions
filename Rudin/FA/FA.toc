@@ -1,0 +1,16 @@
+\contentsline {part}{Part\ I. \enspace \noindent General Theory}{4}{part.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Topological Vector Spaces}}{5}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{Completness}}{6}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Convexity}}{7}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Duality in Banach Spaces}}{9}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Some Applications}}{10}{chapter.5}%
+\contentsline {part}{Part\ II. \enspace \noindent Distributions and Fourier Transforms}{11}{part.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{Test Functions and Distributions}}{12}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Fourier Transforms}}{13}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Applications to Differential Equations}}{14}{chapter.8}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Tauberian Theory}}{15}{chapter.9}%
+\contentsline {part}{Part\ III. \enspace \noindent Banach Algebras and Spectral Theory}{16}{part.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Banach Algebras}}{17}{chapter.10}%
+\contentsline {chapter}{\tocchapter {Chapter}{11}{Commutative Banach Algebras}}{18}{chapter.11}%
+\contentsline {chapter}{\tocchapter {Chapter}{12}{Bounded Operators on a Hilbert Space}}{19}{chapter.12}%
+\contentsline {chapter}{\tocchapter {Chapter}{13}{Unbounded Operators}}{21}{chapter.13}%

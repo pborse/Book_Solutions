@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'AG.blg'
+[81] biber-darwin:340> INFO - === Tue Feb 13, 2024, 02:11:27
+[97] Biber.pm:418> INFO - Reading 'AG.bcf'
+[207] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[223] bbl.pm:654> INFO - Writing 'AG.bbl' with encoding 'UTF-8'
+[223] bbl.pm:757> INFO - Output to AG.bbl
+[224] Biber.pm:130> WARN - The file 'AG.bcf' does not contain any citations!
+[224] Biber.pm:132> INFO - WARNINGS: 1

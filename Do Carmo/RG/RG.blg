@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'RG.blg'
+[83] biber-darwin:340> INFO - === Wed Mar 20, 2024, 15:40:29
+[100] Biber.pm:418> INFO - Reading 'RG.bcf'
+[213] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[230] bbl.pm:654> INFO - Writing 'RG.bbl' with encoding 'UTF-8'
+[230] bbl.pm:757> INFO - Output to RG.bbl
+[230] Biber.pm:130> WARN - The file 'RG.bcf' does not contain any citations!
+[230] Biber.pm:132> INFO - WARNINGS: 1

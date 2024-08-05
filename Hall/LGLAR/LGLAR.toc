@@ -1,0 +1,13 @@
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Matrix Lie Groups}}{4}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{The Matrix Exponential}}{5}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Lie Algebras}}{6}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Basic Representation Theory}}{7}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{The Baker-Campbell-Hausdorff Formula and Its Consequences}}{8}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{The Representations of $\mathfrak {sl}_3(\mathbf {C})$}}{9}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Semisimple Lie Algebras}}{10}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Root Systems}}{11}{chapter.8}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Representations of Semisimple Lie Algebras}}{12}{chapter.9}%
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Further Properties of the Representations}}{13}{chapter.10}%
+\contentsline {chapter}{\tocchapter {Chapter}{11}{Compact Lie Groups and Maximal Tori}}{14}{chapter.11}%
+\contentsline {chapter}{\tocchapter {Chapter}{12}{The Compact Group Approach to Representation Theory}}{15}{chapter.12}%
+\contentsline {chapter}{\tocchapter {Chapter}{13}{Fundamental Groups of Compact Lie Groups}}{16}{chapter.13}%

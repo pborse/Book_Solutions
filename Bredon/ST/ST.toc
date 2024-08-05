@@ -1,0 +1,6 @@
+\contentsline {chapter}{\tocchapter {Chapter}{I}{Sheaves and Presheaves}}{4}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{II}{Sheaf Cohomology}}{5}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{III}{Comparison with Other Cohomology Theories}}{8}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{IV}{Applications of Spectral Sequences}}{9}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{V}{Borel--Moore Homology}}{11}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{VI}{Cosheaves and Čech Homology}}{13}{chapter.6}%

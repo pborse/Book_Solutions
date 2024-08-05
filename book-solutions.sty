@@ -1,0 +1,265 @@
+\usepackage[left = 1in, right = 1in]{geometry}
+
+\usepackage{amssymb}
+\usepackage[all, arc]{xy}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{etoolbox}
+\usepackage{chngcntr}
+\usepackage{mathtools}
+\usepackage{ytableau}
+\ytableausetup{centertableaux}
+\usepackage{appendix}
+
+\usepackage[backend = biber, style = alphabetic]{biblatex}
+\addbibresource{bib.bib}
+
+\DeclareFieldFormat{extraalpha}{#1}
+
+\DeclareLabelalphaTemplate{
+  \labelelement{
+    \field[final]{shorthand}
+    \field{label}
+    \field[strwidth=3,strside=left,ifnames=1]{labelname}
+    \field[strwidth=1,strside=left]{labelname}
+  }
+}
+
+\setcounter{tocdepth}{2}
+\patchcmd{\@tocline}
+  {\hfil}
+  {\leaders\hbox{\,.\,}\hfil}
+  {}{}
+
+\usepackage{hyperref}  
+\hypersetup{
+  bookmarksnumbered=true,
+  colorlinks=true,
+  linkcolor=red,
+  citecolor=red,
+  filecolor=red,
+  menucolor=red,
+  urlcolor=red,
+  pdfnewwindow=true,
+  pdfstartview=FitBH}
+  
+\let\fullref\autoref
+
+\def\makeautorefname#1#2{\expandafter\def\csname#1autorefname\endcsname{#2}}
+
+\def\equationautorefname~#1\null{(#1)\null}
+
+\patchcmd{\@thm}{\thm@headfont{\scshape}}{\thm@headfont{\scshape\bseries}}{}{}
+\patchcmd{\@thm}{\thm@notefont{\fontseries\mddefault\upshape}}{}{}{}
+
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ex}{Exercise}
+\newtheorem*{sol}{Solution}
+\newtheorem*{claim}{Claim}
+\newtheorem*{rem*}{Remark}
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\DD}{\mathbf{D}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\GG}{\mathbf{G}}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\RP}{\mathbf{RP}}
+\newcommand{\CP}{\mathbf{CP}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\BB}{\mathbf{B}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\U}{\mathrm{U}}
+\renewcommand{\O}{\mathrm{O}}
+\renewcommand{\bar}{\overline}
+\renewcommand{\gcd}{\mathrm{gcd}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+\newcommand{\gl}{\mathfrak{gl}}
+\renewcommand{\sl}{\mathfrak{sl}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\psu}{\mathfrak{psu}}
+\renewcommand{\u}{\mathfrak{u}}
+\newcommand{\qand}{\quad\text{and}\quad}
+\newcommand{\qor}{\quad\text{or}\quad}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+\let\sp\relax
+\let\sm\setminus
+\let\os\overset
+\let\b\textbf
+\let\it\textit
+\let\rm\mathrm
+\let\bb\mathbb
+\let\mb\mathbf
+\let\mf\mathfrak
+\let\mc\mathcal
+\let\ms\mathscr
+\let\msf\mathsf
+
+\let\emptyset\varnothing
+\let\oldsubset\subset
+\let\oldsupset\supset
+\let\subset\subseteq
+\let\supset\supseteq
+\let\nsub\trianglelefteq
+\let\nsup\trianglerighteq
+\let\subgrp\leq
+\let\subgrpneq\lneq
+\let\supgrp\geq
+\let\supgrpneq\gneq
+
+\makeatletter
+\newcommand{\nsubneq}{%
+  \ooalign{$\lneq$\cr\raise.22ex\hbox{$\vartriangleleft$}\cr}%
+}
+\newcommand{\nsupneq}{%
+  \ooalign{$\gneq$\cr\raise.22ex\hbox{$\vartriangleright$}\cr}%
+}
+\makeatother
+
+\let\phi\varphi
+\let\epsilon\varepsilon
+\let\dirlim\varinjlim
+\let\invlim\varprojlim
+\let\xto\xrightarrow
+\let\into\hookrightarrow
+\let\otni\hookleftarrow
+\let\onto\twoheadrightarrow
+\let\otno\twoheadleftarrow
+\let\bij\leftrightarrow
+\let\homeo\approx
+
+\newcommand{\transv}{\mathrel{\text{\tpitchfork}}}
+\makeatletter
+\newcommand{\tpitchfork}{%
+  \vbox{
+    \baselineskip\z@skip
+    \lineskip-.52ex
+    \lineskiplimit\maxdimen
+    \m@th
+    \ialign{##\crcr\hidewidth\smash{$-$}\hidewidth\crcr$\pitchfork$\crcr}
+  }%
+}
+
+\DeclareMathOperator{\Cr}{Cr}
+\DeclareMathOperator{\Conf}{Conf}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\CaCl}{CaCl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Num}{Num}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\elm}{elm}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\hd}{hd}
+\DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\length}{length}
+\DeclareMathOperator{\area}{area}
+\DeclareMathOperator{\init}{in}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Sing}{Sing}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Bun}{Bun}
+\DeclareMathOperator{\rel}{rel}
+\DeclareMathOperator{\PD}{PD}
+\DeclareMathOperator{\Hasse}{Hasse}
+\DeclareMathOperator{\Bl}{Bl}
+\DeclareMathOperator{\Spe}{Sp\acute{e}}
+\DeclareMathOperator{\sp}{sp}
+\DeclareMathOperator{\dv}{div}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator{\Per}{Per}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\bProj}{\mb{Proj}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\bSpec}{\mb{Spec}}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Max}{Max}
+\DeclareMathOperator{\maxspec}{max-Spec}
+\DeclareMathOperator{\Rad}{Rad}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\esssup}{ess-sup}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\chr}{char}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\M}{M}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\PSU}{PSU}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Alt}{Alt}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\mat}{mat}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\sheafhom}{\ms{H}\kern -.5pt om}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\sheafext}{\ms{E}\kern -.5pt xt}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Homeo}{Homeo}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Orbit}{Orbit}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Cone}{Cone}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\grph}{graph}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\vol}{vol}

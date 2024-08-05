@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'AEC.blg'
+[82] biber-darwin:340> INFO - === Thu Dec 14, 2023, 18:06:45
+[98] Biber.pm:418> INFO - Reading 'AEC.bcf'
+[210] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[226] bbl.pm:654> INFO - Writing 'AEC.bbl' with encoding 'UTF-8'
+[226] bbl.pm:757> INFO - Output to AEC.bbl
+[227] Biber.pm:130> WARN - The file 'AEC.bcf' does not contain any citations!
+[227] Biber.pm:132> INFO - WARNINGS: 1

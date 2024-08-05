@@ -1,0 +1,283 @@
+\begin{prob}[Exercise on Sequences]
+
+\end{prob}
+
+\begin{prob}[Example: Sequences are Inadequate]
+
+\end{prob}
+
+\begin{prob}[Exercise on Hausdorff Spaces: Door Spaces]
+Let $(X, \ms{T})$ be a Hausdorff door space, and let $s$ be an accumulation point of $X$. Then by Theorem 2.2(a), there is a net in $X\setminus\{s\}$ converging to $s$. Hence by Theorem 2.2(c), $X\setminus\{s\}$ is not closed and thus $\{s\}$ is not open. Since $X$ is a door space, it follows that $\{s\}$ is open and so $X\setminus\{s\}$ is closed. Now if $t \in X\setminus\{s\}$ is also an accumulation point of $X$, we have that $\{t\}$ is open and hence $X\setminus\{s, t\}$ is closed.
+\end{prob}
+
+\begin{prob}[Exercise on Subsequences]
+If $m \in \omega$, then $\{i \in \omega\mid N_i < m\}$ is finite and so it has a maximal element $n$. Then if $p \in \omega$ with $p \geq n + 1$, we have $p \not \in \{i \in \omega\mid N_i < m\}$ and hence $N_p \geq m$. Thus for any sequence $S$, we have that $S\circ N$ is a subsequence of $S$.
+
+Now suppose $N$ is a sequence of nonnegative integers such that $S\circ N$ is not a subsequence of $S$. Then by definition of a subsequence, there is $m \in \omega$ for which the set of $i \in \omega$ with $N_i \geq m$ is cofinal in $\omega$. By well-ordering of $\omega$, there is a least such $m$. Then by choice of $m$, $\{i \in \omega\mid N_i \leq m-1\}$ is not cofinal in $\omega$, and so it is bounded above. Thus $\{i \in \omega\mid N_i = m\}$ is cofinal in $\omega$, so also $\{i \in \omega\mid S_{N_i} = S_m\}$ is cofinal in $\omega$. Then $S_m$ is a cluster point of $S\circ N$.
+\end{prob}
+
+\begin{prob}[Example: Cofinal Subsets are Inadequate]
+\begin{enumerate}
+\item Since every point of $X$ other than $(0, 0)$ is open,it suffices to show that if $x \in X\setminus\{(0, 0)\}$ then $x$ and $(0, 0)$ can be separated by disjoint neighborhoods. But $\{x\}$ is open and also $X\setminus\{x\}$ is an open neighborhood of $(0, 0)$ since for all $m \in \omega$, $\{n \in \omega\mid (m, n) \in \{x\}\}$ has at most one element.
+
+\item We showed in part (a) that if $x \in X\setminus\{(0, 0)\}$ then $\{x\}$ is closed and so the claim holds for $x$. On the other hand, $\{x\}$ is open for all $x \in X\setminus\{(0, 0)\}$ by definition of the topology and so $\{(0, 0)\}$ is the intersection of the closed neighborhoods $X\setminus\{x\}$ for $x \in X\setminus\{(0, 0)\}$. Since $X$ is countable by Theorem 0.17, we have by Theorem 0.15 that $X\setminus\{(0, 0)\}$ is countable and so $\{(0, 0)\}$ is a countable intersection of closed neighborhoods.
+
+\item Let $\ms{U}$ be an open cover of $X$, and for each $x \in X$ let $U_x \in \ms{U}$ such that $x \in U_x$. Since $X$ is countable, $\{U_x\mid x \in X\}$ is countable by Theorem 0.16. Then $\{U_x\mid x \in X\}$ is a countable subcover of $\ms{U}$, so $X$ is Lindelöf.
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Monotone Nets]
+(Note: We assume that $>$ is antisymmetric, as in Problem 1.I.)
+\begin{enumerate}
+\item Let $\{S_n, n \in D, \succ\}$ be a monotone increasing net with bounded range, and let $s$ be the supremum of the range of $S$. Let $a, b \in X$ such that $a < s < b$. Then $a$ is not an upper bound of the range of $S$ since $<$ is antisymmetric. Thus there is $n \in D$ for which $a < S_n$. Then for $m \in D$ with $m \succ n$, $S_m \geq S_n$. Hence $a < S_m$. Since $s$ is an upper bound of the range of $S$, we have $a < S_m \leq s$ and so $a < S_m < b$ for $m \succ n$. Then $S$ is eventually in $\{x \in X\mid a < x < b\}$. But the collection of $\{x \in X\mid a < x < b\}$ for $a, b \in X$ is a base for the order topology on $X$ and so the collection of $\{x \in X\mid a < x < b\}$ for $a, b \in X$ with $a < s < b$ is a local base at $s$. Then $S$ converges to $s$.
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Integration Theory, Junior Grade]
+(Note: Since $\RR$ is Hausdorff, we have by Theorem 2.3 that nets in $\RR$ converge to at most one point. Thus if $f$ is summable over $A$, we can unambiguously write $\sum_Af$ for the unique point to which $S$ converges.)
+\begin{enumerate}
+\item Suppose that $f$ is nonnegative and that $\{S_F \mid F \in \ms{A}\}$ is bounded above. The net $S$ is monotone when $\RR$ is linearly ordered by $>$, for if $G\supset F$ with $F, G \in \ms{A}$ then $S_F \geq S_G$. Since $(\RR, >)$ is order-complete, we thus have by Problem 2.F(a) that $S$ converges to the supremum of $\{S_F\mid F \in \ms{A}\}$. Conversely, suppose for sake of contradiction that $f$ is nonnegative and summable but that $\{S_F\mid F \in \ms{A}\}$ is not bounded above. Let $S$ converge to $s \in \RR$. Let $a, b \in \RR$ such that $a < s < b$. There exists $F \in \ms{A}$ such that $S_F \geq b$, since $\{S_F\mid F \in \ms{A}\}$ is not bounded above. For any $G \in \ms{A}$ with $G \supset F$, we have since $f$ is nonnegative that $S_G \geq S_F$ and thus $S_G \geq b$. Since $(\ms{A}, \supset)$ is a directed set, it follows that $S$ is not eventually in $(a, b)$. But $(a, b)$ is a neighborhood of $s$, and so this contradicts the convergence of $S$ to $s$. Hence $\{S_F\mid F \in \ms{A}\}$ must be bounded above.
+
+We now obtain the analogous result for nonpositive $f$ by replacing the linear order $>$ on $\RR$ with $<$. Let $f$ be nonpositive and suppose that $\{S_F\mid F \in \ms{A}\}$ is bounded below. We have that $S$ is a monotone net when $\RR$ is linearly ordered by $<$: if $F, G \in \ms{A}$ such that $G \supset F$, then $S_G \leq S_F$. Thus by Problem 2.F(a), $S$ converges to the infimum of $\{S_F\mid F \in \ms{A}\}$. Conversely, let $f$ be nonpositive and summable but suppose for sake of contradiction that $\{S_F\mid F \in \ms{A}\}$ is not bounded below. Let $S$ converge to $s \in \RR$. If $a, b \in \RR$ such that $a < s < b$, there exists $F \in \ms{A}$ such that $S_F \leq a$ since $\{S_F\mid F \in \ms{A}\}$ is not bounded below. Then for $G \in \ms{A}$ with $G \supset F$, we have $S_G \leq S_F$ so $S_G \leq a$. Now since $\ms{A}$ is directed by $\supset$, $S$ is not eventually in $(a, b)$, a contradiction. Hence $\{S_F\mid F \in \ms{A}\}$ is bounded below.
+
+\item Let $\ms{A}_+$ denote the family of finite subsets of $A_+$ and $\ms{A}_-$ the family of finite subsets of $\ms{A}_-$. Then $\sum_Ff \geq 0$ for all $F \in \ms{A}_+$ and $\sum_Ff \leq 0$ for all $F \in \ms{A}_-$. Suppose first that $f$ is summable over $A$, and suppose for sake of contradiction that $\{S_{F_+}\mid F_+ \in \ms{A}_+\}$ is not bounded above. For $a \in \RR$ such that $\sum_Af < a$, there is $F \in \ms{A}$ such that $S_G < a$ for all $G \in \ms{A}$ with $G \supset F$. Since $F$ is finite, it has a finite number of subsets and hence there is $b \in \RR$ such that $b \leq S_{F'}$ for all $F' \subset F$. Then there is $F_+ \in \ms{A}_+$ such that $S_{F_+} \geq a - b$. We have that $F_+\cup F \in \ms{A}$ contains $F$, so $S_{F_+\cup F} < a$. Since \[S_{F_+\cup F} = S_{F_+} + S_{F\setminus F_+}\] and $F\setminus F_+ \subset F$, it follows that \[a = (a - b) + b \leq S_{F_+} + S_{F\setminus F_+} < a,\] a contradiction. Hence $\{S_{F_+}\mid F_+ \in \ms{A}_+\}$ is bounded above. If $\{S_{F_-}\mid F_- \in \ms{A}_-\}$ is not bounded below, let $a \in \RR$ such that $a < \sum_Af$ and let $b \in \RR$ such that $S_{F'} \leq b$ for all $F' \subset F$. Then there is $F \in \ms{A}$ such that $a < S_G$ for all $G \in \ms{A}$ with $G \supset F$, and $F_- \in \ms{A}_-$ such that $S_{F_-} \leq a-b$. Then $F_-\cup F \in \ms{A}$ contains $F$, so $a < S_{F_-\cup F}$. But \[S_{F_-\cup F} = S_{F_-} + S_{F\setminus F_-}\] and $F\setminus F_- \subset F$ implies \[a < S_{F_-} + S_{F\setminus F_-} \leq (a - b) + b = a.\] This is a contradiction, so $\{S_{F_-} \mid F_- \in \ms{A}_-\}$ is bounded below. By part (a), we thus have that $f$ is summable on $A_+$ and $A_-$.
+
+Now suppose $f$ is summable over $A_+$ and $A_-$. For convenience, let $s_+ = \sum_{A_+}f$ and $s_- = \sum_{A_-}f$. Let $a, b \in \RR$ such that $a < s_+ + s_- < b$. We have \[\frac{a + s_+ - s_-}{2} =  s_+ + \frac{a - s_+ - s_-}{2}  < s_+ < s_+ + \frac{b - s_+ - s_-}{2} = \frac{b + s_+ - s_-}{2}\] and \[\frac{a - s_+ + s_-}{2} = s_- + \frac{a - s_+ - s_-}{2} < s_- < s_- + \frac{b - s_+ - s_-}{2} = \frac{b - s_+ + s_-}{2}.\] Then since $\{S_F, F \in \ms{A}_+, \supset\}$ converges to $s_+$ and $\{S_F, F \in \ms{A}_-, \supset\}$ converges to $s_-$, are $F_+ \in \ms{A}_+$ and $F_- \in \ms{A}_-$ such that for $G_+ \in \ms{A}_+$ with $G_+ \supset F_+$ and $G_- \in \ms{A}_-$ with $G_- \supset F_-$, \[\frac{a + s_+ - s_-}{2} < S_{G_+} < \frac{b + s_+ - s_-}{2}\] and \[\frac{a - s_+ + s_-}{2} < S_{G_-} < \frac{b - s_+ + s_-}{2}.\] Now let $F = F_+ \cup F_-$. Then for $G \in \ms{A}$ with $G \supset F$, let \[G_+ = \{a \in G\mid f(a) \geq 0\}\] and \[G_- = \{a \in G\mid f(a) < 0\}.\] Then $G_+ \subset A_+$ and $G_- \subset A_-$, and from $G_+, G_- \subset G$ we have that $G_+$ and $G_-$ are finite. Thus $G_+ \in \ms{A}_+$ and $G_- \in \ms{A}_-$. Moreover, $f$ is nonnegative on $F_+$ and $F_+ \subset F \subset G$, so $G_+ \supset F_+$. Similarly, $G_- \supset F_-$. Then \[\frac{a + s_+ - s_-}{2} < S_{G_+} < \frac{b + s_+ - s_-}{2}\] and \[\frac{a - s_+ + s_-}{2} < S_{G_-} < \frac{b - s_+ + s_-}{2}\] by the choice of $F_+$ and $F_-$. But $G$ is the disjoint union of $G_+$ and $G_-$, so $S_G = S_{G_+} + S_{G_-}$. Then from \[\frac{a + s_+ - s_-}{2} + \frac{a - s_+ + s_-}{2} = a\] and \[\frac{b + s_+ - s_-}{2} + \frac{b - s_+ + s_-}{2},\] we conclude that $a < S_G < b$. Hence $S$ is eventually in $(a, b)$, so $S$ converges to $s_+ + s_-$. That is, $f$ is summable over $A$ and \[\sum_A f = \sum_{A_+}f + \sum_{A_-}f.\]
+
+In particular, if $f$ is summable over $A$, then $f$ is summable over $A_+$ and $A_-$ and so \[\sum_Af = \sum_{A_+}f + \sum_{A_-}f.\]
+
+\item Suppose $f$ is summable over $A$. Then $f$ is summable over $A_+$ and $A_-$ by part (b). We have \[|f|(a) = \begin{cases}
+f(a) & a \in A_+\\
+-f(a) & a \in A_-
+\end{cases}\] 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item
+\begin{enumerate}[label = (\roman*)]
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Integration Theory, Utility Grade]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Maximal Ideals in Lattices]
+\begin{enumerate}
+\item Let $\ms{A}$ denote the family of ideals which contain $A$ and are disjoint from $B$, and let $\ms{N}$ be a nest in $\ms{A}$. If $\ms{N}$ is empty, then since $A \in \ms{A}$, $A$ is an upper bound of $\ms{N}$ in $\ms{A}$. If $\ms{N}$ is nonempty, we claim that $\bigcup\ms{N} \in \ms{A}$. Clearly since $A \subset N$ for any $N \in \bigcup\ms{N}$, we have $A \subset \bigcup\ms{N}$. Moreover, \[\left(\bigcup\ms{N}\right)\cap B = \bigcup_{N \in \ms{N}}(N\cap B) = \bigcup_{N \in \ms{N}}\emptyset = \emptyset\] so $\bigcup\ms{N}$ is disjoint from $B$. Suppose $y \in \bigcup\ms{N}$ and $x \in X$ such that $y \geq x$. Then if $N \in \ms{N}$ such that $y \in N$, we have also that $x \in N$ since $N$ is an ideal of $X$. If $y, z \in \bigcup\ms{N}$, let $N, M \in \ms{N}$ such that $y \in N$ and $z \in M$. Then since $\ms{N}$ is a nest, WLOG $M \subset N$. Hence $y, z \in N$, and so $y\vee z \in N$. Thus $y\vee z \in \bigcup\ms{N}$, so that $\bigcup\ms{N}$ is an ideal of $X$. Now since $N \subset \bigcup\ms{N}$ for all $N \in \ms{N}$, we have that $\bigcup\ms{N}$ is an upper bound for $\ms{N}$ in $\ms{A}$. Hence by Theorem 0.25(a) (the Maximal Principle), there is a maximal element $A'$ of $\ms{A}$; that is, $A'$ is maximal among the ideals of $X$ containing $A$ and disjoint from $B$.
+
+The existence of $B'$ is proven in exactly the same manner. Let $\ms{B}$ denote the family of dual ideals of $X$ which contain $B$ and are disjoint from $A'$. Since $B$ is a dual ideal of $X$ disjoint from $A'$, we have $B \in \ms{B}$. Thus the empty nest is bounded above in $\ms{B}$. Now suppose that $\ms{N}$ is a nonempty nest in $\ms{B}$; we wish to show that $\bigcup\ms{N} \in \ms{B}$. For any $N \in \ms{N}$, we have that $B \subset N$ and so $B \subset \bigcup\ms{N}$. Moreover, \[\left(\bigcup\ms{N}\right)\cap A' = \bigcup_{N \in \ms{N}}(N\cap A') = \bigcup\emptyset = \emptyset,\] so $\bigcup\ms{N}$ is disjoint from $A'$. Now let $y \in \bigcup\ms{N}$ and suppose $x \in X$ with $x\geq y$. Then if $N \in \ms{N}$ such that $y \in N$, we have $x \in N$ since $N$ is a dual ideal of $X$ and thus $x \in \bigcup\ms{N}$. For $y, z \in \bigcup\ms{N}$, there are $N, M \in \ms{N}$ such that $y \in N$ and $z \in M$. WLOG, since $\ms{N}$ is a nest, $M \subset N$. Then $y, z \in N$ and so since $N$ is a dual ideal, $y\wedge z \in N$. Thus $y \wedge z \in \bigcup\ms{N}$, and so $\bigcup\ms{N}$ is a dual ideal of $X$. Then $\bigcup\ms{N} \in \ms{B}$. Now by Theorem 0.25(a) (the Maximal Principle), there is a maximal element $B'$ of $\ms{B}$. This $B'$ is maximal among the dual ideals of $X$ containing $B$ and disjoint from $A'$.
+
+\item For $c \in X$, let \[C = \{x \in X\mid x \leq c\text{ or } x \leq c\vee y\text{ for some }y \in A'\}.\] We claim that $C$ is an ideal of $X$ containing $A'$ and $c$. [TODO] If $C'$ is any ideal of $X$ containing $A'$ and $c$, then $c\vee y \in C'$ for any $y \in A'$. Then if $x \in X$ such that $x \leq c$ or $x \leq c\vee y$ for some $y \in A'$, we have $x \in C'$ since $C'$ is an ideal. Thus $C \subset C'$, and so $C$ is the smallest such ideal.
+
+If $C$ is disjoint from $B$, then $C$ is an ideal of $X$ containing $A'$ (and thus also $A$) which is disjoint from $B$. Hence by maximality of $A'$, we have $C \subset A'$. In particular, $c \in A'$. Now suppose $c$ is in neither $A'$ nor $B$; then $C$ intersects $B$. Let $y \in B\cap C$. From $y \in C$, either $y \leq c$ or there exists $x \in A'$ such that $y \leq c\vee x$. But $B$ is a dual ideal and $c \not \in B$, so $y \leq c$ is impossible. Thus there is $x \in A'$ such that $y \leq c\vee x$, and so since $B$ is a dual ideal, $c\vee x \in B$.
+
+\item Since $B \subset B'$, if $c$ is in neither $A'$ nor $B'$ then by part (b), there is $x \in A'$ such that $c\vee x \in B$. By an argument entirely analogous to part (b), there is $y \in B'$ such that $c\wedge y \in A'$. Then $(c\vee x)\wedge y \in B'$ since $B'$ is a dual ideal containing $c\vee x$ and $y$. We also have that \[(c\vee x)\wedge y = (c\wedge y)\vee (x\wedge y)\] since $X$ is distributive. From $x \geq x\wedge y$, we have $x\wedge y \in A'$ and thus $(c\wedge y)\vee (x\wedge y) \in A'$. But $B'$ is disjoint from $A'$ by construction, and so we have a contradiction. Then $A'\cup B' = X$, proving the claim.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Universal Nets]
+\begin{enumerate}
+\item Suppose $\{S_n, n \in D\}$ is a universal net in $X$ which is frequently in $A \subset X$. Then $S$ is not eventually in $X\setminus A$, and so $S$ is eventually in $A$ since it is a universal net.
+
+\item We first show that if a net $\{S_n, n \in D\}$ in $X$ is eventually in $A \subset X$, then any subnet of $S$ is eventually in $A$. Indeed, let $N: E \to D$ be a function of directed sets as in the definition of a subnet of $S$. Since $S$ is eventually in $A$, there is $m \in D$ such that $S_n \in A$ for $n \geq m$. Let $n \in E$ such that for $p \geq n$, $N_p \geq m$. Then $S_{N_p} \in A$ for $p \geq n$, and so $S\circ N$ is eventually in $A$. Now if $S$ is a universal net in $X$, for any subset $A \subset X$, $S$ is eventually in $A$ or eventually in $X\setminus A$. Hence any subnet of $S$ is eventually in $A$ or eventually in $X\setminus A$, and so is a universal net in $X$.
+
+Suppose $\{S_n, n \in D\}$ is a universal net in $X$ and that $f: X \to Y$ is a function. Then $f\circ S$ is a net in $Y$. For any subset $B \subset Y$, $S$ is eventually in $f^{-1}(B)$ or $X\setminus f^{-1}(B)$. Thus there is $n \in D$ such that either for all $m \geq n$, $S_n \in f^{-1}(B)$, or for all $m \geq n$, $S_n \in X\setminus f^{-1}(B)$. But $X\setminus f^{-1}(B) = f^{-1}(Y\setminus B)$ and hence for all $m \geq n$, $f(S_n) \in B$ or for all $m \geq n$, $f(S_n) \in Y\setminus B$. Hence $f\circ S$ is eventually in $B$ or $Y\setminus B$, so $f\circ S$ is a universal net in $Y$.
+
+\item Let $S$ be a net in $X$ and let $\ms{A}$ be the family of all subsets $A \subset X$ for which $S$ is frequently in $A$, and let $\ms{P}$ be the family of subsets of $\ms{A}$ which are closed under finite intersections. Suppose that $\ms{N}$ is a nest in $\ms{P}$; we claim that $\bigcup\ms{N} \in \ms{P}$. Let $A, B \in \bigcup\ms{N}$. Then there are $N, M \in \ms{N}$ such that $A \in N$ and $B \in M$, and WLOG we assume that $M \subset N$. Then $A, B \in N$ and so $A\cap B \in N$. Hence $A\cap B \in \bigcup\ms{N}$, so $\bigcup\ms{N} \in \ms{P}$ (clearly $\bigcup\ms{N} \subset \ms{A}$). Thus $\ms{N}$ has an upper bound in $\ms{P}$, and so by Theorem 0.25(a) (the Maximal Principle), there is a maximal element of $\ms{P}$. Let $\ms{C}$ be a maximal element of $\ms{P}$. Suppose for sake of contradiction that there is $A \subset X$ such that $A$ and $X\setminus A$ are not in $\ms{C}$. To yield a contradiction, it suffices by definition of $\ms{C}$ to show that $\ms{C}\cup\{A\}$ or $\ms{C}\cup\{X\setminus A\}$ is in $\ms{P}$. [TODO: finish]
+
+[TODO: other method]
+
+\item Let $S$ be a net in $X$, and let $\ms{C}$ be as in part (c). By Lemma 2.5, there is a subnet $T$ of $S$ which is eventually in each member of $\ms{C}$. But for all $A \subset X$, we have $A \in \ms{C}$ or $X\setminus A \in \ms{C}$ and hence $T$ is eventually in $A$ or $X\setminus A$. Then $T$ is a universal subnet of $S$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Boolean Rings: There are Enough Homomorphisms]
+\begin{enumerate}
+\item We have for $r, s \in R$ that
+\begin{align*}
+r + s & = (r + s)^2\\
+& = r^2 + rs + sr + s^2\\
+& = r + rs + sr + s,
+\end{align*}
+and so $0 = rs + sr$. Adding $rs$ to both sides yields $rs = sr$, and so $R$ is commutative.
+
+\item Since $R$ is a ring, it has the usual $\ZZ$-algebra structure. For all $r \in R$, we have $2r = r + r = 0$ and thus this $\ZZ$-algebra structure factors through a $\ZZ/2\ZZ$-algebra structure.
+
+\item If $A \in \ms{A}$, then
+\begin{align*}
+A\Delta\emptyset & = (A\cup\emptyset)\setminus(A\cap\emptyset)\\
+& = A\setminus\emptyset\\
+& = A.
+\end{align*}
+For $A, B \in \ms{A}$, it is clear that $A\Delta B = B\Delta A$. Moreover, we notice that
+\begin{align*}
+A\Delta B & = (A\cup B)\setminus(A\cap B)\\
+& = (A\setminus(A\cap B))\cup(B\setminus(A\cap B))\\
+& = (A\setminus B)\cup(B\setminus A).
+\end{align*}
+Now for $A, B, C \in \ms{A}$,
+\begin{align*}
+(A\Delta B)\Delta C & = ((A\Delta B)\setminus C)\cup (C\setminus(A\Delta B))\\
+& = (((A\setminus B)\cup(B\setminus A))\setminus C)\cup(C\setminus((A\cup B)\setminus(A\cap B)))\\
+& = (A\setminus(B\cup C))\cup(B\setminus(A\cup C))\cup(C\setminus(A\cup B))\cup(A\cap B\cap C)\\
+& = (A\setminus(B\cup C))\cup(A\cap B\cap C)\cup(B\setminus(A\cup C))\cup(C\setminus(A\cup B))\\
+& = (A\setminus((B\cup C)\setminus(B\cap C)))\cup(((B\setminus C)\setminus A)\cup((C\setminus B)\setminus A))\\
+& = (A\setminus((B\cup C)\setminus(B\cap C)))\cup(((B\setminus C)\cup(C\setminus B))\setminus A)\\
+& = (A\setminus(B\Delta C))\cup((B\Delta C)\setminus A)\\
+& = A\Delta(B\Delta C).
+\end{align*}
+Thus $(\ms{A}, \Delta)$ is an abelian group. It is clear that $\cap$ is associative, and so we show that $\cap$ distributes over $\Delta$. For all $A, B, C \in \ms{A}$, we have
+\begin{align*}
+A\cap(B\Delta C) & = A\cap((B\cup C)\setminus(B\cap C))\\
+& = (A\cap(B\cup C))\setminus(B\cap C)\\
+& = ((A\cap B)\cup(A\cap C))\setminus(B\cap C)\\
+& = ((A\cap B)\setminus(B\cap C))\cup((A\cap C)\setminus(B\cap C))\\
+&  = ((A\cap B)\setminus(A\cap C))\cup((A\cap C)\setminus(A\cap B))\\
+& = (A\cap B)\Delta(A\cap C),
+\end{align*}
+as desired. Moreover, for all $A \in \ms{A}$, we have $A\cap X = A$ and $X\cap A = A$ so $(\ms{A}, \Delta, \cap)$ is a ring with additive unit $\emptyset$ and multiplicative unit $X$. Finally, we have that $(\ms{A}, \Delta, \cap)$ is also a Boolean ring: for any $A \in \ms{A}$, it is clear that $A\cap A = A$ and \[A\Delta A = (A\cup A)\setminus(A\cap A) = A\setminus A = A.\]
+
+\item [TODO]
+
+\item Let $r, s, t \in R$ such that $r \geq s$ and $s\geq t$. Then \[r\cdot t = r\cdot(s\cdot t) = (r\cdot s)\cdot t = s\cdot t = t,\] so $r \geq t$. Thus $\geq$ partially orders $R$. For $r, s \in R$, let $r\vee s = r + s + r\cdot s$ and $r\wedge s = r\cdot s$. Then (note that by part (a), $R$ is commutative) $r\vee s = s\vee r$, $r\wedge s = s\wedge r$, and
+\begin{align*}
+(r\vee s)\cdot r & = (r + s + r\cdot s)\cdot r\\
+& = r + s\cdot r + (r\cdot s)\cdot r\\
+& = r + s\cdot r + (s\cdot r)\cdot r\\
+& = r + s\cdot r + s\cdot r^2\\
+& = r + s\cdot r + s\cdot r\\
+& = r
+\end{align*}
+and
+\begin{align*}
+(r\wedge s)\cdot r & = (r\cdot s)\cdot r\\
+& = r^2\cdot s\\
+& = r\cdot s\\
+& = r\wedge s.
+\end{align*}
+Then $r\vee s \geq r, s$ and $r, s \geq r\wedge s$. On the other hand, if $a \geq r, s$ and $r, s \geq b$, then
+\begin{align*}
+a\cdot(r\vee s) & = a\cdot(r + s + r\cdot s)\\
+& = a\cdot r + a\cdot s + a\cdot(r\cdot s)\\
+& = r + s + (a\cdot r)\cdot s\\
+& = r + s + r\cdot s
+\end{align*}
+and
+\begin{align*}
+(r\wedge s)\cdot b & = (r\cdot s)\cdot b\\
+& = r\cdot(s\cdot b)\\
+& = r\cdot b\\
+& = b.
+\end{align*}
+Thus $a \geq r\vee s$ and $r\wedge s \geq b$, so $r\vee s$ is the join of $r, s$ and $r\wedge s$ is the meet of $r, s$. For $r, s, t \in R$,
+\begin{align*}
+(r\vee s)\vee t & = (r + s + r\cdot s)\vee t\\
+& = (r + s + r\cdot s) + t + (r + s + r\cdot s)\cdot t\\
+& = r + s + r\cdot s + t + r\cdot t + s\cdot t + (r\cdot s)\cdot t\\
+& = r + (s + t + s\cdot t) + r\cdot(s + t + s\cdot t)\\
+& = r\vee(s + t + s\cdot t)\\
+& = r\vee(s\vee t)
+\end{align*}
+and
+\begin{align*}
+(r\wedge s)\wedge t & = (r\cdot s)\cdot t\\
+& = r\cdot(s\cdot t)\\
+& = r\wedge(s\wedge t).
+\end{align*}
+Then $\vee$ and $\wedge$ are associative. Moreover, we have for $r, s, t \in R$ that
+\begin{align*}
+r\wedge(s\vee t) & = r\cdot(s + t + s\cdot t)\\
+& = r\cdot s + r\cdot t + r\cdot(s\cdot t)\\
+& = r\cdot s + r\cdot t + r^2\cdot(s\cdot t)\\
+& = r\cdot s + r\cdot t + (r\cdot s)\cdot(r\cdot t)\\
+& = (r\cdot s)\vee(r\cdot t)\\
+& = (r\wedge s)\vee(r\wedge t)
+\end{align*}
+and
+\begin{align*}
+r\vee(s\wedge t) & = r\vee(s\cdot t)\\
+& = r + s\cdot t + r\cdot(s\cdot t)\\
+& = r^2 + r\cdot t + r\cdot t + s\cdot r + s\cdot t + r\cdot(s\cdot t) + r\cdot(s\cdot t) + r\cdot(s\cdot t)\\
+& = r^2 + r\cdot t + r^2\cdot t + s\cdot r + s\cdot t + s\cdot(r\cdot t) + (r\cdot s)\cdot r + (r\cdot s)\cdot t + (r\cdot s)\cdot(r\cdot t)\\
+& = (r + s + r\cdot s)\cdot(r + t + r\cdot t)\\
+& = (r\vee s)\wedge(r\vee t)
+\end{align*}
+Thus $(R, \geq)$ is a distributive latttice.
+
+\item [TODO]
+
+\item [TODO]
+
+\item [TODO]
+
+\item [TODO]
+
+\item [TODO]
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Filters]
+\begin{enumerate}
+\item Suppose $U$ is an open subset of $X$, $x \in U$, and $\ms{F}$ is a filter in $X$ which converges to $x$. Then $U$ is a neighborhood of $x$, so $U \in \ms{F}$.
+
+Conversely, suppose that $U \subset X$ such that $U$ belongs to every filter which converges to a point of $U$. By Theorem 1.2, for any $x \in U$ the neighborhood system $\ms{U}_x$ of $x$ is a dual ideal of the Boolean ring $(2^X, \Delta, \cap)$. Moreover, every neighborhood of $x$ is nonempty since it contains $x$, and hence $\ms{U}_x$ is a filter in $X$. It is immediate that $\ms{U}_x$ converges to $x$, and hence $U \in \ms{U}_x$. Then $U$ is a neighborhood of $x$, and so by Theorem 1.1, $U$ is open.
+
+\item Suppose $A\setminus\{x\}$ belongs to some filter $\ms{F}$ in $X$ which converges to $x$. Then for all neighborhoods $U$ of $x$< we have $U \in \ms{F}$ and hence $U\cap(A\setminus\{x\}) \in \ms{F}$. Since $\emptyset\not\in\ms{F}$, it follows that $U$ intersects $A\setminus\{x\}$ and so $x$ is an accumulation point of $A$.
+
+Conversely, suppose that $x$ is an accumulation point of $A$. As shown in part (a), the neighborhood system $\ms{U}_x$ of $x$ is a filter in $X$. By Problem 2.I(b), the smallest dual ideal of $(2^X, \Delta, \cap)$ containing $\ms{U}_x$ and $A\setminus\{x\}$ is \[\ms{F} = \{B \subset X\mid A\setminus\{x\} \subset B\text{ or } U\cap(A\setminus\{x\}) \subset B\text{ for some }U \in \ms{U}_x\}.\] But any neighborhood $U$ of $x$ intersects $A\setminus\{x\}$ since $x$ is an accumulation point of $A$, and thus $\ms{F}$ consists of nonempty sets. Hence $\ms{F}$ is a filter in $X$ which converges to $x$ and contains $A\setminus\{x\}$.
+
+\item By definition, every $\ms{F} \in \phi_x$ contains $\ms{U}_x$. Thus $\ms{U}_x \subset \bigcap\phi_x$. Conversely, we saw in part (a) that $\ms{U}_x$ is a filter. Then $\ms{U}_x \in \phi_x$ and so $\bigcap\phi_x \subset \ms{U}_x$, proving the claim.
+
+\item Since $\ms{F}$ converges to $x$, we have $\ms{U}_x \subset \ms{F}$. Then from $\ms{F} \subset \ms{G}$, we also have $\ms{U}_x \subset \ms{G}$ and so $\ms{G}$ converges to $x$.
+
+\item Suppose for sake of contradiction that $A, B \subset X$ such that $A, B \not \in \ms{F}$ but $A\cup B \in \ms{F}$. Then since $\ms{F}$ is an ultrafilter, we must have that the smallest dual ideal of $(2^X, \Delta, \cap)$ containing $\ms{F}$ and $A$ is $2^X$ and the smallest dual ideal containing $\ms{F}$ and $B$ is $2^X$. Then by Problem 2.I(b), there exist $F, G \in \ms{F}$ such that $A\cap F = B\cap G = \emptyset$. Then $(A\cup B)\cap(F\cap G) \in \ms{F}$, but
+\begin{align*}
+(A\cup B)\cap(F\cap G) & = (A\cap(F\cap G))\cup(B\cap (F\cap G))\\
+& = ((A\cap F)\cap G)\cup((B\cap G)\cap F)\\
+& = \emptyset
+\end{align*}
+since $(A\cap F)\cap G \subset A\cap F = \emptyset$ and $(B\cap G)\cap F \subset B\cap G = \emptyset$. This is a contradiction (since $\emptyset\not\in\ms{F}$), so $A$ or $B$ is in $\ms{F}$.
+
+If $X = \emptyset$, then the empty filter is the only ultrafilter in $X$ and so the second claim in the problem statement is false. Now suppose $X \not = \emptyset$. Then $\{X\}$ is a filter in $X$ which contains $\emptyset$ and so $\emptyset$ is not an ultrafilter in $X$. Thus if $\ms{F}$ is an ultrafilter in $X$, $\ms{F}$ is nonempty and so it follows that $X \in \ms{F}$ as $X$ contains every subset of $X$. Then for any $A \subset X$, we have $A\cup(X\setminus A) = X \in \ms{F}$ so that $A$ or $X\setminus A$ lies in $\ms{F}$.
+
+\item
+\begin{enumerate}
+\item Since the order on $D$ is reflexive, $\{x_n, n \in D\}$ is not eventually in $\emptyset$. Thus $\emptyset \not \in \ms{F}$. If $A, B \in \ms{F}$, let $n, m \in D$ such that $x_p \in A$ for all $p \geq n$ and $x_p \in B$ for all $p \geq m$. Since $D$ is directed, there is $p \in D$ such that $p \geq n, m$. Then for $q \geq p$, we have $q \geq n, m$ so $x_q \in A\cap B$. Then $A\cap B \in \ms{F}$. Finally, suppose $A \in \ms{F}$ and that $B$ is a subset of $X$ containing $A$. Then there is $n \in D$ such that $x_m \in A$ for $m \geq n$, and so also $x_m \in B$ for $m \geq n$. Thus $B \in \ms{F}$, so that $\ms{F}$ is a filter in $X$.
+
+\item (Note: We assume $\ms{F}$ is nonempty so that $D$ is nonempty.) We first show that $D$ is directed by $\geq$. Since $\ms{F}$ is nonempty, there is $F \in \ms{F}$. But $\ms{F}$ is a filter and so $F \not = \emptyset$. Thus there is $x \in F$, so $(x, F) \in D$; that is, $D$ is nonempty. If $(x, F), (y, G), (z, H) \in \ms{F}$ such that $(z, H) \geq (y, G)$ and $(y, G) \geq (x, F)$, then $H \subset G$ and $G \subset F$. Thus $(z, H) \geq (x, F)$, so $\geq$ is a partial order on $D$. For any $(x, F) \in D$, we clearly have $F \subset F$ and so $(x, F) \geq (x, F)$. Finally, let $(x, F), (y, G) \in D$. Then $F, G \in \ms{F}$ so $F\cap G \in \ms{F}$ with $F\cap G \subset F, G$. Letting $z \in F\cap G$ ($F\cap G$ is nonempty since $\ms{F}$ is a filter), we then have $(z, F\cap G) \in D$ with $(z, F\cap G) \geq (x, F), (y, G)$. Hence $D$ is directed by $\geq$.
+
+Now we have that $\{f(x, F), (x, F) \in D\}$ is a net in $X$. Suppose $A \in \ms{F}$, and let $x \in A$. Then for any $(y, B) \in D$ such that $(y, B) \geq (x, A)$, we have $y \in B$ and $B \subset A$. Hence $f(y, B) = y \in A$, so that $\{f(x, F), (x, F) \in D\}$ is eventually in $A$. Conversely, let $A \subset X$ such that $\{f(x, F), (x, F) \in D\}$ is eventually in $A$. Then there is $(x, F) \in D$ such that $y \in A$ whenever $(y, G) \geq (x, F)$. Since $(y, F) \geq (x, F)$ for all $y \in F$, we thus have $y \in A$ for all $y \in F$. Hence $F \subset A$, and so $A \in \ms{F}$ since $F \in \ms{F}$.
+\end{enumerate}
+\end{enumerate}
+\end{prob}

@@ -1,0 +1,6 @@
+\contentsline {chapter}{\tocchapter {Chapter}{I}{Elliptic and Modular Functions}}{4}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{II}{Complex Multiplication}}{6}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{III}{Elliptic Surfaces}}{8}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{IV}{The Néron Model}}{10}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{V}{Elliptic CUrves over Complete Fields}}{12}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{VI}{Local Height Functions}}{13}{chapter.6}%

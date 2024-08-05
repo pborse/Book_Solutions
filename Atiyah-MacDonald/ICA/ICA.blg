@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'ICA.blg'
+[85] biber-darwin:340> INFO - === Sun Aug  4, 2024, 13:59:42
+[103] Biber.pm:418> INFO - Reading 'ICA.bcf'
+[218] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[234] bbl.pm:654> INFO - Writing 'ICA.bbl' with encoding 'UTF-8'
+[234] bbl.pm:757> INFO - Output to ICA.bbl
+[234] Biber.pm:130> WARN - The file 'ICA.bcf' does not contain any citations!
+[234] Biber.pm:132> INFO - WARNINGS: 1

@@ -1,0 +1,117 @@
+\begin{ex}
+\begin{enumerate}
+\item The change of basis from $\{(1, 3), (4, 2)\}$ to $\{(1, 0), (0, 1)\}$ has determinant \[\begin{vmatrix}
+1 & 4\\
+3 & 2
+\end{vmatrix} = (1)(2) - (4)(3) = -10\] and so $\{(1, 3), (4, 2)\}$ is negative.
+
+\item The change of basis from $\{(1, 3, 5), (2, 3, 7), (4, 8, 3)\}$ has determinant
+\begin{align*}
+\begin{vmatrix}
+1 & 2 & 4\\
+3 & 3 & 8\\
+5 & 7 & 3
+\end{vmatrix} & = 1\begin{vmatrix}
+3 & 8\\
+7 & 3
+\end{vmatrix} - 2\begin{vmatrix}
+3 & 8\\
+5 & 3
+\end{vmatrix} + 4\begin{vmatrix}
+3 & 3\\
+5 & 7
+\end{vmatrix}\\
+& = 1((3)(3) - (8)(7)) - 2((3)(3) - (8)(5)) + 4((3)(7) - (3)(5))\\
+& = -47 + 62 + 24\\
+& = 39,
+\end{align*}
+so $\{(1, 3, 5), (2, 3, 7), (4, 8, 3)\}$ is positive.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+For any $(x, y, z), (x_0, y_0, z_0) \in P$, we have \[ax + by + cz = d\] and \[ax_0 + by_0 + cz_0 = d\] so \[(a, b, c)\cdot(x-x_0, y-y_0, z-z_0) = a(x-x_0) + b(y-y_0) + c(z-z_0) = 0.\] Then $v = (a, b, c)$ is perpendicular to $P$. Moreover, for all $(x, y, z) \in P$, we have $(a, b, c)\cdot(x, y, z) = -d$ and so by the Cauchy-Schwarz inequality, \[\|(a, b, c)\|\|(x, y, z)\| \geq |d|.\] Hence \[\|(x, y, z)\| \geq \frac{|d|}{\sqrt{a^2 + b^2 + c^2}}.\] The distance $|d|/\sqrt{a^2 + b^2 + c^2}$ is achieved by \[(x, y, z) = \left(-\frac{ad}{a^2+b^2+c^2}, -\frac{bd}{a^2+b^2+c^2}, -\frac{cd}{a^2+b^2+c^2}\right) \in P,\] so $|d|/\sqrt{a^2+b^2+c^2}$ is the distance from the plane to the origin.
+\end{ex}
+
+\begin{ex}
+The angle of intersection of two planes is given by the angle of their normal vectors. By Exercise 2, the normal vector of the plane $5x + 3y + 2z - 4 = 0$ is $(5, 3, 2)$ and the normal vector of $3x + 4y - 7z = 0$ is $(3, 4, -7)$. If $\theta$ denotes the angle between $(5, 3, 2)$ and $(3, 4, -7)$, then \[\cos\theta = \frac{(5, 3, 2)\cdot(3, 4, -7)}{\|(5, 3, 2)\|\|(3, 4, -7)\|} = \frac{13}{\sqrt{38}\sqrt{74}}.\] Hence \[\theta = \arccos\left(\frac{13}{2\sqrt{703}}\right).\]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+We have that $(p-p_1)\wedge(p-p_2)\cdot(p-p_3) = 0$ for $p = p_1, p_2, p_3$ and so it suffices to show that this equation defines a plane. Indeed, if $p = (x, y, z)$ then
+\begin{align*}
+(p-p_1)\wedge(p-p_2)\cdot(p-p_3) & = \begin{vmatrix}
+x-x_1 & x-x_2 & x-x_3\\
+y-y_1 & y-y_2 & y-y_3\\
+z-z_1 & z-z_2 & z-z_3
+\end{vmatrix}\\
+& = \begin{vmatrix}
+x-x_1 & x_1-x_2 & x_1-x_3\\
+y-y_1 & y_1-y_2 & y_1-y_3\\
+z-z_1 & z_1-z_2 & z_1-z_3
+\end{vmatrix}\\
+& = a(x-x_1) + b(y-y_1) + c(z-z_1)
+\end{align*}
+where
+\begin{align*}
+a & = \begin{vmatrix}
+y_1-y_2 & y_1-y_3\\
+z_1-z_2 & z_1-z_3
+\end{vmatrix},\\
+b & = -\begin{vmatrix}
+x_1-x_2 & x_1-x_3\\
+z_1-z_2 & z_1-z_3
+\end{vmatrix},\\
+c & = \begin{vmatrix}
+x_1-x_2 & x_1-x_3\\
+y_1-y_2 & y_1-y_3
+\end{vmatrix}.
+\end{align*}
+Thus letting $d = -ax_1-by_1-cz_1$, we see that $(p-p_1)\wedge(p-p_2)\cdot(p-p_3) = 0$ defines the plane given by $ax+by+cz+d = 0$.
+\end{ex}
+
+\begin{ex}
+The planes are defined by $v_i\cdot(x, y, z) = d_i$. Then if $(x_0, y_0, z_0)$ lies in their intersection, $(x, y, z)$ lies in the intersection if and only if $v_i\cdot(x-x_0, y-y_0, z-z_0) = 0$ for $i = 1, 2$. But since the planes are nonparallel, we have that $v_1$ and $v_2$ are linearly independent and so $(x, y, z)$ is in the intersection if and only if $(x-x_0, y-y_0, z-z_0)$ is parallel to $u = v_1\wedge v_2$. Hence if $u = (u_1, u_2, u_3)$, the intersection of the two planes is parameterized by \[x-x_0 = u_1t,\quad y-y_0 = u_2t,\quad z-z_0 = u_3t\] for $t \in \RR$.
+\end{ex}
+
+\begin{ex}
+By Exercise 2, the normal vector to the plane given by $ax + by + cz + d = 0$ is $(a, b, c)$. Then the plane and the line are parallel if and only if $(a, b, c)\cdot (u_1, u_2, u_3) = 0$, that is, \[au_1 + bu_2 + cu_3 = 0.\]
+\end{ex}
+
+\begin{ex}
+Since the lines are nonparallel, $u$ and $v$ are linearly independent. Then $u\wedge v\not = 0$ and $u\wedge v$ is perpendicular to both lines, so the distance $\rho$ is given by the length of the projection of $r$ onto $u\wedge v$, that is, \[\frac{|(u\wedge v)\cdot r|}{\|u\wedge v\|}.\]
+\end{ex}
+
+\begin{ex}
+The normal vector to the plane is $(3, 4, 7)$ and the line is in the direction of $(3, 5, 9)$. Then the angle of intersection $\theta \in [0, \pi/2]$ satisfies
+\begin{align*}
+\sin\theta & = \frac{|(3, 4, 7)\cdot (3, 5, 9)|}{\|(3, 4, 7)\|\|(3, 5, 9)\|}\\
+& = \frac{92}{\sqrt{74}\sqrt{115}}\\
+& = \frac{92}{\sqrt{8510}}
+\end{align*}
+and so \[\theta = \arcsin\left(\frac{92}{\sqrt{8510}}\right).\]
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+
+\end{ex}

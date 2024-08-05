@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'CCAT.blg'
+[103] biber-darwin:340> INFO - === Sun Aug  4, 2024, 14:02:15
+[119] Biber.pm:418> INFO - Reading 'CCAT.bcf'
+[231] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[248] bbl.pm:654> INFO - Writing 'CCAT.bbl' with encoding 'UTF-8'
+[248] bbl.pm:757> INFO - Output to CCAT.bbl
+[248] Biber.pm:130> WARN - The file 'CCAT.bcf' does not contain any citations!
+[248] Biber.pm:132> INFO - WARNINGS: 1

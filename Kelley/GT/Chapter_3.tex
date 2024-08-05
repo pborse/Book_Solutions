@@ -1,0 +1,243 @@
+\begin{prob}[Connected Spaces]
+Let $f: X \to Y$ be a continuous map of topological spaces and suppose $Y$ is not connected. Then there are disjoint closed subsets $A, B$ of $Y$ such that $Y = A\cup B$. Thus \[X = f^{-1}(Y) = f^{-1}(A\cup B) = f^{-1}(A)\cup f^{-1}(B),\] where $f^{-1}(A)$ and $f^{-1}(B)$ are closed subsets of $X$. Moreover, $f^{-1}(A)$ and $f^{-1}(B)$ are disjoint since $A$ and $B$ are disjoint. Hence $X$ is not connected, which shows the contrapositive of the required statement.
+\end{prob}
+
+\begin{prob}[Theorem on Continuity]
+Let $Y$ be a topological space and $f: X \to Y$ a function which is continuous on $A$ and on $B$. Suppose $V$ is an open subset of $Y$. Then since $f|_A: A \to Y$ is continuous, we have that \[(f|_A)^{-1}(V) = f^{-1}(V)\cap A\] is open in $A$. Similarly, since $f|_B: B \to Y$ is continuous, \[(f|_B)^{-1}(V) = f^{-1}(V)\cap B\] is open in $B$. Thus by Corollary 1.19, $f^{-1}(V)$ is open in $X$ as desired.
+\end{prob}
+
+\begin{prob}[Exercise on Continuous Functions]
+Let $E$ denote the subset of $X$ on which $f$ and $g$ agree, and let $x \in X\setminus E$. Then $f(x)$ and $g(x)$ are distinct points of $Y$, so there are disjoint neighborhoods $U$ and $V$ of $f(x)$ and $g(x)$, respectively. Then $f^{-1}(U)$ and $g^{-1}(V)$ are neighborhoods of $x$ by Theorem 3.1(d), and so $f^{-1}(U)\cap g^{-1}(V)$ is a neighborhood of $x$ by Theorem 1.2. If $y \in f^{-1}(U)\cap g^{-1}(V)$, then $f(y) \in U$ while $g(y) \in V$, so $f(y) \not = g(y)$ as $U$ and $V$ are disjoint. Thus $f^{-1}(U)\cap g^{-1}(V)$ is contained in $X\setminus E$, and hence $X\setminus E$ is open by Theorem 1.1. Now $E$ is a closed subset of $X$.
+
+If $E$ is also dense in $X$, then $E = \bar{E} = X$ and so $f = g$.
+\end{prob}
+
+\begin{prob}[Continuity at a Point; Continuous Extension]
+\begin{enumerate}
+\item Suppose first that $f$ is continuous at $x$. Then $x \in \bar{X_0}$ by definition. Let $y \in Y$ such that every neighborhood of $y$ has inverse image under $f$ equal to the intersection of $X_0$ with a neighborhood of $x$. Let $S$ be a net in $X_0$ converging to $x$. Let $V$ be a neighborhood of $y$; by choice of $y$ there exists a neighborhood $U$ of $x$ for which $f^{-1}(V) = X_0\cap U$. But since $S$ is in $X_0$ and converges to $x$, it is eventually in $X_0\cap U$. Hence $f\circ S$ is eventually in $V$, and thus $f\circ S$ converges to $y$. If $T$ is another net in $X_0$ converging to $x$, then $f\circ S$ and $f\circ T$ both converge to $y$.
+
+Conversely, suppose that $x \in \bar{X_0}$ and that for any two nets $S$ and $T$ in $X_0$ converging to $x$, we have that $f\circ S$ and $f\circ T$ converge to the same point of $Y$. By Theorem 2.3, the limit of a net in $Y$ is unique if it exists. Hence there is $y \in Y$ such that $f\circ S$ converges to $y$ whenever $S$ is a net in $X_0$ converging to $x$. Let $V$ be a neighborhood of $y$, and suppose for sake of contradiction that there is no neighborhood $U$ of $x$ for which $X_0\cap U \subset f^{-1}(V)$. We can then define a net $S$ in $X_0$ with domain $\ms{U}_x$ (directed by $\subset$) as follows: for all $U \in \ms{U}_x$, let $S_U$ be an element of $X_0\cap U$ which is not in $f^{-1}(V)$. Then for all $U \in \ms{U}_x$, $S$ is eventually in $U$. Hence $S$ is a net in $X_0$ converging to $x$ and thus $f\circ S$ converges to $y$. But by definition of $S$, $f\circ S$ is in $Y\setminus V$ and hence cannot converge to $y$. This is a contradiction, and so there is a neighborhood $U$ of $x$ for which $X_0\cap U \subset f^{-1}(V)$. Then $U\cup f^{-1}(V)$ is a neighborhood of $x$ (by Theorem 1.2) and \[f^{-1}(V) = (X_0\cap U)\cup f^{-1}(V) = X_0\cap(U\cup f^{-1}(V))\] since $f^{-1}(V) \subset X_0$. Thus $f$ is continuous at $x$.
+
+\item [TODO]
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Exercise on Real-Valued Continuous Functions]
+\begin{enumerate}
+\item As explained in the hint, it suffices to show that the function $\RR \to \RR$ given by multiplication by $a$ is continuous. If $a = 0$, then $h$ is the constant function with value zero and is hence continuous. Now suppose $a \not = 0$. Since $\RR$ is equipped with the order topology, it suffices by Theorem 3.1(c) to show that $\{y \in \RR\mid ay < b\}$ and $\{y \in \RR\mid b < ay\}$ are open for each $b \in \RR$. Indeed, if $a > 0$, then \[\{y \in \RR\mid ay < b\} = \{y \in \RR\mid y < b/a\}\] and \[\{y \in \RR\mid b < ay\} = \{y \in \RR\mid b/a < y\}\] are open; if $a < 0$, then \[\{y \in \RR\mid ay < b\} = \{y \in \RR\mid b/a < y\}\] and \[\{y \in \RR\mid b < ay\} = \{y \in \RR\mid y < b/a\}\] are open.
+
+\item Like in part (a), it suffices to show that $|\cdot|: \RR \to \RR$ is continuous. Let $A = \{y \in \RR\mid y \leq 0\}$ and $B = \{y \in \RR\mid 0 \leq y\}$. Then \[\RR\setminus A = \{y \in \RR\mid 0 < y\}\] and \[\RR\setminus B = \{y \in \RR\mid y < 0\}\] are open, so $A$ and $B$ are closed. Thus by Theorem 1.17, $A\setminus B$ and $B\setminus A$ are separated. [TODO]
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Upper Semi-Continuous Functions]
+\begin{enumerate}
+\item (Note: in the problem statement, $\geq$ should be replaced by $\leq$.) Suppose that $\{S_n, n \in D\}$ is a net of real numbers which converges to $s$ relative to $\ms{U}$. Then for all $a \in \RR$ with $s < a$, we have that $U = \{t \in \RR\mid t < a\}$ is a $\ms{U}$-neighborhood of $s$ and so $S$ is eventually in $U$. Hence there is $p \in D$ such that $S_m \in U$ for $m \geq p$. Now for all $n \in D$ with $n \geq p$, we have that \[\{S_m\mid m \in D\text{ and }m \geq n\} \subset U\] and hence \[\sup\{S_m\mid m \in D\text{ and }m\geq n\} \leq a.\] [TODO]
+
+\item By Theorem 3.1(b), $f$ is $\ms{U}$-continuous if and only if the inverse image of each $\ms{U}$-closed set is closed in $X$. But $f^{-1}(\emptyset) = \emptyset$ and $f^{-1}(\RR) = X$ are of course closed in $X$ and so $f$ is $\ms{U}$-continuous if and only if $f^{-1}(\{t \in \RR\mid t \geq a\})$ is closed in $X$ for all $a \in \RR$. That is, $f$ is $\ms{U}$-continuous if and only if $f$ is upper semicontinuous.
+
+We know from Theorem 3.1(f) that $f$ is $\ms{U}$-continuous if and only if for all nets $\{x_n, n \in D\}$ in $X$ converging to $x$, $\{f(x_n), n \in D\}$ converges to $f(x)$ relative to $\ms{U}$. By part (a), the $\ms{U}$-convergence of $\{f(x_n), n \in D\}$ to $f(x)$ is equivalent to $\lim\sup\{f(x_n), n \in D\} \leq f(x)$, proving the claim.
+
+\item [TODO]
+
+\item Let $a \in \RR$. Then for $x \in X$, $i(x) \geq a$ if and only if $f(x) \geq a$ for all $f \in F$. Hence \[\{x \in X\mid i(x) \geq a\} = \bigcap\{\{x \in X\mid f(x) \geq a\}f \in F\}\] is closed in $X$ since each $\{x \in X\mid f(x) \geq a\}$ is closed by upper semicontinuity of $f$.
+
+\item As described in the problem statement, we define $f^-$ as follows: for each neighborhood $U$ of $x$, let $S_U = \sup\{f(y)\mid y \in U\}$ (which exists since $f$ is bounded). If $U, V \in \ms{U}_x$ with $U \subset V$ then $S_U \leq S_V$. Thus by Problem 2.F(a), $\lim\{S_U, U \in \ms{U}_x, \subset\}$ exists and is equal to $\inf\{S_U\mid U \in \ms{U}_x\}$. Then set $f^-(x) = \lim\{S_U, U \in \ms{U}_x, \subset\}$. For all $U \in \ms{U}_x$, we have that $x \in U$ and so $S_U \geq f(x)$ by definition of $S_U$. Hence $f^- \geq f$.
+
+Let $a \in \RR$. Then for $x \in X$, $f^-(x) \geq a$ if and only if $S_U \geq a$ for all $U \in \ms{U}_x$. Equivalently, for all $U \in \ms{U}_x$, there exists $y \in U$ for which $f(y) \geq a$, that is, $x \in \{y \in X\mid f(y) \geq a\}^-$. Hence \[\{x \in X\mid f^-(x) \geq a\} = \{y \in X\mid f(y)\geq a\}^-\] is closed and so $f^-$ is upper semicontinuous.
+
+Now suppose $g: X \to \RR$ is another upper semicontinuous function with $g \geq f$. Then for all $x \in X$, $\{y \in X\mid g(y) \geq f^-(x)\}$ is a closed set containing $\{y \in X\mid f(y)\geq f^-(x)\}$. Hence \[\{y \in X\mid g(y) \geq f^-(x)\} \supset \{y \in X\mid f^-(y)\geq f^-(x)\}.\] Since $x$ lies in the latter set, it follows that $g(x) \geq f^-(x)$. Thus $g \geq f^-$, which shows that $f^-$ is the unique smallest upper semicontinuous function greater than or equal to $f$.
+
+\item We note that if $f$ is bounded, then $-f$ is also bounded. Hence $f_- = -(-f)^-$ is well-defined and so is $Q_f = f^- - f_-$. By definition, we have that \[Q_f = f^- - (-(-f)^-) = f^- + (-f)^-\] is the sum of two upper semicontinuous real-valued functions on $X$. Hence by part (c), $Q_f$ is also upper semicontinuous. We also observe that by part (e), for all $x \in X$,
+\begin{align*}
+f_-(x) & = -(-f)^-(x)\\
+& = -\inf_{U \in \ms{U}_x}\sup_{y \in U}(-f(y))\\
+& = \sup_{U \in \ms{U}_x}\inf_{y \in U}f(y).
+\end{align*}
+
+Now we show that $f$ is continuous if and only if $Q_f = 0$. By Theorem 3.1(d), it suffices to show that $f$ is continuous at $x \in X$ if and only if $Q_f(x) = 0$. We have that $f^- \geq f$ and $(-f)^- \geq -f$, so $f_- \leq f$. Then \[Q_f = f^- - f_- \geq f - f = 0.\] Thus if $Q_f(x) \not = 0$, we have $Q_f(x) > 0$ and so $f^-(x) > f_-(x)$. From $f^-(x) \geq f(x) \geq f_-(x)$, it follows that either $f^-(x) > f(x)$ or $f_-(x) < f(x)$. WLOG, suppose that $f^-(x) > f(x)$. Then $(f^-(x) + f(x))/2 > f(x)$, and so $\{t \in \RR\mid t < (f^-(x) + f(x))/2\}$ is a neighborhood of $f(x)$ in $\RR$. Hence if $f$ were continuous at $x$, there exists $U \in \ms{U}_x$ such that $f(y) < (f^-(x) + f(x))/2$ for all $y \in U$. Then \[\sup_{y \in U}f(y) < f^-(x)\] and so \[\inf_{U \in \ms{U}_x}\sup_{y \in U}f(y) < f^-(x).\] But by part (e), \[\inf_{U \in \ms{U}_x}\sup_{y \in U}f(y) = f^-(x),\] a contradiction. Hence $f$ is not continuous at $x$. 
+
+Conversely, suppose that $Q_f(x) = 0$. Then from $f^-(x) \geq f(x) \geq f_-(x)$, we have that $f^-(x) = f(x) = f_-(x)$. If $a \in \RR$ such that $f(x) < a$, then $f^-(x) < a$ and thus by part (e), $\sup_{y \in U}f(y) < a$ for some neighborhood $U$ of $x$. Thus $f(y) < a$ for all $y \in U$, and so $f(U) \subset \{t \in \RR\mid t < a\}$. Similarly, if $a \in \RR$ such that $a < f(x)$, then $a < f_-(x)$ and so there exists a neighborhood $U$ of $x$ for which $a < \inf_{y \in U}f(y)$. Then $a < f(y)$ for all $y \in U$ and so $f(U) \subset \{t \in \RR\mid a < t\}$. Since the collection of all $\{t \in \RR\mid t < a\}$ for $f(x) < a$ and $\{t \in \RR\mid a < t\}$ for $a < f(x)$ is a local subbase at $x$, it thus follows from Theorem 1.2 and Theorem 3.1(e) that $f$ is continuous at $x$.
+
+\item By Theorem 3.12, the projection $P: G \to \ms{D}$ is closed. For any $a \in \RR$, $(X\times \{t \in \RR\mid t < a\}) \cap G$ is an open subset of $G$. For $x \in X$, we have that $(\{x\}\times\RR)\cap G$ is contained in $(X\times\{t \in \RR\mid t < a\})\cap G$ if and only if $f(x) < t$. Hence the union of all elements of $\ms{D}$ contained in $(X\times \{t \in \RR\mid t < a\}) \cap G$ is equal to $(\{x \in X\mid f(x) < a\}\times\RR)\cap G$. By Theorem 3.10, this is an open subset of $G$. [TODO]
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Exercise on Topological Equivalence]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Homeomorphisms and One-to-One Continuous Maps]
+
+\end{prob}
+
+\begin{prob}[Continuity in Each of Two Variables]
+
+\end{prob}
+
+\begin{prob}[Exercise on Euclidean $n$-Space]
+
+\end{prob}
+
+\begin{prob}[Exercise on Closure, Interior, and Boundary in Products]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Exercise on Product Spaces]
+
+\end{prob}
+
+\begin{prob}[Product of Spaces with Countable Bases]
+
+\end{prob}
+
+\begin{prob}[Example on Products and Separability]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Product of Connected Spaces]
+
+\end{prob}
+
+\begin{prob}[Exercise on $T_1$-Spaces]
+
+\end{prob}
+
+\begin{prob}[Exercise on Quotient Spaces]
+
+\end{prob}
+
+\begin{prob}[Example on Quotient Spaces and Diagonal Sequences]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Topological Groups]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Subgroups of a Topological Group]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Factor Groups and Homeomorphisms]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Box Spaces]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Functionals on Real Linear Spaces]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Real Linear Topological Spaces]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}

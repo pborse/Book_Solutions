@@ -1,0 +1,14 @@
+\contentsline {part}{Part\ I. \enspace \noindent The Topology of Algebraic Varieties}{4}{part.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{1}{The Lefschetz Theorem on Hyperplane Sections}}{5}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{Lefschetz Pencils}}{6}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Monodromy}}{7}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{The Leray Spectral Sequence}}{8}{chapter.4}%
+\contentsline {part}{Part\ II. \enspace \noindent Variations of Hodge Structure}{9}{part.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Transversality and Applications}}{10}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{Hodge Filtration of Hypersurfaces}}{11}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Normal Functions and Infinitesimal Invariants}}{12}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Nori's Work}}{13}{chapter.8}%
+\contentsline {part}{Part\ III. \enspace \noindent Algebraic Cycles}{14}{part.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Chow Groups}}{15}{chapter.9}%
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Mumford's Theorem and its Generalisations}}{16}{chapter.10}%
+\contentsline {chapter}{\tocchapter {Chapter}{11}{The Bloch Conjecture and its Generalisations}}{17}{chapter.11}%

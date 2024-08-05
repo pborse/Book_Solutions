@@ -1,0 +1,364 @@
+\begin{ex}
+Suppose $\{s_n\}_{n \in \NN}$ converges. Then by Theorem 3.11(a), $\{s_n\}_{n \in \NN}$ is Cauchy. Hence for any $\epsilon > 0$, there is $N \in \NN$ such that $|s_n-s_m| < \epsilon$ for $n, m \geq N$. Then \[||s_n|-|s_m|| \leq |s_n-s_m| < \epsilon\] for $n, m \geq N$, and so $\{|s_n|\}_{n \in \NN}$ is a Cauchy sequence. Thus by Theorem 3.11(c), $\{|s_n|\}_{n \in \NN}$ converges.
+
+We provide also a direct proof which does not rely on Cauchy sequences. Suppose $\lim_{n\to\infty}s_n = s$. If $s > 0$, there is $N \in \NN$ such that $s_n > 0$ for all $n \geq N$. Hence $|s_n| = s_n$ for $n \geq N$, and so $\lim_{n\to\infty}|s_n| = s$. Similarly, if $s < 0$, there is $N \in \NN$ such that $s_n < 0$ for $n \geq N$. Then $|s_n| = -s_n$ for $n \geq N$, and so $\lim_{n\to\infty}|s_n| = -s$. Finally, suppose $s = 0$. Then for any $\epsilon > 0$, there is $N \in \NN$ such that $|s_n| < \epsilon$ for $n \geq N$. That is, $\lim_{n\to\infty}|s_n| = 0$.
+
+The converse is false; for example, let $s_n = (-1)^n$ for all $n \in \NN$. Then $\{s_n\}_{n \in \NN}$ diverges but $\{|s_n|\}_{n \in \NN}$ is constant and thus converges.
+\end{ex}
+
+\begin{ex}
+We observe that for all $n \in \NN$, \[\left(\sqrt{n^2 + n} + n\right)\left(\sqrt{n^2 + n} - n\right) = \left(\sqrt{n^2 + n}\right)^2 - n^2 = n\] and thus \[\sqrt{n^2 + n} - n = \frac{n}{\sqrt{n^2 + n} + n} = \frac{1}{\sqrt{1 + \frac{1}{n}} + 1}.\] But we have for all $n \in \NN$ that \[1 < \sqrt{1 + \frac{1}{n}} < 1 + \frac{1}{2n}\] with $\lim_{n\to\infty}1 = 1$ and $\lim_{n\to\infty}(1 + 1/(2n)) = 1$. Hence $\lim_{n\to\infty}\sqrt{1 + 1/n} = 1$. Then \[\lim_{n\to\infty}\left(\sqrt{1 + \frac{1}{n}} + 1\right) = 2\] by Theorem 3.3(b) with \[\sqrt{1 + \frac{1}{n}} + 1 > 0\] for all $n \in \NN$, so that \[\lim_{n\to\infty}\frac{1}{\sqrt{1 + \frac{1}{n}} + 1} = \frac{1}{2}\] by Theorem 3.3(d). Hence \[\lim_{n\to\infty}\left(\sqrt{n^2 + n} - n\right) = \frac{1}{2}.\]
+\end{ex}
+
+\begin{ex}
+We first note that each $s_n$ is positive; this will be used implicitly throughout the solution. By Theorem 3.14, it suffices to show that $\{s_n\}_{n \in \NN}$ is monotonically increasing and bounded above. We first show by induction that $s_n < 2$ for all $n \in \NN$. For $n = 1$, this claim is true since \[s_1^2 = 2 < 4 = 2^2.\] Now suppose $s_n < 2$ for some $n \in \NN$. Then \[s_{n+1}^2 = 2 + \sqrt{s_n} < 2 + \sqrt{2} < 4,\] so $s_{n+1} < 2$ as desired.
+
+Now we show by induction that $s_n < s_{n+1}$ for all $n \in \NN$. We have \[s_1^2 = 2 < 2 + \sqrt{s_1} = s_2^2,\] so $s_1 < s_2$. Now suppose $s_n < s_{n+1}$ for some $n \in \NN$. Then \[s_{n+1}^2 = 2 + \sqrt{s_n} < 2 + \sqrt{s_{n+1}} = s_{n+2}^2,\] so \[s_{n+1} < s_{n+2},\] which proves the claim.
+\end{ex}
+
+\begin{ex}
+We prove by induction that for all $m \in \NN$, \[s_{2m-1} = 1 - \frac{1}{2^{m-1}}\] and \[s_{2m} = \frac{1}{2} - \frac{1}{2^m}.\] We have by definition that $s_1 = 0$ and \[s_2 = \frac{s_1}{2} = \frac{0}{2} = 0,\] so the claim holds for $m = 1$. Now suppose it holds for some $m \in \NN$; then
+\begin{align*}
+s_{2(m+1)-1} & = s_{2m+1}\\
+& = \frac{1}{2} + s_{2m}\\
+& = \frac{1}{2} + \left(\frac{1}{2} - \frac{1}{2^m}\right)\\
+& = 1 - \frac{1}{2^m}\\
+& = 1 - \frac{1}{2^{(m+1)-1}}
+\end{align*}
+and
+\begin{align*}
+s_{2(m+1)} & = s_{2m+2}\\
+& = \frac{s_{2m+1}}{2}\\
+& = \frac{1 - \frac{1}{2^m}}{2}\\
+& = \frac{1}{2} - \frac{1}{2^{m+1}},
+\end{align*}
+proving the claim. Then since $\lim_{m\to\infty}1/2^{m-1} = 0$, we have by Theorem 3.3(b) that \[\lim_{m\to\infty}s_{2m-1} = \lim_{m\to\infty}\left(1 - \frac{1}{2^{m-1}}\right) = 1,\] so $\{s_n\}_{n \in \NN}$ has a subsequence convergening to 1. But also $s_n < 1$ for all $n \in \NN$, and so \[\limsup_{n\to\infty}s_n = 1.\] Moreover, from $\lim_{m\to\infty}1/2^m = 0$, we have by Theorem 3.3(b) that \[\lim_{m\to\infty}s_{2m} = \lim_{m\to\infty}\left(\frac{1}{2} - \frac{1}{2^m}\right) = \frac{1}{2}\] and hence $\{s_n\}_{n \in \NN}$ has a subsequence converging to $1/2$. Let $x < 1/2$. Then $1/2 - x > 0$, so there is $M \in \NN$ for which \[\frac{1}{2} - x > \frac{1}{2^M}.\] Then for any $m \in \NN$, we have \[\frac{1}{2} - x > \frac{1}{2^m}\] and so \[\frac{1}{2} - \frac{1}{2^m} > x.\] Thus $s_{2m} > x$, and so also $s_{2m-1} > x$ since \[s_{2m-1} = 2s_{2m} > s_{2m}\] as $s_{2m} > 0$. Then with $N = 2M - 1$, we have that $s_n > x$ for all $n \geq N$. Hence by Theorem 3.17, \[\liminf_{n\to\infty}s_n = \frac{1}{2}.\]
+\end{ex}
+
+\begin{ex}
+Let $E_{a+b}$ be the set of all $x \in \bar{\RR}$ such that $a_{n_k} + b_{n_k} \to x$ for a subsequence $\{a_{n_k} + b_{n_k}\}_{k \in \NN}$ of $\{a_n + b_n\}_{n \in \NN}$; let $E_a$ and $E_b$ be defined similarly for the sequences $\{a_n\}_{n \in \NN}$ and $\{b_n\}_{n \in \NN}$. Then $E_{a+b} \subset E_a + E_b$, and so \[\sup E_{a + b} \leq \sup(E_a + E_b).\] If $\limsup_{n\to\infty}a_n$ and $\limsup_{n\to\infty}b_n$ are both real, then $\sup E_a + \sup E_b$ is an upper bound for $E_a + E_b$. Thus\[\sup(E_a + E_b) \leq \sup E_a + \sup E_b.\] Hence \[\sup E_{a+b} \leq \sup E_a + \sup E_b,\] that is, \[\limsup_{n\to\infty}(a_n+b_n) \leq \limsup_{n\to\infty}a_n + \limsup_{n\to\infty}b_n.\] If $\limsup_{n\to\infty}a_n$ or $\limsup_{n\to\infty}b_n$ is $\infty$, then there is nothing to prove. Finally, suppose WLOG that $\limsup_{n\to\infty}a_n = -\infty$ and $\limsup_{n\to\infty}b_n \not = \infty$. Then by Theorem 3.17(a), $E_a = \{-\infty\}$ and $\{b_n\}_{n \in \NN}$ is bounded above. Let $M \in \RR$ such that $b_n \leq M$ for all $n \in \NN$. By Theorem 3.6(b), it follows from $E_a = \{-\infty\}$ that every subsequence of $\{a_n\}_{n\to\infty}$ is unbounded below. Hence if $\{a_{n_k}+b_{n_k}\}_{k \in \NN}$ is any subsequence of $\{a_n+b_n\}_{n \in \NN}$, we see from $a_{n_k}+b_{n_k} \leq a_{n_k} + M$ that $\{a_{n_k}+b_{n_k}\}_{k \in \NN}$ is unbounded below. Thus $E_{a+b} = -\infty$, so again we have that $\sup E_{a+b} \leq \sup E_a+\sup E_b$. Then \[\limsup_{n\to\infty}(a_n + b_n) \leq \limsup_{n\to\infty}a_n + \limsup_{n\to\infty}b_n\] in all cases.
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item It is clear that the $n$th partial sum of $\sum_{n = 1}^{\infty}a_n$ is $\sqrt{n+1}$. Since $\{\sqrt{n+1}\}_{n \in \NN}$ is unbounded above, we thus have by Theorem 3.2(c) that $\sum_{n = 1}^{\infty}a_n$ diverges.
+
+\item For each $n \in \NN$, we observe that
+\begin{align*}
+|a_n| & = \frac{\sqrt{n+1} - \sqrt{n}}{n}\\
+& = \frac{1}{n(\sqrt{n + 1} + \sqrt{n})}\\
+& < \frac{1}{n\sqrt{n}}\\
+& = \frac{1}{n^{3/2}}.
+\end{align*}
+By Theorem 3.28, $\sum_{n = 1}^{\infty}1/n^{3/2}$ converges since $3/2 > 1$. Thus by Theorem 3.25(a), $\sum_{n = 1}^{\infty}a_n$ converges.
+
+\item We have for all $n \in \NN$ that
+\begin{align*}
+\sqrt[n]{|a_n|} & = \sqrt[n]{\left|(\sqrt[n]{n} - 1)^n\right|}\\
+& = \sqrt[n]{n} - 1.
+\end{align*}
+But $\lim_{n\to\infty}(\sqrt[n]{n} - 1) = 0$ by Theorem 3.20(c) and Theorem 3.3(b). Thus by Theorem 3.33(a), $\sum_{n = 1}^{\infty}a_n$ converges.
+
+\item If $|z| \leq 1$, then for any $n \in \NN$,
+\begin{align*}
+|a_n| & = \left|\frac{1}{1 + z^n}\right|\\
+& = \frac{1}{|1 + z^n|}\\
+& \geq \frac{1}{1 + |z|^n}\\
+& \geq \frac{1}{2}.
+\end{align*}
+Thus $\{a_n\}_{n \in \NN}$ does not converge to 0, and so by Theorem 3.23, $\sum_{n = 1}^{\infty} a_n$ diverges.
+
+Now suppose $|z| > 1$. Then for any $n \in \NN$,
+\begin{align*}
+\left|\frac{a_{n+1}}{a_n}\right| & = \left|\frac{\frac{1}{1 + z^{n+1}}}{\frac{1}{1 + z^n}}\right|\\
+& = \frac{|1 + z^n|}{|1 + z^{n+1}|}\\
+& \leq \frac{1 + |z|^n}{|z|^{n+1} - 1}\\
+& = \frac{1}{|z|} + \frac{1 - \frac{1}{|z|}}{|z|^{n+1} - 1}.
+\end{align*}
+But since $|z| > 1$, we have that $|z|^{n+1} - 1 \to \infty$ as $n \to \infty$. Hence by Theorem 3.3(b), we have \[\lim_{n\to\infty}\left(\frac{1}{|z|} + \frac{1 - \frac{1}{|z|}}{|z|^{n+1} - 1}\right) = \frac{1}{|z|} < 1.\] Thus by Theorem 3.19, \[\limsup_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| \leq \limsup_{n\to\infty}\left(\frac{1}{|z|} + \frac{1 - \frac{1}{|z|}}{|z|^{n+1} - 1}\right) < 1,\] and so by Theorem 3.34(a), $\sum_{n = 1}^{\infty}a_n$ converges.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+We have for all $n \in \NN$ that \[\left(\sqrt{a_n} - \frac{1}{n}\right)^2 \geq 0\] and thus \[a_n - \frac{2\sqrt{a_n}}{n} + \frac{1}{n^2} \geq 0.\] Rearranging, \[\frac{\sqrt{a_n}}{n} \leq \frac{1}{2}\left(a_n + \frac{1}{n^2}\right).\] By Theorem 3.28, $\sum_{n = 1}^{\infty}1/n^2$ converges and thus by Theorem 3.47, \[\sum_{n = 1}^{\infty}\frac{1}{2}\left(a_n + \frac{1}{n^2}\right)\] converges. Now since $\sqrt{a_n}/n \geq 0$ for all $n \in \NN$, we conclude from Theorem 3.25(a) that $\sum_{n = 1}^{\infty}\sqrt{a_n}/n$ converges.
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item We have by Theorem 3.3 and Theorem 3.20(c) that
+\begin{align*}
+\lim_{n\to\infty}\sqrt[n]{|n^3|} & = \lim_{n\to\infty}(\sqrt[n]{n})^3\\
+& = \left(\lim_{n\to\infty}\sqrt[n]{n}\right)^3\\
+& = 1.
+\end{align*}
+Hence by Theorem 3.39, the radius of convergence of $\sum_{n = 0}^{\infty}n^3z^n$ is \[R = \frac{1}{\limsup_{n\to\infty}\sqrt[n]{|n^3|}} = 1.\]
+
+\item We observe for all $z \in \CC$ and $n \in \NN$ that \[\left|\frac{\frac{2^{n+1}}{(n+1)!}z^{n+1}}{\frac{2^n}{n!}z^n}\right| = \frac{2|z|}{n+1}.\] By Theorem 3.3(b) and Theorem 3.20(a), \[\lim_{n\to\infty}\frac{2|z|}{n+1} = 2|z|\lim_{n\to\infty}\frac{1}{n+1} = 0.\] Then by Theorem 3.34(a), $\sum_{n=1}^{\infty}\frac{2^n}{n!}z^n$ converges for all $z \in \CC$. Thus the radius of convergence of $\sum_{n=1}^{\infty}\frac{2^n}{n!}z^n$ is $\infty$.
+
+\item For all $n \in \NN$, we see by Theorem 3.3(b, c, d) and Theorem 3.20(c) that
+\begin{align*}
+\lim_{n\to\infty}\sqrt[n]{\left|\frac{2^n}{n^2}\right|} & = \lim_{n\to\infty}\frac{2}{(\sqrt[n]{n})^2}\\
+& = 2\frac{1}{\left(\lim_{n\to\infty}\sqrt[n]{n}\right)^2}\\
+& = 2.
+\end{align*}
+Hence by Theorem 3.39, the radius of convergence of $\sum_{n = 1}^{\infty}\frac{2^n}{n^2}z^n$ is \[R = \frac{1}{\limsup_{n\to\infty}\sqrt[n]{\left|\frac{2^n}{n^2}\right|}} = \frac{1}{2}.\]
+
+\item This computation is almost identical to that of part (c). By Theorem 3.3(b, c) and Theorem 3.20(c), we have that
+\begin{align*}
+\lim_{n\to\infty}\sqrt[n]{\left|\frac{n^3}{3^n}\right|} & = \lim_{n\to\infty}\frac{(\sqrt[n]{n})^n}{3}\\
+& = \frac{1}{3}\left(\lim_{n\to\infty}\sqrt[n]{n}\right)^3\\
+& = \frac{1}{3}.
+\end{align*}
+Then by Theorem 3.39, the radius of convergence of $\sum\frac{n^3}{3^n}z^n$ is \[R = \frac{1}{\limsup_{n\to\infty}\sqrt[n]{\left|\frac{n^3}{3^n}\right|}} = 3.\]
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+By Theorem 3.39, we wish to show that $\limsup_{n\to\infty}\sqrt[n]{|a_n|} \geq 1$. Since infinitely many of the $a_n$ are distinct from zero, there is a subsequence $\{a_{n_k}\}_{k \in \NN}$ of $\{a_n\}_{n \in \NN}$ for which $\sqrt[n]{|a_{n_k}|} \geq 1$ for all $k \in \NN$. Then since every subsequence of $\{a_{n_k}\}_{k\in\NN}$ and by Theorem 3.19, \[\limsup_{n\to\infty}a_n \geq \limsup_{k\to\infty}a_{n_k} \geq 1.\]
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item Suppose for sake of contradiction that $\sum_{n = 1}^{\infty}\frac{a_n}{1+a_n}$ converges. Then by Theorem 3.23, \[\lim_{n\to\infty}\frac{a_n}{1+a_n} = 0.\] Hence there is $N \in \NN$ such that \[\frac{a_n}{1+a_n} < \frac{1}{2}\] for all $n \geq N$. But then \[2a_n < 1 + a_n\] and so $a_n < 1$ for $n \geq N$. Hence \[|a_n| = a_n < \frac{2a_n}{1+a_n}\] for all $n \geq N$, so by Theorem 3.25(a), $\sum_{n=1}^{\infty}a_n$ converges. This is a contradiction and thus $\sum_{n=1}^{\infty}\frac{a_n}{1+a_n}$ diverges whenever $\sum_{n=1}^{\infty}a_n$ diverges.
+
+\item Fix $N, k \in \NN$. Since $a_n > 0$ for all $n \in \NN$, we have $s_{N+m} < s_{N+k}$ for all $m = 1, \ldots, k$ and hence
+\begin{align*}
+\frac{a_{N+1}}{s_{N+1}} + \cdots + \frac{a_{N+k}}{s_{N+k}} & \geq \frac{a_{N+1}}{s_{N+k}} + \cdots + \frac{a_{N+k}}{s_{N+k}}\\
+& = \frac{a_{N+1} + \cdots + a_{N+k}}{s_{N+k}}\\
+& = \frac{s_{N+k}-s_N}{s_{N+k}}\\
+& = 1 - \frac{s_N}{s_{N+k}}.
+\end{align*}
+
+We have by Theorem 3.24 that $s_n \to \infty$ as $n \to \infty$. Hence for fixed $N \in \NN$, since $s_n > 0$ for all $n \in \NN$, \[\lim_{k\to\infty}\left(1 - \frac{s_N}{s_{N+k}}\right) = 1.\] By the inequality established above, along with Theorem 3.19, it follows that \[\limsup_{k\to\infty}\sum_{n = N+1}^{N+k}\frac{a_n}{s_n} \geq \limsup_{k\to\infty}\left(1 - \frac{s_N}{s_{N+k}}\right) = 1.\] By Theorem 3.22, if $\sum_{n=1}^{\infty}\frac{a_n}{s_n}$ converges then there exists $N \in \NN$ such that \[\limsup_{k\to\infty}\sum_{n = N+1}^{N+k}\frac{a_n}{s_n} < 1.\] Hence $\sum_{n=1}^{\infty}\frac{a_n}{s_n}$ diverges.
+
+\item From $a_n > 0$ for all $n \in \NN$, we have $s_{n-1} < s_n$ and thus
+\begin{align*}
+\frac{a_n}{s_n^2} & = \frac{s_n - s_{n-1}}{s_n^2}\\
+& < \frac{s_n-s_{n-1}}{s_{n-1}s_n}\\
+& = \frac{1}{s_{n-1}} - \frac{1}{s_n}
+\end{align*}
+for $n \geq 2$. The $n$th partial sum of $\sum_{n=2}^{\infty}\left(\frac{1}{s_{n-1}}-\frac{1}{s_n}\right)$ is \[\frac{1}{s_1} - \frac{1}{s_n} = \frac{1}{a_1} - \frac{1}{s_n}.\] But as explained in part (b), $s_n \to \infty$ as $n \to \infty$ and so \[\sum_{n = 2}^{\infty}\left(\frac{1}{s_{n-1}} - \frac{1}{s_n}\right) = \frac{1}{a_1}.\] Now by Theorem 3.25(a), since $\frac{a_n}{s_n^2} > 0$ for all $n \in \NN$, $\sum_{n = 1}^{\infty}\frac{a_n}{s_n^2}$ converges.
+
+\item It is clear that if $a_n = 1$ for all $n \in \NN$ then $\lim_{n\to\infty}a_n = 1$, so by Theorem 3.23, $\sum_{n = 1}^{\infty}$ diverges. In this case, \[\frac{a_n}{1 + na_n} = \frac{1}{1 + n} \geq \frac{1}{2n}\] for all $n \in \NN$. But $\sum_{n = 1}^{\infty}\frac{1}{2n}$ diverges by Theorem 3.47 and Theorem 3.28, so by Theorem 3.25(a), \[\sum_{n = 1}^{\infty}\frac{a_n}{1 + na_n}\] diverges. On the other hand, let $S$ denote the set of positive square numbers and suppose \[a_n = \begin{cases}
+1 & n\in S\\
+0 & n\not\in S.
+\end{cases}\] Then since $S$ is infinite, $\{a_n\}_{n \in \NN}$ does not converge to 0. Thus by Theorem 3.23, $\sum_{n = 1}^{\infty}a_n$ diverges. But \[\frac{a_n}{1 + na_n} = \begin{cases}
+\frac{1}{1 + n} & n \in S\\
+0 & n\not\in S.
+\end{cases}\] Then by Theorem 3.28 and Theorem 3.24, \[\sum_{n = 1}^{\infty}\frac{a_n}{1 + na_n}\] converges since $\sum_{n = 1}^{\infty}1/n^2$ converges.
+
+Now let $\{a_n\}_{n \in \NN}$ be any sequence of positive real numbers. For any $n \in \NN$, we have that \[\frac{a_n}{1 + n^2a_n} < \frac{a_n}{n^2a_n} = \frac{1}{n^2}.\] Thus by Theorem 3.25(a) and Theorem 3.28 (with $p = 2$), we have that \[\sum_{n = 1}^{\infty}\frac{a_n}{1 + n^2a_n}\] converges.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+We first note that $\sum_{k = n}^{\infty}a_k$ converges for all $n \in \NN$ by Theorem 3.25(a), and so each $r_n$ is well-defined. Moreover, $\{r_n\}_{n \in \NN}$ is monotonically decreasing sequence of positive reals since $a_n > 0$ for all $n \in \NN$. Finally, by Theorem 3.22, $\lim_{n\to\infty}r_n = 0$.
+\begin{enumerate}
+\item We observe for $m < n$,
+\begin{align*}
+\frac{a_m}{r_m} + \cdots + \frac{a_n}{r_n} & > \frac{a_m}{r_m} + \cdots + \frac{a_n}{r_m}\\
+& = \frac{a_m + \cdots + a_n}{r_m}\\
+& = \frac{r_m-r_{n+1}}{r_m}\\
+& > \frac{r_m-r_n}{r_m}\\
+& = 1 - \frac{r_n}{r_m}.
+\end{align*}
+Since $\lim_{n\to\infty}r_n = 0$, we have for fixed $m \in \NN$ that \[\lim_{n\to\infty}\left(1 - \frac{r_n}{r_m}\right) = 0.\] Thus by Theorem 3.19, we have that
+\begin{align*}
+\limsup_{n\to\infty}\sum_{k = m}^n\frac{a_k}{r_k} \geq \limsup_{n\to\infty}\left(1 - \frac{r_n}{r_m}\right) = 1
+\end{align*}
+for all $m \in \NN$. But if $\sum_{n = 1}^{\infty}\frac{a_n}{r_n}$ converges, then by Theorem 3.22, there is $m \in \NN$ such that \[\limsup_{n\to\infty}\sum_{k = m}^n\frac{a_k}{r_k} < 1.\] Hence $\sum_{n = 1}^{\infty}\frac{a_n}{r_m}$ diverges.
+
+\item We observe that for any $n \in \NN$, \[(\sqrt{r_n} + \sqrt{r_{n+1}})(\sqrt{r_n} - \sqrt{r_{n+1}}) = r_n - r_{n+1} = a_n.\] Thus
+\begin{align*}
+\sqrt{r_n} - \sqrt{r_{n+1}} & = \frac{a_n}{\sqrt{r_n} + \sqrt{r_{n+1}}}\\
+& > \frac{a_n}{\sqrt{r_n} + \sqrt{r_n}}\\
+& = \frac{a_n}{2\sqrt{r_n}}.
+\end{align*}
+Rearranging, \[\frac{a_n}{\sqrt{r_n}} < 2(\sqrt{r_n} - \sqrt{r_{n+1}})\] for all $n \in \NN$. Then the $n$th partial sum of $\sum_{n = 1}^{\infty}\frac{a_n}{\sqrt{r_n}}$ is bounded above by \[2\sqrt{r_1} = 2\sqrt{\sum_{k = 1}^{\infty}a_k}.\] By Theorem 3.24, it follows that $\sum_{n = 1}^{\infty}\frac{a_n}{\sqrt{r_n}}$ converges.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Let $\sum_{n = 0}^{\infty}a_n$ and $\sum_{n = 0}^{\infty}b_n$ be two absolutely convergent series, and let \[c_n = \sum_{k = 0}^na_kb_{n-k}\] for each $n \geq 0$. Then $\sum_{n = 0}^{\infty}|a_n|$ and $\sum_{n = 0}^{\infty}|b_n|$ converge absolutely, and so by Theorem 3.45 and Theorem 3.50, we have that \[\sum_{n = 0}^{\infty}\sum_{k = 0}^n|a_k||b_{n-k}|\] converges. But \[|c_n| = \left|\sum_{k = 0}^na_kb_{n-k}\right| \leq \sum_{k = 0}^n|a_k||b_{n-k}|.\] Thus by Theorem 3.25(a), $\sum_{n = 0}^{\infty}|c_n|$ converges, that is, the Cauchy product of $\sum_{n = 0}^{\infty}a_n$ and $\sum_{n = 0}^{\infty}b_n$ converges absolutely.
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item Let $\epsilon > 0$. Then there is $N \in \NN$ such that $|s_n - s| < \epsilon$ for $n \geq N$. Then for all $n \geq N$, we have
+\begin{align*}
+|\sigma_n - s| & = \left|\frac{s_0 + s_1 + \cdots + s_n}{n + 1} - s\right|\\
+& \leq \frac{|s_0 + s_1 + \cdots + s_{N-1}| + N|s| + |s_N + \cdots + s_n - (n-N+1)s|}{n+1}\\
+& \leq \frac{|s_0 + s_1 + \cdots + s_{N-1}| + |s_N-s| + \cdots + |s_n-s|}{n+1}\\
+& < \frac{|s_0+s_1+\cdots+s_{N-1}| + (n-N+1)\epsilon}{n+1}\\
+& = \frac{|s_0+s_1+\cdots + s_{N-1}| - N\epsilon}{n+1} + \epsilon.
+\end{align*}
+Since $\lim_{n\to\infty}1/(n+1) = 0$, by Theorem 3.3(b) we have that \[\lim_{n\to\infty}\frac{|s_0+s_1+\cdots+s_{N-1}| - N\epsilon}{n+1} = 0.\] Hence by Theorem 3.19, \[\limsup_{n\to\infty}|\sigma_n-s| \leq \limsup_{n\to\infty}\left(\frac{|s_0 + s_1 + \cdots + s_{N-1}|-N\epsilon}{n+1} + \epsilon\right) = \epsilon.\] Since this holds for all $\epsilon > 0$, we have that $\limsup_{n\to\infty}|\sigma_n-s| = 0$ and hence $\lim_{n\to\infty}\sigma_n = s$ as desired.
+
+\item Let $s_n = (-1)^n$ for all $n \geq 0$. Then \[\sigma_n = \begin{cases}
+\frac{1}{n+1} & n\text{ is even}\\
+0 & n\text{ is odd}.
+\end{cases}\] Then since $\lim_{n\to\infty}1/(n+1) = 0$, we have that $\lim_{n\to\infty}\sigma_n = 0$. But clearly $\{s_n\}_{n\in\NN}$ does not converge since it is not Cauchy (Theorem 3.11(a)).
+
+\item [TODO]
+
+\item [TODO]
+
+\item [TODO]
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item It is clear by induction that $x_n > 0$ for all $n \in \NN$. We first show by induction that $x_n > \sqrt{\alpha}$ for all $n \in \NN$. The claim holds for $n = 1$ by assumption. If $x_n > \sqrt{\alpha}$ for some $n \in \NN$, then $x_n \not = \sqrt{\alpha}$ and hence \[\left(x_n - \frac{\alpha}{x_n}\right)^2 > 0.\] Thus \[4x_{n+1}^2 = \left(x_n + \frac{\alpha}{x_n}\right)^2 \geq 4\alpha,\] and so $x_{n+1} > \sqrt{\alpha}$, proving the claim.
+
+Now for any $n \in \NN$, we have
+\begin{align*}
+x_{n+1} & = \frac{1}{2}\left(x_n + \frac{\alpha}{x_n}\right)\\
+& < \frac{1}{2}\left(x_n + \frac{\alpha}{\sqrt{\alpha}}\right)\\
+& = \frac{1}{2}(x_n + \sqrt{\alpha})\\
+& < \frac{1}{2}(2x_n)\\
+& = x_n.
+\end{align*}
+In particular, $\{x_n\}_{n\in\NN}$ is monotonically decreasing. [TODO: limit]
+
+\item We observe for any $n \in \NN$ that
+\begin{align*}
+\frac{\epsilon_n^2}{2x_n} & = \frac{(x_n - \sqrt{\alpha})^2}{2x_n}\\
+& = \frac{x_n^2-2x_n\sqrt{\alpha} + \alpha}{2x_n}\\
+& = \frac{1}{2}\left(x_n + \frac{\alpha}{x_n}\right) - \sqrt{\alpha}\\
+& = x_{n+1} - \sqrt{\alpha}\\
+& = \epsilon_{n+1}.
+\end{align*}
+Thus since $x_n > \sqrt{\alpha}$ for all $n \in \NN$ (as shown in part (a)), we have \[\epsilon_{n+1} = \frac{\epsilon_n^2}{2x_n} < \frac{\epsilon_n^2}{2\sqrt{\alpha}}.\]
+
+Now let $\beta = 2\sqrt{\alpha}$; we prove by induction that \[\epsilon_{n+1} < \beta\left(\frac{\epsilon_1}{\beta}\right)^{2^n}\] for all $n \in \NN$. For $n = 1$, we have by the above that
+\begin{align*}
+\epsilon_2 & < \frac{\epsilon_1^2}{2\sqrt{\alpha}}\\
+& = 2\sqrt{\alpha}\left(\frac{\epsilon_1}{2\sqrt{\alpha}}\right)^{2^1}\\
+& = \beta\left(\frac{\epsilon_1}{\beta}\right)^{2^1}.
+\end{align*}
+Now suppose for some $n \in \NN$ that \[\epsilon_{n+1} < \beta\left(\frac{\epsilon_1}{\beta}\right)^{2^n}.\] Then
+\begin{align*}
+\epsilon_{n+2} & < \frac{\epsilon_{n+1}^2}{2\sqrt{\alpha}}\\
+& < \frac{1}{\beta}\left(\beta\left(\frac{\epsilon_1}{\beta}\right)^{2^n}\right)^2\\
+& = \beta\left(\frac{\epsilon_1}{\beta}\right)^{2^{n+1}},
+\end{align*}
+proving the claim.
+
+\item We observe that for $\alpha = 3$ and $x_1 = 2$, \[\frac{\epsilon_1}{\beta} = \frac{2 - \sqrt{3}}{2\sqrt{3}} = \frac{1}{\sqrt{3}} - \frac{1}{2}.\] Then since
+\begin{align*}
+\left(\frac{1}{\sqrt{3}}\right)^2 & = \frac{1}{3}\\
+& < \frac{9}{25}\\
+& = \left(\frac{3}{5}\right)^2\\
+& = \left(\frac{1}{2} + \frac{1}{10}\right)^2,
+\end{align*}
+we have \[\frac{1}{\sqrt{3}} - \frac{1}{2} < \frac{1}{10}\] and so $\epsilon_1/\beta < 1/10$.
+
+Since $\sqrt{3} < 2$ (as $3 < 4$), we have $\beta = 2\sqrt{3} < 4$. Thus by part (b),
+\begin{align*}
+\epsilon_{n+1} & < \beta\left(\frac{\epsilon_1}{\beta}\right)^{2^n}\\
+& < 4\left(\frac{1}{10}\right)^{2^n}\\
+& = 4\cdot 10^{-2^n}.
+\end{align*}
+For example, \[\epsilon_5 < 4\cdot 10^{-16}\] and \[\epsilon_6 < 4\cdot 10^{-32}.\]
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item We prove that $x_{2n-1} > x_{2n+1}$ for all $n \in \NN$. For any $n \in \NN$, we see that
+\begin{align*}
+x_{2n+1} & = x_{2n} + \frac{\alpha - x_{2n}^2}{1 + x_{2n}}\\
+& = x_{2n-1} + \frac{\alpha - x_{2n-1}^2}{1 + x_{2n-1}} + \frac{\alpha - x_{2n}^2}{1 + x_{2n}}
+\end{align*}
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+We assume that $\alpha$ is a positive real number and $x_1 > \sqrt[p]{\alpha}$. [TODO]
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+Suppose $\{p_{n_k}\}_{k \in \NN}$ is a subsequence of $\{p_n\}_{n \in \NN}$ which converges to $p$. Then for any $\epsilon > 0$, there is $K \in \NN$ such that $d(p_{n_k}, p) < \epsilon/2$ for all $k \geq K$. Since $\{p_n\}_{n \in \NN}$ is Cauchy, there also exists $N \in \NN$ such that $d(p_n, p_m) < \epsilon/2$ for $n, m \geq N$. For any $n \geq N$, we may choose $k \geq K$ such that $n_k \geq N$. Then
+\begin{align*}
+d(p_n, p) & \leq d(p_n, p_{n_k}) + d(p_{n_k}, p)\\
+& < \epsilon/2 + \epsilon/2\\
+& = \epsilon,
+\end{align*}
+and hence $\lim_{n\to\infty}p_n = p$.
+\end{ex}
+
+\begin{ex}
+As in the proof of Theorem 3.10(b), we have from $E \subset E_n$ for all $n \in \NN$ and \[\lim_{n\to\infty}\diam E_n = 0\] that $\bigcap_{n = 1}^{\infty}E_n$ contains at most one point, so it suffices to show it is nonempty. For each $n \in \NN$, let $p_n \in E_n$ (since $E_n$ is nonempty). Then for each $N \in \NN$, we have $\{p_n\}_{n \geq N} \subset E_N$ and hence \[\lim_{N\to\infty}\diam\{p_n\}_{n \geq N} = 0\] since $\lim_{n\to\infty}\diam E_n = 0$. Thus $\{p_n\}_{n \in \NN}$ is Cauchy, and so it converges to some point $p$ since $X$ is complete. For any $N \in \NN$, the sequence $\{p_n\}_{n \geq N}$ in $E_N$ also converges to $p$. Hence $p$ is a limit point of $E_N$ for all $N \in \NN$, and so $p \in \bigcap_{n = 1}^{\infty}E_n$ since each $E_n$ is closed. This proves that $\bigcap_{n = 1}^{\infty}E_n$ is nonempty as desired.
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+As in the hint, we have for all $m, n \in \NN$ that \[d(p_n, q_n) \leq d(p_n, p_m) + d(p_m, q_m) + d(q_m, q_n).\] If $\epsilon > 0$, then there is $N \in \NN$ such that \[d(p_n, p_m) < \frac{\epsilon}{2}\] and \[d(q_n, q_m) < \frac{\epsilon}{2}\] for $n, m \geq N$. Then
+\begin{align*}
+d(p_n, q_n) - d(p_m, q_m) & \leq d(p_n, p_m) + d(q_m, q_n)\\
+& < \frac{\epsilon}{2} + \frac{\epsilon}{2}\\
+& = \epsilon,
+\end{align*}
+and so \[|d(p_n, q_n) - d(p_m, q_m)| < \epsilon\] (by interchanging $n$ and $m$) for $n, m \geq N$. Thus $\{d(p_n, q_n)\}_{n \in \NN}$ is a Cauchy sequence. By Theorem 3.11(c), it follows that $\{d(p_n, q_m)\}_{n \in \NN}$ converges.
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item For any Cauchy sequence $\{p_n\}_{n \in \NN}$ in $X$, we have $d(p_n, p_n) = 0$ for all $n \in \NN$ and hence $\{p_n\}_{n \in \NN}$ is equivalent to $\{p_n\}_{n \in \NN}$. Suppose $\{p_n\}_{n \in \NN}$ and $\{q_n\}_{n \in \NN}$ are Cauchy sequences such that $\{p_n\}_{n \in \NN}$ is equivalent to $\{q_n\}_{n \in \NN}$. Then \[\lim_{n\to\infty}d(p_n, q_n) = 0,\] and so also \[\lim_{n\to\infty}d(q_n, p_n) = \lim_{n\to\infty}d(p_n, q_n) = 0.\] That is, $\{q_n\}_{n \in \NN}$ is equivalent to $\{p_n\}_{n \in \NN}$. Finally, suppose $\{p_n\}_{n \in \NN}$, $\{q_n\}_{n \in \NN}$, and $\{r_n\}_{n \in \NN}$ are Cauchy sequences in $X$ such that $\{p_n\}_{n \in \NN}$ is equivalent to $\{q_n\}_{n \in \NN}$ and $\{q_n\}_{n \in \NN}$ is equivalent to $\{r_n\}_{n \in \NN}$. Then for any $\epsilon > 0$, there is $N \in \NN$ such that \[d(p_n, q_n) < \frac{\epsilon}{2}\] and \[d(q_n, r_n) < \frac{\epsilon}{2}\] for $n\geq N$. Thus
+\begin{align*}
+d(p_n, r_n) & \leq d(p_n, q_n) + d(q_n, r_n)\\
+& < \frac{\epsilon}{2} + \frac{\epsilon}{2}\\
+& = \epsilon
+\end{align*}
+for $n \geq N$, and so $\lim_{n\to\infty}d(p_n, r_n) = 0$. Hence $\{p_n\}_{n \in \NN}$ is equivalent to $\{r_n\}_{n \in \NN}$, and so equivalence of Cauchy sequences in $X$ is an equivalence relation.
+
+\item Let $P, Q \in X^*$ and supose $\{p_n\}_{n \in \NN}$ and $\{p_n'\}_{n \in \NN}$ are representatives of $P$ and $\{q_n\}_{n \in \NN}$ and $\{q_n'\}_{n \in \NN}$ are representatives of $Q$. Then we have for all $n \in \NN$ that
+\begin{align*}
+d(p_n, q_n) \leq d(p_n, p_n') + d(p_n', q_n') + d(q_n', q_n)
+\end{align*}
+so \[d(p_n, q_n) - d(p_n', q_n') \leq d(p_n, p_n') + d(q_n, q_n')\] and similarly \[d(p_n', q_n') - d(p_n, q_n) \leq d(p_n, p_n') + d(q_n, q_n').\] Hence \[|d(p_n, q_n) - d(p_n', q_n')| \leq d(p_n, p_n') + d(q_n, q_n').\] But $\lim_{n\to\infty}d(p_n, p_n') = 0$ and $\lim_{n\to\infty}d(q_n, q_n') = 0$ since $\{p_n\}_{n \in \NN}$ is equivalent to $\{p_n'\}_{n \in \NN}$ and $\{q_n\}_{n \in \NN}$ is equivalent to $\{q_n'\}_{n \in \NN}$. Thus \[\lim_{n\to\infty}(d(p_n, q_n) - d(p_n', q_n')) = 0,\] and so \[\lim_{n\to\infty}d(p_n, q_n) = \lim_{n\to\infty}d(p_n', q_n')\] by Theorem 3.3(a) and Exercise 3.23. Hence $\Delta(P, Q)$ is well-defined.
+
+Now we show that $\Delta$ is a metric on $X^*$. Suppose $P, Q \in X^*$, and let $\{p_n\}_{n \in \NN}$ be a representative of $P$ and $\{q_n\}_{n \in \NN}$ a representative of $Q$. Then we have by Theorem 3.19 that \[\Delta(P, Q) = \lim_{n\to\infty}d(p_n, q_n) \geq 0\] since $d(p_n, q_n) \geq 0$ for all $n \in \NN$. Moreover, $\Delta(P, Q) = 0$ if and only if $\lim_{n\to\infty}d(p_n, q_n) = 0$, that is, $\{p_n\}_{n \in \NN}$ is equivalent to $\{q_n\}_{n \in \NN}$. Thus $\Delta(P, Q) = 0$ if and only if $P = Q$, so part (a) of Definition 2.15 is established. We also have that $d(p_n, q_n) = d(q_n, p_n)$ for all $n \in \NN$, and so \[\Delta(P, Q) = \lim_{n\to\infty}d(p_n, q_n) = \lim_{n\to\infty}d(q_n, p_n) = \Delta(Q, P).\] This proves part (b) of Definition 2.15. Finally, suppose also that $R \in X^*$ and $\{r_n\}_{n \in \NN}$ is a representative of $R$. Then we have \[d(p_n, r_n) \leq d(p_n, q_n) + d(q_n, r_n)\] for all $n \in \NN$ and thus by Theorem 3.19 and Theorem 3.3(a),
+\begin{align*}
+\Delta(P, R) & = \lim_{n\to\infty}d(p_n, r_n)\\
+& \leq \lim_{n\to\infty}(d(p_n, q_n) + d(q_n, r_n))\\
+& = \lim_{n\to\infty}d(p_n, q_n) + \lim_{n\to\infty}d(q_n, r_n)\\
+& = \Delta(P, Q) + \Delta(Q, R).
+\end{align*}
+This is part (c) of Definition 2.15, and so $\Delta$ is a metric on $X^*$.
+
+\item Let $\{P_k\}_{k \in \NN}$ be a Cauchy sequence in $X^*$. Let $\{p_{n, k}\}_{n \in \NN}$ be a representative of $P_k$ for each $k \in \NN$. For all $n, m \in \NN$, we have \[d(p_{n, n}, p_{m, m}) \leq d(p_{n, n}, p_{m, n}) + d(p_{m, n}, p_{m ,m}).\] For any $\epsilon > 0$, there is $K \in \NN$ such that \[\Delta(P_k, P_l) < \frac{\epsilon}{2}\] for $k, l \geq K$. 
+
+\item We have that $\{p\}_{n \in \NN}$ is Cauchy since $d(p, p) = 0$; thus the class $P_p \in X^*$ is well-defined. By definition, for any $p, q \in X$, we have \[\Delta(P_p, P_q) = \lim_{n\to\infty}d(p, q) = d(p, q).\] That is, if $\phi: X \to X^*$ is given by $\phi(p) = P_p$, we have \[\Delta(\phi(p), \phi(q)) = d(p, q)\] for all $p, q \in X$. Then $\phi$ is an isometric embedding of $X$ into $X^*$ (note that by part (a) of Definition 2.15, a distance-preserving map of metric spaces is necessarily injective).
+
+\item Let $P \in X^*$ and $\epsilon > 0$. Suppose $\{p_n\}_{n \in \NN}$ is a representative of $P$. Then $\{p_n\}_{n \in \NN}$ is Cauchy, and so there is $N \in \NN$ such that $d(p_n, p_m) < \epsilon/2$ for $n, m \geq N$. Thus \[\lim_{n\to\infty}d(p_n, p_N) \leq \frac{\epsilon}{2} < \epsilon\] by Theorem 3.19, and so \[\Delta(P, P_{p_N}) < \epsilon.\] But $P_{p_N} = \phi(p_N) \in \phi(X)$, and hence $\phi(X)$ is dense in $X^*$.
+
+Now suppose $X$ is complete, and let $P \in X^*$. Let $\{p_n\}_{n \in \NN}$ be a representative of $P$. Then $\{p_n\}_{n \in \NN}$ is a Cauchy sequence in $X$, and so since $X$ is complete, there is $p \in X$ such that $\{p_n\}_{n \in \NN}$ converges to $p$. Thus \[\lim_{n\to\infty}d(p_n, p) = 0,\] and so $\{p_n\}_{n \in \NN}$ is equivalent to $\{p\}_{n \in \NN}$. Then $P = \phi(p)$, and so $\phi(X) = X^*$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+
+\end{ex}

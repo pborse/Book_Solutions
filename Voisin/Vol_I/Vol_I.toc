@@ -1,0 +1,15 @@
+\contentsline {part}{Part\ I. \enspace \noindent Preliminaries}{4}{part.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Holomorphic Functions of Many Variables}}{5}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{Complex Manifolds}}{6}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Kähler Metrics}}{7}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Sheaves and Cohomology}}{8}{chapter.4}%
+\contentsline {part}{Part\ II. \enspace \noindent The Hodge Decomposition}{9}{part.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Harmonic Forms and Cohomology}}{10}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{The Case of Kähler Manifolds}}{11}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Hodge Structures and Polarisations}}{12}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Holomorphic de Rham Complexes and Spectral Sequences}}{13}{chapter.8}%
+\contentsline {part}{Part\ III. \enspace \noindent Variations of Hodge Structures}{14}{part.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Variations of Hodge Structure}}{15}{chapter.10}%
+\contentsline {part}{Part\ IV. \enspace \noindent Cycles and Cycle Classes}{16}{part.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{11}{Hodge Classes}}{17}{chapter.11}%
+\contentsline {chapter}{\tocchapter {Chapter}{12}{Deligne-Beilinson Cohomology and the Abel-Jacobi Map}}{18}{chapter.12}%

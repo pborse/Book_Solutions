@@ -1,0 +1,11 @@
+\contentsline {chapter}{\tocchapter {Chapter}{I}{Algebraic Varieties}}{4}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{II}{Algebraic Curves}}{5}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{III}{The Geometry of Elliptic Curves}}{6}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{IV}{The Formal Group of an Elliptic Curve}}{8}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{V}{Elliptic Curves over Finite Fields}}{9}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{VI}{Elliptic Curves over $\mathbf {C}$}}{10}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{VII}{Elliptic Curves over Local Fields}}{11}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{VIII}{Elliptic Curves over Global Fields}}{12}{chapter.8}%
+\contentsline {chapter}{\tocchapter {Chapter}{IX}{Integral Points on Elliptic Curves}}{13}{chapter.9}%
+\contentsline {chapter}{\tocchapter {Chapter}{X}{Computing the Mordell-Weil Group}}{14}{chapter.10}%
+\contentsline {chapter}{\tocchapter {Chapter}{XI}{Algorithmic Aspects of Elliptic Curves}}{15}{chapter.11}%

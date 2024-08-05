@@ -1,0 +1,48 @@
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Some topics in commutative algebra}}{5}{chapter.1}%
+\contentsline {section}{\tocsection {}{1}{Tensor Products}}{5}{section.1.1}%
+\contentsline {section}{\tocsection {}{2}{Flatness}}{5}{section.1.2}%
+\contentsline {section}{\tocsection {}{3}{Formal completion}}{6}{section.1.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{General properties of schemes}}{7}{chapter.2}%
+\contentsline {section}{\tocsection {}{1}{Spectrum of a ring}}{7}{section.2.1}%
+\contentsline {section}{\tocsection {}{2}{Ringed topological spaces}}{7}{section.2.2}%
+\contentsline {section}{\tocsection {}{3}{Schemes}}{8}{section.2.3}%
+\contentsline {section}{\tocsection {}{4}{Reduced schemes and integral schemes}}{8}{section.2.4}%
+\contentsline {section}{\tocsection {}{5}{Dimension}}{9}{section.2.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Morphisms and base change}}{10}{chapter.3}%
+\contentsline {section}{\tocsection {}{1}{The technique of base change}}{10}{section.3.1}%
+\contentsline {section}{\tocsection {}{2}{Applications to algebraic varieties}}{10}{section.3.2}%
+\contentsline {section}{\tocsection {}{3}{Some global properties of morphisms}}{11}{section.3.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Some local properties}}{13}{chapter.4}%
+\contentsline {section}{\tocsection {}{1}{Normal schemes}}{13}{section.4.1}%
+\contentsline {section}{\tocsection {}{2}{Regular schemes}}{13}{section.4.2}%
+\contentsline {section}{\tocsection {}{3}{Flat morphisms and smooth morphisms}}{14}{section.4.3}%
+\contentsline {section}{\tocsection {}{4}{Zariski's `Main Theorem' and applications}}{15}{section.4.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Coherent sheaves and Čech cohomology}}{16}{chapter.5}%
+\contentsline {section}{\tocsection {}{1}{Coherent sheaves on a scheme}}{16}{section.5.1}%
+\contentsline {section}{\tocsection {}{2}{Čech cohomology}}{17}{section.5.2}%
+\contentsline {section}{\tocsection {}{3}{Cohomology of projective schemes}}{18}{section.5.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{Sheaves of differentials}}{19}{chapter.6}%
+\contentsline {section}{\tocsection {}{1}{Kähler differentials}}{19}{section.6.1}%
+\contentsline {section}{\tocsection {}{2}{Differential study of smooth morphisms}}{19}{section.6.2}%
+\contentsline {section}{\tocsection {}{3}{Local complete intersection}}{20}{section.6.3}%
+\contentsline {section}{\tocsection {}{4}{Duality theory}}{20}{section.6.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Divisors and applications to curves}}{21}{chapter.7}%
+\contentsline {section}{\tocsection {}{1}{Cartier divisors}}{21}{section.7.1}%
+\contentsline {section}{\tocsection {}{2}{Weil divisors}}{21}{section.7.2}%
+\contentsline {section}{\tocsection {}{3}{Riemann-Roch theorem}}{21}{section.7.3}%
+\contentsline {section}{\tocsection {}{4}{Algebraic curves}}{22}{section.7.4}%
+\contentsline {section}{\tocsection {}{5}{Singular curves, structure of $\Pic ^0(X)$}}{22}{section.7.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Birational geometry of surfaces}}{23}{chapter.8}%
+\contentsline {section}{\tocsection {}{1}{Blowing-ups}}{23}{section.8.1}%
+\contentsline {section}{\tocsection {}{2}{Excellent schemes}}{23}{section.8.2}%
+\contentsline {section}{\tocsection {}{3}{Fibered surfaces}}{24}{section.8.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Regular surfaces}}{25}{chapter.9}%
+\contentsline {section}{\tocsection {}{1}{Intersection theory on a regular surface}}{25}{section.9.1}%
+\contentsline {section}{\tocsection {}{2}{Intersection and morphisms}}{25}{section.9.2}%
+\contentsline {section}{\tocsection {}{3}{Minimal surfaces}}{26}{section.9.3}%
+\contentsline {section}{\tocsection {}{4}{Applications to contraction; canonical model}}{26}{section.9.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Reduction of algebraic curves}}{27}{chapter.10}%
+\contentsline {section}{\tocsection {}{1}{Models and reductions}}{27}{section.10.1}%
+\contentsline {section}{\tocsection {}{2}{Reduction of elliptic curves}}{27}{section.10.2}%
+\contentsline {section}{\tocsection {}{3}{Stable reduction of algebraic curves}}{28}{section.10.3}%
+\contentsline {section}{\tocsection {}{4}{Deligne-Mumford theorem}}{28}{section.10.4}%

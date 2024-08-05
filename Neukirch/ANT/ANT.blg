@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'ANT.blg'
+[83] biber-darwin:340> INFO - === Thu Feb 22, 2024, 02:29:35
+[100] Biber.pm:418> INFO - Reading 'ANT.bcf'
+[210] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[226] bbl.pm:654> INFO - Writing 'ANT.bbl' with encoding 'UTF-8'
+[226] bbl.pm:757> INFO - Output to ANT.bbl
+[226] Biber.pm:130> WARN - The file 'ANT.bcf' does not contain any citations!
+[226] Biber.pm:132> INFO - WARNINGS: 1

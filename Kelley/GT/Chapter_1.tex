@@ -1,0 +1,181 @@
+\begin{prob}[Largest and Smallest Topologies]
+\begin{enumerate}
+\item Let $\{\ms{T}_{\alpha}\}_{\alpha \in I}$ be a family of topologies for $X$, and let $\ms{T} = \bigcap_{\alpha \in I}\ms{T}_{\alpha}$. Then $\ms{T}$ is a family of subsets of $X$ and $\emptyset, X \in \ms{T}$ since $\emptyset, X \in \ms{T}_{\alpha}$ for all $\alpha \in I$. An arbitrary union of $\ms{T}$-open sets is also an arbitrary union of $\ms{T}_{\alpha}$-open sets for all $\alpha \in I$, and hence is $\ms{T}$-open. Similarly, any finite intersection of $\ms{T}$-open sets is a finite intersection of $\ms{T}_{\alpha}$-open sets for all $\alpha \in I$, and so is $\ms{T}$-open. Thus $\ms{T}$ is a topology on $X$.
+
+\item 
+
+\item Let $\{\ms{T}_{\alpha}\}_{\alpha \in I}$ be a collection of topologies for $X$. By part (a), $\bigcap_{\alpha \in I}\ms{T}_{\alpha}$ is a topology for $X$ which is contained in every $\ms{T}_{\alpha}$. If $\ms{U}$ is another topology for $X$ contained in every $\ms{T}_{\alpha}$, then $\ms{U} \subset \bigcap_{\alpha}\ms{T}_{\alpha}$ and so $\bigcap_{\alpha}\ms{T}_{\alpha}$ is the (unique) largest topology for $X$ contained in $\ms{T}_{\alpha}$ for all $\alpha \in I$. On the other hand, by Theorem 1.12, there is a unique smallest topology for $X$ containing each $\ms{T}_{\alpha}$ since \[\bigcup\bigcup_{\alpha \in I}\ms{T}_{\alpha} = \bigcup_{\alpha \in I}\bigcup\ms{T}_{\alpha} = X.\]
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Topologies From Neighborhood Systems]
+\begin{enumerate}
+\item 
+\begin{enumerate}[label = (\roman*)]
+\item This holds by definition of $\ms{U}_x$.
+
+\item Let $x \in U' \subset U$ and $x \in V' \subset V$ with $U'$ and $V'$ open. Then $x \in U'\cap V' \subset U\cap V$ with $U'\cap V'$ open, so $U\cap V \in \ms{U}_x$. (This is part of Theorem 1.2.)
+
+\item Let $U'$ be an open set for which $x \in U' \subset V$. Then $x \in U' \subset V$ and so $V \in \ms{U}_x$. (This is also part of Theorem 1.2.)
+
+\item Let $V$ be an open set for which $x \in V \subset U$, so in particular $V \in \ms{U}_x$ and $V \subset U$. Moreover, $V$ is a neighborhood of each of its points, and so $V \in \ms{U}_y$ for all $y \in V$.
+\end{enumerate}
+
+\item Suppose that conditions (i), (ii), and (iii) above are satisfied. If $U \in \ms{T}$, then for all $x \in U$ we have $U \in \ms{U}_x$ and hence $x \in X$. Thus $\ms{T}$ is a family of subsets of $X$. We have that $\emptyset \in \ms{T}$ vacuously. From (iii) and the fact that each $\ms{U}_x$ is nonempty, $X \in \ms{U}_x$ for all $x \in X$ and thus $X \in \ms{T}$. Let $\ms{U}$ be a subfamily of $\ms{T}$. Then for all $x \in \bigcup\ms{U}$, there is $U \in \ms{U}$ such that $x \in U$ and so $U \in \ms{U}_x$. Thus $\bigcup\ms{U} \in \ms{U}_x$ by (iii), and so $\bigcup\ms{U} \in \ms{T}$. Finally if $U, V \in \ms{T}$ then for all $x \in U\cap V$, we have $U \in \ms{U}_x$ and $V \in \ms{U}_x$. Then by (ii), $U\cap V \in \ms{U}_x$ and so $U\cap V \in \ms{T}$. (This part does not actually use (i).)
+
+Now suppose also that (iv) holds, and fix $x \in X$. If $U$ is a $\ms{T}$-neighborhood of $x$, then there is $V \in \ms{T}$ such that $x \in V \subset U$. Thus $V \in \ms{U}_x$, and so $U \in \ms{U}_x$ by (iii) (this implication does not require (iv)). Conversely, if $U \in \ms{U}_x$ then by (iv), there is $V \in \ms{U}_x$ such that $V \subset U$ and $V \in \ms{U}_y$ for all $y \in V$. Thus $V \in \ms{T}$. By (i), $x \in V \subset U$ so $U$ is a $\ms{T}$-neighborhood of $x$. Hence $\ms{U}_x$ is the $\ms{T}$-neighborhood system of $x$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Topologies From Interior Operators]
+Suppose first that $\ms{T}$ is a topology for $X$. Then the following statements are satisfied by the interior operator $^i$ associated to $\ms{T}$:
+\begin{enumerate}
+\item $X^i = X$. (Proof: This is clear since $X \in \ms{T}$, and hence $X$ is a neighborhood of every $x \in X$.)
+
+\item For each $A \subset X$, $A^i \subset A$. (Proof: By definition, $A^i$ consists only of points of $A$.)
+
+\item For each $A \subset X$, $A^{ii} = A^i$. (Proof: We know by Theorem 1.9 that $A^i$ is open, and hence also $A^{ii} = A^i$.)
+
+\item For each $A, B \subset X$, $(A\cap B)^i = A^i\cap B^i$. (Proof: Let $x \in (A\cap B)^i$. Then $A\cap B$ is a neighborhood of $x$, and so from $A\cap B \subset A, B$ we have that $A$ and $B$ are neighborhoods of $x$ by Theorem 1.2. Hence $x \in A^i\cap B^i$. On the other hand, if $x \in A^i\cap B^i$ then $A$ and $B$ are neighborhoods of $x$. Thus by Theorem 1.2, $A\cap B$ is a neighborhood of $x$, so $x \in (A\cap B)^i$.)
+\end{enumerate}
+(Note that these are ``dual'' to the Kuratowski closure axioms of Theorem 1.8, using that $X\setminus A^i = \bar{X\setminus A}$ (Theorem 1.9). This provides an alternative proof of (a)-(d), and also shows that the claim below is equivalent to Theorem 1.8; in fact, the arguments below are dual to the proof of Theorem 1.8.)
+
+We claim that, conversely, if $^i: 2^X \to 2^X$ is any function satisfying conditions (a)-(d) above then the family $\ms{T}$ of all $A \subset X$ for which $A^i = A$ is a topology for $X$ such that $^i$ is the interior operator associated to $\ms{T}$. We have from (a) that $X \in \ms{T}$, and from (b) that $\emptyset \in \ms{T}$. If $U, V \in \ms{T}$, then \[(U\cap V)^i = U^i\cap V^i = U\cap V\] by (d), and so $U \cap V \in \ms{T}$. Observe that if $A \subset B \subset X$, then $A = A\cap B$ so \[A^i = (A\cap B)^i = A^i\cap B^i\] by (d). Thus $A^i \subset B^i$. Now suppose $\ms{U}$ is a subfamily of $\ms{T}$. Then for all $U \in \ms{U}$, we have $U \subset \bigcup\ms{U}$ and so \[U = U^i \subset \left(\bigcup\ms{U}\right)^i.\] Hence $\bigcup\ms{U} \subset \bigcup\ms{U}^i.$ By (b), it follows that $\left(\bigcup\ms{U}\right)^i = \bigcup\ms{U}$ and so $\bigcup\ms{U} \in \ms{T}$. Then $\ms{T}$ is a topology for $X$. Let $^{\circ}$ denote the interior operator associated to $\ms{T}$. Then for all $A \subset X$, $A^{\circ}$ is open by Theorem 1.9 and so $(A^{\circ})^i = A^{\circ}$. Then $A^{\circ} \subset A^i$ since $A^{\circ} \subset A$. On the other hand, by (c), $A^i$ is open and thus $A^i \subset A^{\circ}$ by Theorem 1.9. Hence $A^i = A^{\circ}$; that is, $^i$ is the interior operator associated to $\ms{T}$.
+\end{prob}
+
+\begin{prob}[Accumulation Points in $T_1$-Spaces]
+\begin{enumerate}
+\item By Theorem 1.12, there is a smallest topology $\ms{T}$ for $X$ which contains $X\setminus\{x\}$ for all $x \in X$, which is also the smallest topology for $X$ for which every singleton is closed. That is, $\ms{T}$ it is the smallest topology such that $(X, \ms{T})$ is a $T_1$-space. (Alternatively, we may apply Problem 1.A(a): an arbitrary intersection of $T_1$-topologies for $X$ is again a $T_1$-topology for $X$.)
+
+\item We have by part (a) that $\ms{T}$ consists of arbitrary unions of finite intersections of complements of singletons in $X$, so $\ms{T}$ consists of $\emptyset$ and the complements of finite subsets of $X$. Now suppose $A \subset X$ is not $\emptyset$ or $X$. Then $A$ is open if and only if $X\setminus A$ is finite and $A$ is closed if and only if $A$ is finite. Since $X = (X\setminus A) \cup A$ is infinite, it follows that $A$ cannot be both open and closed. Thus $X$ is connected.
+
+\item Let $A \subset X$, and let $A'$ denote the set of accumulation points of $A$. Let $x \in X\setminus A'$. Then there is an open neighborhood $U$ of $x$ such that $U\cap (A\setminus\{x\}) = \emptyset$. Suppose for sake of contradiction that $U\cap A' \not = \emptyset$. Then for $y \in U\cap A'$, we have $U\cap (A\setminus\{y\}) \not = \emptyset$. But $U\cap (A\setminus\{y\}) \subset U\cap A$ and $U\cap (A\setminus\{x\}) = \emptyset$, so $U\cap(A\setminus\{y\}) = \{x\}$. Then since $(X, \ms{T})$ is a $T_1$-space, $U\setminus\{x\}$ is a neighborhood of $y$ such that $(U\setminus\{x\})\cap (A\setminus\{y\})$. This contradicts that $y \in A'$, and so $U\cap A' = \emptyset$. Thus $x$ is not an accumulation point of $A'$. By Theorem 1.5, it follows that $A'$ is closed.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Kuratowski Closure and Complement Problem]
+
+\end{prob}
+
+\begin{prob}[Exercise on Spaces With a Countable Base]
+Let $\ms{B}$ be a countable base for a topological space $(X, \ms{T})$, and suppose $\ms{A}$ is another base. Let $S$ be the set of all pairs $(B, C)$ such that $B, C \in \ms{B}$ and there is $A \in \ms{A}$ such that $B \subset A \subset C$. Then $S$ is countable by Theorem 0.17, and for all $(B, C) \in S$, let $A_{B, C} \in \ms{A}$ such that $B \subset A_{B, C} \subset C$. By Theorem 0.16, $\ms{A}' = \{A_{B, C}\mid (B, C) \in S\}$ is a countable subfamily of $\ms{A}$. Now let $U$ be open and $x \in U$. Since $\ms{A}$ and $\ms{B}$ are bases for $\ms{T}$, there are $A \in \ms{A}$ and $B, C \in \ms{B}$ such that \[x \in B \subset A \subset C \subset U.\] Then $(B, C) \in S$ and so $x \in A_{B, C} \subset U$ with $A_{B, C} \in \ms{A}'$. Thus $\ms{A}'$ is also a base for $\ms{T}$, proving the claim.
+\end{prob}
+
+\begin{prob}[Exercise on Dense Sets]
+Let $x \in U$, and suppose $V$ is a neighborhood of $x$. Then by Theorem 1.1 and Theorem 1.2, $U\cap V$ is a neighborhood of $x$ and so $U\cap V$ intersects $A$ as $A$ is dense in $X$. Then since $U\cap V \subset U$, we also have that $U\cap V$ intersects $A\cap U$ and so $V$ intersects $A\cap U$. Thus $x \in (A\cap U)^-$, which shows that $U \subset (A\cap U)^-$.
+\end{prob}
+
+\begin{prob}[Accumulation Points]
+For each $x \in A\setminus B$, let $U_x$ be an open neighborhood of $x$ for which $U_x\cap A$ is countable. Then $\{U_x\cap (A\setminus B)\}_{x \in A\setminus B}$ is an open cover of $A\setminus B$ in the subspace topology. Then since $A\setminus B$ is Lindelöf, there is a countable subset $C$ of $A\setminus B$ for which $\{U_x\cap(A\setminus B)\}_{x \in C}$ is also an open cover of $A\setminus B$. But each $U_x\cap(A\setminus B)$ is countable by Theorem 0.15, and so $A\setminus B$ is countable by Theorem 0.17. Now let $x \in B$ and $U$ be a neighborhood of $x$. If $U$ intersects only countably many points of $B$, then $U\cap A = (U\cap B)\cup(U\cap (A\setminus B))$ is countable by Theorems 0.15 and 0.17. But $U\cap A$ is uncountable since $x \in B$, so this is a contradiction. Thus $U\cap B$ is uncountable; that is, any neighborhood of a point of $B$ intersects uncountably many points of $B$.
+\end{prob}
+
+\begin{prob}[The Order Topology]
+(Note: We assume that $X$ consists of at least two points, for else the given ``subbase'' does not have union equal to $X$ and is hence not a subbase of any topology for $X$.)
+\begin{enumerate}
+\item Let $\ms{T}$ denote the order topology for $X$ associated to $<$. Then if $a, b \in X$ with $a < b$, let $U = \{x \in X\mid x < a\}$ and $V = \{x \in X\mid a < x\}$. Then $U, V \in \ms{T}$ and if $x \in U$ and $y \in V$, we have $x < a < y$ and so $x < y$. On the other hand, suppose $\ms{U}$ is a topology for $X$ such that for all $a, b \in X$ with $a < b$ there are neighborhoods $U$ of $a$ and $V$ of $b$ such that for $x \in U$ and $y \in V$, $x < y$. Fix $a \in X$. Then if $x \in X$ such that $x < a$, there is a $\ms{U}$-open neighborhood $U$ of $x$ such that $U \subset \{x \in X\mid x < a\}$. Thus $\{x \in X\mid x < a\}$ is $\ms{U}$-open. Similarly, if $x \in X$ with $a < x$, there is a $\ms{U}$-open neighborhood $V$ of $x$ such that $V \subset \{x \in X\mid a < x\}$ so $\{x \in X\mid a < x\}$ is $\ms{U}$-open. Then $\ms{T} \subset \ms{U}$ by definition of $\ms{T}$.
+
+\item 
+
+\item Let $A$ be a nonempty subset of $X$ which has an upper bound. Let $U = \bigcup_{a \in A}\{x \in X\mid x < a\}$. Then $U$ is open by definition of $\ms{T}$. If $U = \emptyset$, then there are no $a, b \in A$ for which $a < b$. It follows that $A$ is a singleton and thus has a supremum. Now suppose $U \not = \emptyset$. Since $<$ is antisymmetric, any upper bound of $A$ is not in $U$, and so $U \not = X$. Thus since $X$ is connected, it follows that $U$ is not closed. By Theorem 1.5, there is an accumulation point $x$ of $U$ which is not contained in $U$. Then $x \in \bigcap_{a \in A}\{x \in X\mid x\not < a\}$ and so for all $a \in A$, $x > a$ or $x = a$. Thus $x$ is an upper bound for $A$. If $y < x$, then $\{x \in X\mid y < x\}$ is an open neighborhood of $x$, which must intersect $A$. Thus there is $a \in A$ such that $y < a$, and so $y$ is not an upper bound of $A$ since $<$ is antisymmetric. Hence $x$ is the supremum of $A$.
+
+\item Let $A = \{x \in X\mid a < x\}$ and $B = \{x \in X\mid x < b\}$. Then $A$ and $B$ are nonempty open subsets of $X$ (as $b \in A$ and $a \in B$), and they are disjoint by the assumption on $a$ and $b$. If $x$ is any point of $X$, then $a < x$, $a = x$, or $x < a$. If $a < x$, then $x \in A$. If $a = x$ or $x < a$, then $x \in B$ since $a < b$. Thus $X = A\cup B$ is a separation of $X$, so $X$ is not connected.
+
+Together with part (c), we have that if $X$ is connected under the order topology then $X$ is order-complete and has no gaps. Conversely, suppose that $X$ is order-complete with no gaps. Then 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Properties of the Real Numbers]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Half-Open Interval Space]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Half-Open Rectangle Space]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Example (the Ordinals) on 1st and 2nd Countability]
+\begin{enumerate}
+\item 
+
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Countable Chain Condition]
+Let $(X, \ms{T})$ be a separable topological space and let $\ms{U}$ be a disjoint family of open subsets of $X$. Let $\ms{U}'$ denote the nonempty elements of $\ms{U}$, and let $C$ be a countable dense subset of $X$. For each $U \in \ms{U}'$, let $x_U \in U\cap C$. If $U, V \in \ms{U}'$ such that $x_U = x_V$, then $(U\cap C)\cap (V\cap C)$ is nonempty. Hence $U\cap V \not = \emptyset$, so $U = V$. Thus $U \mapsto x_U$ is an injective function $\ms{U}' \to C$, and so $\ms{U}'$ is countable by Theorem 0.15. Then $\ms{U} \subset \{\emptyset\}\cup\ms{U}'$ is countable by Theorems 0.15 and 0.17.
+
+Now let $X$ be an uncountable set and $\ms{T}$ be the collection of complements of countable subsets of $X$, along with the empty set. By Theorems 0.15, 0.17, and 1.4, $\ms{T}$ is a topology for $X$. Suppose $U$ and $V$ are disjoint open subsets of $X$. Then $(X\setminus U)\cup (X\setminus V) = X$, so $U$ or $V$ is the empty set by Theorem 0.17. Thus any disjoint subfamily $\ms{U}$ of $\ms{T}$ consists of at most two sets, and so $(X, \ms{T})$ satisfies the countable chain condition. But for any countable subset $C$ of $X$, $X\setminus C$ is a nonempty open subset of $X$ which is disjoint from $C$. Hence $X$ is not separable.
+\end{prob}
+
+\begin{prob}[The Euclidean Plane]
+\begin{enumerate}
+\item 
+
+\item 
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Example on Components]
+
+\end{prob}
+
+\begin{prob}[Theorem on Separated Sets]
+
+\end{prob}
+
+\begin{prob}[Finite Chain Theorem for Connected Sets]
+Let $C = \bigcup\ms{A}$, and suppose $D$ is a subset of $C$ which is both open and closed in $C$. Then for all $A \in \mc{A}$, we have that $D\cap A$ is both open and closed in $A$. Since $A$ is connected, it follows that $D\cap A = A$ or $D\cap A = \emptyset$. Thus $A \subset D$ or $A \subset C\setminus D$. Suppose for sake of contradiction that there are $A, B \in \ms{A}$ such that $A \subset D$ and $B \subset C\setminus D$. Let $A_0, \ldots, A_n \in \ms{A}$ such that $A_0 = A$, $A_n = B$, and for all $i = 0, \ldots, n-1$, $A_i$ and $A_{i+1}$ are not separated. Then there is $i$ such that $A_i \subset D$ and $A_{i+1} \subset C\setminus D$. Thus $A_i$ and $A_{i+1}$ are disjoint, and since $D$ and $C\setminus D$ are closed in $C$ we have that $A_i = (A_i\cap A_{i+1})\cap D$ and $A_{i+1} = (A_i\cap A_{i+1})\cap (C\setminus D)$ are closed in $A_i\cup A_{i+1}$. Hence $A_i$ and $A_{i+1}$ are separated, a contradiction. Thus either $A \subset D$ for all $A \in \ms{A}$ or $A \subset C\setminus D$ for all $A \in \ms{A}$, so $D = C$ or $D = \emptyset$. Then $C$ is connected.
+
+If $\mc{A}$ is a family of connected subsets of a topological space such that no two members of $\mc{A}$ are separated, then it is clear that the finite chain condition is satisfied by $\mc{A}$. Hence $\bigcup\mc{A}$ is connected, which proves Theorem 1.21.
+\end{prob}
+
+\begin{prob}[Locally Connected Spaces]
+\begin{enumerate}
+\item Let $U$ be an open set and $C$ a component of $U$. Then for all $x \in C$, $C$ is the component of $U$ containing $x$ and hence is a neighborhood of $x$. Then $C$ is a neighborhood of each of its points, and is thus open by Theorem 1.1.
+
+\item Suppose that $(X, \ms{T})$ is a locally connected topological space. Then if $U$ is open and $x \in U$, we have by part (a) that the connected component $C$ of $U$ containing $x$ is open. In particular, $C$ is an open connected subset of $X$ for which $x \in C \subset U$. Thus the open connected subsets form a base for $\ms{T}$. Conversely, suppose the family of open connected subsets is a base for $\ms{T}$. Let $x \in X$, and let $U$ be a neighborhood of $x$. Then there is an open connected set $C$ such that $x \in C \subset U$. By the proof of Theorem 1.22, the connected component of $U$ containing $x$ also contains $C$, and so is a neighborhood of $x$. Hence $X$ is locally connected.
+
+\item Let $A$ be the component of $X$ containing $x$. By part (a), $A$ is open, and by Theorem 1.22, $A$ is closed. Then setting $B = X\setminus A$, we have that $X = A\cup B$ is a separation of $X$ such that $x \in A$ and $y \in B$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[The Brouwer Reduction Theorem]
+\begin{enumerate}
+\item We restate the theorem as follows: Let $(X, \ms{T})$ be a topological space such that every subspace of $X$ is Lindelöf (in particular, this holds for any second countable space by Theorem 1.15 since any subspace of a second countable space is second countable). Let $\ms{P}$ be a family of subsets of $X$ which is closed under intersections of countable nests of closed sets. Then for any closed set $A \in \ms{P}$, there is a closed subset $B$ of $A$ such that $B \in \ms{P}$ and no proper closed subset of $B$ is in $\ms{P}$.
+
+Proof: Suppose $A$ is a closed subset of $X$, and let $\ms{A}$ be the family of closed subsets of $A$ which lie in $\ms{P}$. Let $\ms{N} \subset \ms{A}$ be a nest. Then \[X\setminus\left(\bigcap\ms{N}\right) = \bigcup_{N \in \ms{N}}(X\setminus N).\] Since $\ms{A}$ consists only of closed subsets of $X$, we thus have that $\{X\setminus N\mid N \in \ms{N}\}$ is an open cover of $X\setminus(\bigcap\ms{N})$. But $X\setminus(\bigcap\ms{N})$ is Lindelöf, and so there is a countable subnest $\ms{M}$ of $\ms{N}$ such that \[X\setminus\left(\bigcap\ms{N}\right) = \bigcup_{M \in \ms{M}}(X\setminus M).\] Taking complements, \[\bigcap\ms{N} = \bigcap\ms{M}.\] But $\bigcap\ms{M} \in \ms{P}$ by the assumption on $\ms{P}$, and hence $\bigcap\ms{N} \in \ms{P}$. If $\ms{N}$ is nonempty, then since $\ms{N} \subset \ms{A}$ we have that $\bigcap\ms{N}$ is a closed subset of $A$. Hence $\bigcap\ms{N}$ is a lower bound of $\ms{N}$ in $\ms{A}$. Otherwise $\ms{N}$ is empty, and so $A$ is a lower bound of $\ms{N}$ in $\ms{A}$. Hence every nest in $\ms{A}$ has a lower bound, and so by Theorem 0.25(b) (the Minimal Principle), it follows that $\ms{A}$ has a minimal element. That is, there is a closed subset $B$ of $A$ in $\ms{P}$ for which no proper closed subset of $B$ lies in $\ms{P}$.
+
+\item 
+\end{enumerate}
+\end{prob}

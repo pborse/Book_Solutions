@@ -1,0 +1,215 @@
+\begin{ex}
+Let $S$ be a set. Then there is no $x \in \emptyset$, so vacuously we have that $x \in S$ whenever $x \in \emptyset$. Hence $\emptyset \subset S$.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+Suppose that $x \not \in E'$. Then there is an open neighborhood $G$ of $x$ for which $G\cap E$ is empty or equal to $\{x\}$. Let $y \in G\setminus\{x\}$. Then $y \not \in G\cap E$, and so $y$ is not a limit point of $E$. Hence no point of $G$ other than $x$ is in $E'$, and so $x$ is not a limit point of $E'$. Thus $E'$ contains all its limit points and so is closed.
+
+Since $E \subset \bar{E}$, it is clear that any limit point of $E$ is also a limit point of $\bar{E}$. Thus suppose $x$ is a limit point of $\bar{E}$, and let $G$ be an open neighborhood of $x$. Then $G$ contains some $y \in \bar{E}$ other than $x$. If $y \in E'$, then letting $r$ be a positive real such that $r < d(x, y)$ and $B_r(y) \subset G$, we have that $B_r(y)$ contains a point $z$ of $E$ other than $x$ and $y$. Then $G$ contains a point of $E$ other than $x$, and hence $x$ is a limit point of $E$. This completes the proof that the set of limit points of $E$ equals that of $\bar{E}$.
+
+It is not the case that $E$ and $E'$ always have the same limit points. For example, let $E = \{1/n\mid n \in \NN\}$. Then $E' = \{0\}$, which has now limit point since it is finite (Corollary to Theorem 2.20).
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item By Theorem 2.27(a), each $\bar{A_i}$ is closed, and thus by Theorem 2.24(d), $\bigcup_{i = 1}^n\bar{A_i}$. Then from \[B = \bigcup_{i = 1}^nA_i \subset \bigcup_{i = 1}^n\bar{A_i},\] we have by Theorem 2.27(c) that $\bar{B} \subset \bigcup_{i = 1}^n\bar{A_i}$. Conversely, for each $i = 1, \ldots, n$, we have $A_i \subset B \subset \bar{B}$ and hence $\bar{A_i} \subset \bar{B}$ by Theorem 2.27(a, c). Thus \[\bar{B} = \bigcup_{i = 1}^n\bar{A_i}\] as desired.
+
+\item For each $i \in \NN$, we have $A_i \subset B \subset \bar{B}$. Hence by Theorem 2.27(a, c), $\bar{A_i} \subset \bar{B}$, and so \[\bigcup_{i = 1}^{\infty}\bar{A_i} \subset \bar{B}.\]
+\end{enumerate}
+Let our metric space be the real line $\RR$ with the Euclidean metric. For each $i \in \NN$, let $A_i = [1/i, 1]$. Then each $A_i$ is closed and so $A_i = \bar{A_i}$ (Theorem 2.27(b)), and so \[B = \bigcup_{i = 1}^{\infty}A_i = \bigcup_{i = 1}^{\infty}\left(\frac{1}{i}, 1\right] = (0, 1]\] and also \[\bigcup_{i = 1}^{\infty}\bar{A_i} = \bigcup_{i = 1}^{\infty}A_i = \bigcup_{i = 1}^{\infty}\left(\frac{1}{i}, 1\right] = (0, 1].\] But 0 is a limit point of $B$, and hence \[\bar{B} \supsetneq \bigcup_{i = 1}^{\infty}\bar{A_i}.\]
+\end{ex}
+
+\begin{ex}
+Let $E$ be an open subset of $\RR^k$ for some $k \in \NN$, and suppose $x \in E$. Then there is $r > 0$ such that $B_r(x) \subset E$. If $s > 0$, then $B_{\min(r, s)}(x) \subset B_s(x)\cap E$ contains a point other than $x$ (e.g., $x + (\min(r, s)/2, 0, \ldots, 0)$) and hence $x$ is a limit point of $E$.
+
+The corresponding claim for closed subsets of $\RR^k$ is false for all $k \in \NN$. Indeed, any nonempty finite subset of $\RR^k$ is vacuously closed by the Corollary to Theorem 2.20 but, for the same reason, is not contained in its set of limit points.
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item Let $x \in E^{\circ}$; then there is an open neighborhood $G$ of $x$ for which $G \subset E$. Since $G$ is open, we have for all $y \in G$ that $G$ is an open neighborhood of $y$ that is contained in $E$. Hence $G \subset E^{\circ}$ and thus $E^{\circ}$ is open.
+
+\item Since $E^{\circ}$ is open by part (a), we have that if $E^{\circ} = E$ then $E$ is open. Conversely, suppose that $E$ is open. Then by definition, $E \subset E^{\circ}$. On the other hand, we always have $E^{\circ} \subset E$, and hence $E^{\circ} = E$.
+
+\item Since $G$ is open with $G \subset E$, we have that every point of $G$ is an interior point of $E$ and so $G \subset E^{\circ}$.
+
+\item Let $x \not \in E^{\circ}$. Then for all open neighborhoods $G$ of $x$, we have $G \not \subset E$ and hence $G$ intersects $E^c$. Thus $x \in \bar{E^c}$. Conversely, suppose $x \in \bar{E^c}$. Then every open neighborhood $G$ of $x$ intersects $E^c$, and so $x$ is not an interior point of $E$. Hence $x \not \in E^{\circ}$, and so $(E^{\circ})^c = \bar{E^c}$ as desired.
+
+\item No; for example, let $E = \QQ$ in $\RR$ (with the Euclidean metric). Then $E^{\circ} = \emptyset$ since every segment contains an irrational. But $\bar{E} = \RR$ has interior $\RR$.
+
+\item No; again, let $E = \QQ$ in $\RR$ (with the Euclidean metric). Then $\bar{E} = \RR$ but $E^{\circ} = \emptyset$ has empty closure.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Part (a) of Definition 2.15 is clear. Moreover, $p = q$ if and only if $q = p$ and so part (b) holds as well. Now let $p, q, r \in X$. If $p = q = r$, then $d(p, q) = d(p, r) = d(r, q) = 0$ so $d(p, q) = d(p, r) + d(r, q)$. If $p = q$ and $r$ is distinct from $p, q$, then $d(p, q) = 0$ while $d(p, r) = d(r, q) = 1$ so $d(p, q) < d(p, r) + d(r, q)$. If $p = r$ and $q$ is distinct from $p, r$, then $d(p, q) = 1$, $d(p, r) = 0$, and $d(r, q) = 1$ so $d(p, q) = d(p, r) + d(r, q)$. Similarly in the case that $q = r$ and $p$ is distinct from $q, r$. Finally if $p, q,$ and $r$ are distinct, then $d(p, q) = d(p, r) = d(r, q) = 1$ and so $d(p, q) < d(p, r) + d(r, q)$. This proves part (c) of Definition 2.15, and so $d$ is a metric on $X$.
+
+[TODO]
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item This is not a metric on $\RR$. For example, \[d_1(0, 2) = (0 - 2)^2 = 4,\] \[d_1(0, 1) = (0 - 1)^2 = 1,\] and \[d_1(1, 2) = (1 - 2)^2 = 1\] so \[d_1(0, 2) \not\leq d_1(0, 1) + d_1(1, 2).\] Then $d_1$ fails to satisfy part (c) of Definition 2.15.
+
+\item This is a metric on $\RR$. For all $x, y \in \RR$, we have $d_2(x, y) \geq 0$ by the definition of square roots (Theorem 1.21). Moreover, $d_2(x, y) = 0$ if and only if $|x - y| = 0$, that is, $x = y$. For $x, y \in \RR$, we also have
+\begin{align*}
+d_2(x, y) & = \sqrt{|x-y|}\\
+& = \sqrt{|y-x|}\\
+& = d_2(y, x).
+\end{align*}
+Finally, if $x, y, z \in \RR$ then
+\begin{align*}
+d_2(x, y)^2 & = |x-y|\\
+& \leq |x-z| + |z-y|\\
+& \leq d_2(x, z)^2 + d_2(z, y)^2\\
+& \leq (d_2(x, z) + d_2(z, y))^2.
+\end{align*}
+Hence \[d_2(x, y) \leq d_2(x, z) + d_2(z, y),\] so $d_2$ is a metric on $\RR$.
+
+\item This is not a metric on $\RR$. We observe that \[d_3(-1, 1) = \left|(-1)^2 - 1^2\right| = 0\] but $-1 \not = 1$, so part (a) of Definition 2.15 is not satisfied by $d_3$.
+
+\item This is not a metric on $\RR$. For example, we have that \[d_4(0, 1) = |0 - 2(1)| = 2\] but \[d_4(1, 0) = |1 - 2(0)| = 1.\] Thus part (b) of Definition 2.15 is not satisfied by $d_4$.
+
+\item This is a metric on $\RR$. We have for all $x, y \in \RR$ that $|x-y| \geq 0$ and $1 + |x-y| > 0$, so $d_5(x, y) \geq 0$. Also $d_5(x, y) = 0$ if and only if $|x-y| = 0$, that is, $x = y$. Moreover,
+\begin{align*}
+d_5(x, y) & = \frac{|x-y|}{1 + |x-y|}\\
+& = \frac{|y-x|}{1 + |y-x|}\\
+& = d_5(y, x).
+\end{align*}
+Finally, for $x, y, z \in \RR$, \[|x-y| \leq |x-z| + |z-y| + 2|z-y||x-z| + |z-y||x-y||x-z|,\] so \[|x-y|(1 + |x-z|)(1 + |z-y|) \leq |x-z|(1 + |x-y|)(1 + |z-y|) + |z-y|(1 + |x-y|)(1 + |x-z|).\] Thus \[\frac{|x-y|}{1 + |x-y|} \leq \frac{|x-z|}{1 + |x-z|} + \frac{|z-y|}{1 + |z-y|},\] that is, \[d_5(x, y) \leq d_5(x, z) + d_5(z, y),\] so $d_5$ is a metric on $\RR$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Let $\{G_{\alpha}\}_{\alpha \in A}$ be an open cover of $K$. Then there is $\alpha_0 \in A$ such that $0 \in G_{\alpha_0}$. Since $G_{\alpha_0}$ is an open subset of $\RR$, there is $r > 0$ such that $B_r(0) \subset G_{\alpha_0}$. Then for $n > 1/r$, we have that $1/n \in G_{\alpha_0}$. If $N$ denotes the largest natural number less than or equal to $1/r$, then for each $n = 1, \ldots, N$, let $\alpha_n \in A$ such that $1/n \in G_{\alpha_n}$. Then $\{G_{\alpha_n}\}_{n = 0}^N$ is a finite subcover of $\{G_{\alpha}\}_{\alpha \in A}$ for $K$, so $K$ is compact.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+For each natural number $n \geq 2$, let $G_n = (1/n, 1)$. Then $\{G_n\}_{n \geq 2}$ is an open cover of $(0, 1)$. Suppose for sake of contradiction that there is a finite subcover of $\{G_n\}_{n \geq 2}$ for $(0, 1)$. Let $N$ be the largest natural number for which $G_N$ is in this subcover. Then since $(1/n, 1) \supset (1/(n+1), 1)$ for all $n \geq 2$, we have that $(0, 1) = (1/N, 1)$, a contradiction. Hence $\{G_n\}_{n \geq 2}$ has no finite subcover for $(0, 1)$, so $(0, 1)$ is not compact.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+\begin{enumerate}
+\item By Theorem 2.27(b), we have $A = \bar{A}$ and $B = \bar{B}$. Hence \[A\cap\bar{B} = A\cap B = \emptyset\] and \[\bar{A}\cap B = A\cap B = \emptyset.\] Thus $A$ and $B$ are separated.
+
+\item Let $A, B$ be disjoint open subsets of a metric space $X$. Then $B \subset A^c$ where $A^c$ is closed (Theorem 2.23), so by Theorem 2.27(c), $\bar{B} \subset A^c$. Thus $A\cap\bar{B} = \emptyset$. Similarly, $A \subset B^c$ with $B^c$ closed (Theorem 2.23), so by Theorem 2.27(c), $\bar{A} \subset B^c$. Then $\bar{A}\cap B = \emptyset$, so $A$ and $B$ are separated.
+
+\item It is clear that $A$ and $B$ are disjoint, and $A = B_{\delta}(p)$ is open by Theorem 2.19. We claim that $B$ is also open. Let $q \in B$. Then $d(p, q) > \delta$, and so $d(p, q) - \delta > 0$. If $r \in B_{d(p, q) - \delta}(q)$, then $d(r, q) < d(p, q) - \delta$ so \[d(p, r) \geq d(p, q) - d(r, q) > \delta.\] Thus $B_{d(p, q) - \delta}(q) \subset B$, so $q$ is an interior point of $B$. Hence $B$ is open. Now by part (b), $A$ and $B$ are separated.
+
+\item Let $X$ be a connected metric space and suppose that there is $\delta > 0$ such that there is no $q \in X$ with $d(p, q) = \delta$. Then if $A$ and $B$ are defined as in part (c), we have that $X = A\cup B$ with $A$ and $B$ separated. Since $p \in A$, we thus have that $B = \emptyset$ as $X$ is connected.
+
+Hence if $|X| \geq 2$ and $p, q$ are distinct points of $X$, then for every $\delta \in [0, d(p, q)]$ there exists $r \in X$ with $d(p, r) = \delta$. Then the cardinality of $X$ is at least that of $[0, d(p, q)]$, which by the Corollary to Theorem 2.43 is uncountable.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+\begin{ex}
+As in the hint, we show that $\QQ^k$ is a dense subset of $\RR^k$ (Theorem 2.13 and its Corollary, $\QQ^k$ is countable). Let $x \in \RR^k$ and $r$ a positive real. Then by Theorem 1.20(b), for each $i = 1, \ldots, k$ there exists $p_i \in \QQ$ such that \[x_i - r/\sqrt{k} < p_i < x_i + r/\sqrt{k}.\] Then $p = (p_1, \ldots, p_k) \in \QQ^k$ with \[|x_i-p_i| < \frac{r}{\sqrt{k}}\] for each $i$, so
+\begin{align*}
+|x-p| & < \sqrt{\left(\frac{r}{\sqrt{k}}\right)^2 + \cdots + \left(\frac{r}{\sqrt{k}}\right)^2}\\
+& = \sqrt{\frac{r^2}{k} + \cdots + \frac{r^2}{k}}\\
+& = \sqrt{r^2}\\
+& = r.
+\end{align*}
+Hence $p \in B_r(x)$ and so $\QQ^k$ is dense in $\RR^k$.
+\end{ex}
+
+\begin{ex}
+Let $C$ be a countable dense subset of $X$. As in the hint, we show that $\{B_r(p)\}_{r \in \QQ_{> 0}, p \in C}$ is a base for $X$. By the Corollary to Theorem 2.12, this set is at most countable, and by Theorem 2.19, it consists of open subsets of $X$. Now let $x \in X$ and suppose $G$ is an open neighborhood of $x$. Then there is $\delta > 0$ such that $B_{\delta}(x) \subset G$. By Theorem 1.20(b), there is a positive rational $r < \delta/2$. Since $C$ is dense in $X$, there is $p \in C$ such that $d(x, p) < r$. Then \[x \in B_r(p) \subset B_{\delta}(x) \subset G\] as desired.
+\end{ex}
+
+\begin{ex}
+(The claim is false; for example, let $X$ be any finite metric space. Rudin likely meant to define a separable metric space as one with an \emph{at most} countable dense subset. This is the definition I use in the solution below.)
+
+We follow the hint. Let $\delta > 0$ and suppose for sake of contradiction that there are $x_i \in X$ indexed by $i \in \NN$ for which $d(x_i, x_j) \geq \delta$ for all distinct $i, j \in \NN$. Then the $x_i$ are all distinct and so $\{x_i\}_{i \in \NN}$ is an infinite subset of $X$, and hence has a limit point $x$. By Theorem 1.20, there are then infinitely many $i \in \NN$ for which $x_i \in B_{\delta/2}(x)$. Suppose $i, j$ are distinct natural numbers for which $x_i, x_j \in B_{\delta/2}(x)$; then \[d(x_i, x_j) \leq d(x_i, x) + d(x, x_j) < \delta,\] a contradiction.
+
+Thus for any $\delta > 0$, there are $x_1, \ldots, x_k \in X$ such that $d(x_i, x_j) \geq \delta$ for distinct $i, j = 1, \ldots, N$ and for which there is no $x \in X$ with $d(x_i, x) \geq \delta$ for $i = 1, \ldots, N$. Then $\{B_{\delta}(x_i)\}_{i = 1}^N$ covers $X$. In particular, for each $n \in \NN$, there is $N_n \in \NN$ and $x_{1, n}, \ldots, x_{N_n, n} \in X$ such that $\{B_{1/n}(x_{i, n})\}_{i = 1}^{N_n}$. We claim that $\bigcup_{n \in \NN}\{x_{i, n}\}_{i = 1}^{N_n}$ is a dense subset of $X$; by the Corollary to Theorem 2.12, this set is at most countable. Let $p \in X$ and $\delta > 0$. Then by Theorem 1.20(a), there is $n \in \NN$ such that $n > 1/\delta$, so $1/n < \delta$. Then there is $i = 1, \ldots, N_n$ such that $p \in B_{1/n}(x_{i, n})$ and hence $x_{i, n} \in B_{\delta}(p)$, proving the claim.
+\end{ex}
+
+\begin{ex}
+For any $n \in \NN$, $\{B_{1/n}(p)\}_{p \in K}$ is an open cover of $K$ (Theorem 2.19). Then since $K$ is compact, there are $p_1, \ldots, p_{N_n} \in K$ such that $\{B_{1/n}(p_i)\}_{i = 1}^{N_n}$ covers $K$. We claim that $\bigcup_{n \in \NN}\{B_{1/n}(p_i)\}_{i = 1}^{N_n}$ is a base for $K$; by the Corollary to Theorem 2.12, it is at most countable. Suppose $x \in X$ and let $G$ be an open neighborhood of $x$. Then there is $\delta > 0$ such that $B_{\delta}(x) \subset G$. By Theorem 1.20(a), there exists $n \in \NN$ with $n > 2/\delta$, so $1/n < \delta/2$. Then since $\{B_{1/n}(p_i)\}_{i = 1}^{N_n}$ covers $K$, there is $i = 1, \ldots, N_n$ such that \[x \in B_{1/n}(p_i) \subset B_{\delta}(x) \subset G.\]
+
+Now we show that a metric space $X$ with an at most countable base $\{V_{\alpha}\}_{\alpha \in A}$ is separable, using the definition as in the solution to Exercise 2.24. We may assume WLOG that each $V_{\alpha}$ is nonempty. For every $\alpha \in A$, let $x_{\alpha} \in V_{\alpha}$. Let $p \in X$ and $\delta > 0$. Then by Theorem 2.19, $B_{\delta}(p)$ is an open neighborhood of $p$ and so there is $\alpha \in A$ such that $x \in V_{\alpha} \subset B_{\delta}(p)$. Then $x_{\alpha} \in B_{\delta}(p)$, and so $\{x_{\alpha}\}_{\alpha \in A}$ is a dense subset of $X$.
+\end{ex}
+
+\begin{ex}
+We follow the hint. By Exercise 2.24, $X$ is separable, and so by Exercise 2.23, $X$ has a countable base $\{V_{\alpha}\}_{\alpha \in A}$. Now suppose $\{G_{\beta}\}_{\beta \in B}$ is an open cover of $X$. Let $A'$ consist of the $\alpha \in A$ such that $V_{\alpha} \subset G_{\beta}$ for some $\beta \in B$. For each $\alpha \in A'$, let $\beta_{\alpha} \in B$ such that $V_{\alpha} \subset G_{\beta_{\alpha}}$. Then $\{G_{\beta_{\alpha}}\}_{\alpha \in A'}$ is at most countable by Theorem 2.8. For any $x \in X$, there is $\beta \in B$ such that $x \in G_{\beta}$ and thus $\alpha \in A'$ such that $x \in V_{\alpha} \subset G_{\beta}$. Then $x \in G_{\beta_{\alpha}}$ and so $\{G_{\beta_{\alpha}}\}_{\alpha \in A'}$ is an at most countable subcover of $\{G_{\beta}\}_{\beta \in B}$ for $X$.
+
+Now suppose for sake of contradiction that $\{G_i\}_{i \in \NN}$ is a countable open cover of $X$ which has no finite subcover. Then for each $n \in \NN$, \[F_n := (G_1\cup\cdots\cup G_n)^c\] is nonempty and $F_n \supset F_{n+1}$ for all $n \in \NN$. But \[\bigcap_{n = 1}^{\infty} F_n = \bigcap_{n = 1}^{\infty} G_n^c = \emptyset.\] Then if $x_n \in F_n$ for each $n \in \NN$, we have that $\{x_n\}_{n \in \NN}$ is infinite. Thus it has a limit point $x$. Since $\bigcap_{n = 1}^{\infty}F_n = \emptyset$, there is $N \in \NN$ such that $x \not \in F_N$. Since $F_N^c$ is open (Theorem 2.24(a)), $F_N^c$ is then an open neighborhood of $x$. By Theorem 2.20, $F_N^c$ thus contains infinitely many of the $x_n$. But $x_n \in F_N$ for $n \geq N$, a contradiction. Thus every open cover of $X$ has a finite subcover, so $X$ is compact.
+\end{ex}
+
+\begin{ex}
+(Note: The hypothesis that $E$ is uncountable is unnecessary.)
+
+We follow the hint. By Exercise 2.22 and Exercise 2.23, $\RR^k$ has a countable base $\{V_n\}_{n \in \NN}$. Let $W$ be the union of all $V_n$ such that $V_n\cap E$ is at most countable. Suppose $x \in P$. Then every open neighborhood of $x$ contains uncountably many points of $E$, and so $V_n\cap E$ is uncountable for any $n \in \NN$ such that $x \in V_n$. Thus $x \not \in W$. Conversely, suppose $x \not \in W$ and let $G$ be an open neighborhood of $x$. Then there is $n \in \NN$ such that $x \in V_n \subset G$. Since $x \not \in W$, we have that $V_n\cap E$ is uncountable and hence $G\cap E$, which contains $V_n\cap E$, is also uncountable (Theorem 2.8). Hence $x \in P$, and so we have shown that $P = W^c$. Now we have, letting $S$ denote the set of natural numbers $n$ for which $V_n\cap E$ is at most countable,
+\begin{align*}
+P^c\cap E & = W\cap E\\
+& = \left(\bigcup_{n \in S}V_n\right)\cap E\\
+& = \bigcup_{n \in S}(V_n\cap E)
+\end{align*}
+is at most countable by Theorem 2.8 and the Corollary to Theorem 2.12.
+
+Now we show that $P$ is perfect. Since $P = W^c$, we have by Theorem 2.24(a) and Theorem 2.23 that $P$ is closed. Let $x$ be a point of $X$ which is not a limit point of $P$. Then there is an open neighborhood $G$ of $x$ such that $G\cap P \subset \{x\}$. Then for all $y \in G$ distinct from $x$, we have $y \in W$ and thus there is $n_y \in \NN$ such that $x \in V_{n_y}$ and $V_{n_y}\cap E$ is at most countable. Then
+\begin{align*}
+G\cap E & \subset \left(\left(\bigcup_{y \in G\setminus\{x\}}V_{n_y}\right)\cup\{x\}\right)\cap E\\
+& \subset \left(\bigcup_{y \in G\setminus\{x\}}(V_n\cap E)\right)\cup\{x\}
+\end{align*}
+is at most countable by the Corollary to Theorem 2.12. Thus $x \not \in P$, and so $P$ is perfect.
+\end{ex}
+
+\begin{ex}
+Let $F$ be a closed subset of a separable metric space $X$, and let $P$ be the set of condensation points of $F$. Every point of $P$ is a limit point of $F$, and so $P \subset F$ since $F$ is closed. By Exercise 2.23, $X$ has a countable base, and so by Exercise 2.27 (note that the solution to Exercise 2.27 applies to any metric space with a countable base), $P$ is a perfect set and $P^c\cap F$ is at most countable. Since \[F = (P\cup P^c)\cap F = P\cup (P^c\cap F),\] we thus have that $F$ is the union of a perfect set and an at most countable set.
+
+Now let $F$ be a countable closed subset of $\RR^k$. By Theorem 2.43, $F$ is not perfect, and thus it contains an isolated point.
+\end{ex}
+
+\begin{ex}
+[TODO]
+\end{ex}
+
+\begin{ex}
+We prove the equivalent statement, including the fact that $\bigcap_{n = 1}^{\infty}G_n$ is dense in $\RR^k$. Clearly since $\RR^k$ is nonempty, any dense subset of $\RR^k$ is nonempty. Thus it is sufficient to show only that $\bigcap_{n = 1}^{\infty}G_n$ is dense. Let $V_0$ be any nonempty open subset of $\RR^k$. Suppose inductively that we have chosen nonempty open subsets $V_0, V_1, \ldots, V_n$ of $\RR^k$ such that $\bar{V_i}$ is compact and contained in $V_{i-1}\cap G_i$ for each $i = 1, \ldots, n$. Then since $G_{n+1}$ is dense in $\RR^k$, we have that $V_n\cap G_{n+1}$ is nonempty, and it is open by Theorem 2.24(c). If $x_{n+1} \in V_n\cap G_{n+1}$, there is $r_{n+1} > 0$ such that $\bar{B}_{r_{n+1}}(x_{n+1}) \subset V_n\cap G_{n+1}$. Let $V_{n+1} = \bar{B}_{r_{n+1}}(x_{n+1})$. In this way, we construct nonempty open sets $\{V_n\}_{n = 0}^{\infty}$ such that $\bar{V_n}$ is compact and contained in $V_{n-1}\cap G_n$ for $n \in \NN$. Then by the Corollary to Theorem 2.36, $\bigcap_{n = 1}^{\infty}\bar{V_n}$ is nonempty. Since \[\bigcap_{n = 1}^{\infty}\bar{V_n} \subset V_0\cap\left(\bigcap_{n = 1}^{\infty}G_n\right),\] it follows that $V_0$ intersects $\bigcap_{n = 1}^{\infty}G_n$. Hence $\bigcap_{n = 1}^{\infty}G_n$ is dense in $\RR^k$ as desired.
+\end{ex}

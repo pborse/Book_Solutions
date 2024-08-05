@@ -1,0 +1,9 @@
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Fields}}{4}{chapter.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{Varieties over arbitrary fields}}{6}{chapter.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Properties of morphisms}}{7}{chapter.3}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Faithfully flat descent}}{8}{chapter.4}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Algebraic groups}}{9}{chapter.5}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{Étale and fppf cohomology}}{10}{chapter.6}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{The Weil conjectures}}{11}{chapter.7}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Cohomological obstructions to rational points}}{12}{chapter.8}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Surfaces}}{13}{chapter.9}%

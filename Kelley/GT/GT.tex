@@ -1,0 +1,41 @@
+\documentclass[oneside]{amsbook}
+\usepackage{../../../book-solutions}
+
+\setlist*[enumerate]{label = (\alph*), leftmargin = *}
+\numberwithin{prob}{chapter}
+\renewcommand{\theprob}{\thechapter.\Alph{prob}}
+
+\title{Solutions to John L. Kelley's\\ \emph{General Topology}}
+\author{Patrick Borse}
+
+\begin{document}
+\begin{abstract}
+This document contains solutions to the problems of John L. Kelley's \emph{General Topology}. 
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Topological Spaces}
+\input{Chapter_1}
+
+\chapter{Moore--Smith Convergence}
+\input{Chapter_2}
+
+\chapter{Product and Quotient Spaces}
+\input{Chapter_3}
+
+\chapter{Embedding and Metrization}
+\input{Chapter_4}
+
+\chapter{Compact Spaces}
+\input{Chapter_5}
+
+\chapter{Uniform Spaces}
+\input{Chapter_6}
+
+\chapter{Function Spaces}
+\input{Chapter_7}
+
+\end{document}

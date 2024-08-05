@@ -1,0 +1,54 @@
+\documentclass[oneside]{amsbook}
+\usepackage{../../../book-solutions}
+
+\setlist[enumerate]{label = (\alph*), leftmargin = *}
+\renewcommand{\thepart}{\Roman{part}}
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatletter
+\renewcommand{\thesection}{\thepart.\thechapter}
+
+\title{Solutions to Jean-Pierre Serre's\\ \emph{Lie Algebras and Lie Groups}}
+\author{Patrick Borse}
+
+\begin{document}
+\begin{abstract}
+This document contains solutions to the exercises of Jean-Pierre Serre's \emph{Lie Algebras and Lie Groups}.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+\part{Lie Algebras}
+\setcounter{chapter}{1}
+\chapter{Filtered Groups and Lie Algebras}
+\input{Part_I/II}
+
+\chapter{Universal Algebra of a Lie Algebra}
+\input{Part_I/III}
+
+\chapter{Free Lie Algebras}
+\input{Part_I/IV}
+
+\chapter{Nilpotent and Solvable Lie Algebras}
+\input{Part_I/V}
+
+\chapter{Semisimple Lie Algebras}
+\input{Part_I/VI}
+
+\chapter{Representations of $\sl_n$}
+\input{Part_I/VII}
+
+\part{Lie Groups}
+\setcounter{chapter}{2}
+\chapter{Analytic Manifolds}
+\input{Part_II/III}
+
+\chapter{Analytic Groups}
+\input{Part_II/IV}
+
+\chapter{Lie Theory}
+\input{Part_II/V}
+
+\end{document}
