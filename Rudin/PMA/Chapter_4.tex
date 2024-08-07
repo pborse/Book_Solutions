@@ -1,5 +1,35 @@
 \begin{ex}
+No, such an $f$ is not necessarily continuous. For example, suppose $f: \RR \to \RR$ is given by \[f(x) = \begin{cases}
+1 & x = 0\\
+0 & x \not = 0.
+\end{cases}\] Then if $x \not = 0$, we have for all positive $h < |x|$ that \[f(x + h) - f(x - h) = 0 - 0 = 0\] and so \[\lim_{h\to 0}(f(x+h) - f(x-h)) = 0.\] For $x = 0$, we observe that for any $h > 0$, \[f(h) - f(-h) = 0 - 0 = 0.\] Thus \[\lim_{h\to 0}(f(x+h) - f(x-h)) = 0\] for all $x \in \RR$. But $f$ is discontinuous at 0: since $f(t) = 0$ for all $t \not = 0$, we have \[\lim_{t \to 0}f(t) = 0 \not = 1 = f(0).\]
+\end{ex}
 
+\begin{ex}
+We provide first a ``topological'' proof. We have by Theorem 2.27(a) that $\bar{f(E)}$ is a closed subset of $Y$, and so by the Corollary to Theorem 4.8, $f^{-1}(\bar{f(E)})$ is a closed subset of $X$. But \[E \subset f^{-1}(f(E)) \subset f^{-1}(\bar{f(E)}).\] Thus by Theorem 2.27(c), $\bar{E} \subset f^{-1}(\bar{f(E)})$, that is, $f(\bar{E}) \subset \bar{f(E)}$.
+
+Now we provide a ``metric'' proof. Let $p \in \bar{E}$, and let $\epsilon > 0$. Since $f$ is continuous, there is $\delta > 0$ such that if $q \in X$ with $d_X(p, q) < \delta$, then $d_Y(f(p), f(q)) < \epsilon$. But since $p \in \bar{E}$, there is $x \in E$ for which $d_X(p, x) < \delta$. Thus $d_Y(f(p), f(x)) < \epsilon$ with $f(x) \in f(E)$, and so $f(p) \in \bar{f(E)}$. Then $f(\bar{E}) \subset \bar{f(E)}$ as desired.
+
+Let $\iota: (0, 1) \to \RR$ be the inclusion and $E$ the segment $(0, 1)$. Then $\iota$ is continuous and $\iota(E) = E$ so $\bar{\iota(E)} = [0, 1]$ while $\iota(\bar{E}) = \iota(E) = E$ is a proper subset of $[0, 1]$.
+\end{ex}
+
+\begin{ex}
+First the ``topological" proof: $\{0\}$ is a closed subset of $\RR$. Hence by the Corollary to Theorem 4.8, $Z(f) = f^{-1}(0)$ is a closed subset of $X$.
+
+Now we provide a ``metric'' proof. Let $p$ be a limit point of $Z(f)$ and $\epsilon > 0$. Since $f$ is continuous, there is $\delta > 0$ such that if $q \in X$ with $d_X(p, q) < \delta$, then $|f(p) - f(q)| < \epsilon$. But $p$ is a limit point of $Z(f)$, and so there is $q \in Z(f)$ with $d_X(p, q) < \delta$. Then $|f(p) - f(q)| < \epsilon$, so $|f(p)| < \epsilon$ as $f(q) = 0$. Since this holds for all $\epsilon > 0$, it follows that $f(p) = 0$ and so $p \in Z(f)$.
+\end{ex}
+
+\begin{ex}
+It is clear from the definition of continuity that $f: X \to f(X)$ is continuous when $f(X)$ is considered as a subspace of $Y$. Since $E$ is dense in $X$, we have $\bar{E} = X$ and so by Exercise 4.2, $f(X) \subset \bar{f(E)}$, where the closure of $f(E)$ is taken in $f(X)$. But then \[f(X) \subset \bar{f(E)} \subset f(X),\] and so $\bar{f(E)} = f(X)$. Hence $f(E)$ is dense in $f(X)$.
+
+Now suppose $g: X \to Y$ is another continuous function such that $g(p) = f(p)$ for all $p \in E$. Suppose $p \in X$ and $\epsilon > 0$. Let $\delta > 0$ such that if $q \in X$ with $d_X(p, q) < \delta$, then $d_Y(f(p), f(q)) < \epsilon/2$ and $d_Y(g(p), g(q)) < \epsilon/2$. Since $E$ is dense in $X$, there is $q \in E$ with $d_X(p, q) < \delta$. Then since $f(q) = g(q)$, we have
+\begin{align*}
+d_Y(f(p), g(p)) & \leq d_Y(f(p), f(q)) + d_Y(f(q), g(p))\\
+& = d_Y(f(p), f(q)) + d_Y(g(p), g(q))\\
+& < \frac{\epsilon}{2} + \frac{\epsilon}{2}\\
+& = \epsilon.
+\end{align*}
+Thus $d_Y(f(p), g(p)) < \epsilon$ for all $\epsilon > 0$, and so $d_Y(f(p), g(p)) = 0$ and hence $f(p) = g(p)$.
 \end{ex}
 
 \begin{ex}
@@ -7,7 +37,78 @@
 \end{ex}
 
 \begin{ex}
+(Note: I assume that $E \subset \RR$ and $f$ is real-valued. I think this is what the problem intended, but the phrasing is unclear.)
 
+Let $\Gamma$ denote the graph of $f$. Suppose first that $f$ is continuous. Let $(x, y) \in \RR^2\setminus\Gamma$, and suppose first that $x \in E$. Then $f(x) \not = y$, and so $|f(x) - y| > 0$. Let $\epsilon = |f(x) - y|$. By continuity of $f$, there is $\delta > 0$ such that $|f(x) - f(x')| < \epsilon$ if $x' \in E$ with $|x-x'| < \delta$. In this case,
+\begin{align*}
+|f(x') - y| & \geq |f(x) - f(y)| - |f(x) - f(x')|\\
+& = \epsilon - |f(x) - f(x')|\\
+& > 0,
+\end{align*}
+so $f(x') \not = y$. If $r = \min(\delta, \epsilon)$, we thus have $B_r((x, y)) \subset \RR^2\setminus\Gamma$. Now suppose $x \not \in E$. By Theorem 2.34, $E$ is closed in $\RR$ and so there is $r > 0$ such that $B_r(x) \subset \RR\setminus E$. Then $B_r((x, y)) \subset \RR^2\setminus\Gamma$. Hence every point of $\RR^2\setminus\Gamma$ is an interior point, and so $\Gamma$ is a closed subset of $\RR^2$ (Corollary to Theorem 2.23). We have by Theorem 2.41((b) $\implies$ (a)) that $E$ is a bounded subset of $\RR$, and by Theorem 4.15, $f(E)$ is a bounded subset of $\RR$. Hence $E\times f(E)$ is bounded, and so also $\Gamma$ is bounded as $\Gamma \subset E\times f(E)$. Then $\Gamma$ is a closed and bounded subset of $\RR^2$, and so $\Gamma$ is compact by Theorem 2.41((a) $\implies$ (b)).
+
+Conversely, suppose that $\Gamma$ is compact. Let $x \in E$ and let $\epsilon > 0$. Suppose for sake of contradiction that for all $n \in \NN$, there is $x_n \in E$ such that $|x-x_n| < 1/n$ while $|f(x) - f(x_n)| \geq \epsilon$. Since $\Gamma$ is compact, the sequence $\{(x_n, f(x_n))\}_{n \in \NN}$ in $\Gamma$ has a subsequence $\{(x_{n_k}, f(x_{n_k}))\}_{n \in \NN}$ whihc converges in $\Gamma$. But $\lim_{k\to\infty}x_{n_k} = x$ so $\{(x_{n_k}, f(x_{n_k}))\}_{n \in \NN}$ converges to $(x, f(x))$. This contradicts that $|f(x) - f(x_{n_k})| \geq \epsilon$ for all $k \in \NN$, and so $f$ is continuous at $x$. Thus $f$ is continuous on $E$.
+\end{ex}
+
+\begin{ex}
+We handle $f$ and $g$ separately, starting with $f$. [TODO]
+\end{ex}
+
+\begin{ex}
+Since $f$ is uniformly continuous, there is $\delta > 0$ such that if $x' \in E$ with $|x-x'| < \delta$, then $|f(x) - f(x')| < 1$. We have that $\{B_{\delta}(x)\}_{x \in E}$ covers $\bar{E}$, and $\bar{E}$ is compact by Theorem 2.41((a) $\implies$ (b)), since $E$ is bounded. Thus there are $x_1, \ldots, x_n \in E$ such that $\{B_{\delta}(x_i)\}_{i = 1}^n$ covers $E$. Now if $x \in E$, there is $i = 1, \ldots, n$ such that $|x - x_i| < \delta$. Thus $|f(x) - f(x_i)| < 1$, and so \[|f(x)| \leq |f(x) - f(x_i)| + |f(x_i)| < 1 + |f(x_i)|.\] Hence for any $x \in E$, we have \[|f(x)| < 1 + \max_{1 \leq i \leq n}|f(x_i)|\] so $f$ is bounded on $E$.
+
+The identity function $\id_{\RR}: \RR \to \RR$ is uniformly continuous but unbounded.
+\end{ex}
+
+\begin{ex}
+Let $f: X \to Y$ be a function between metric spaces, and suppose first that $f$ is uniformly continuous. Then for any $\epsilon > 0$, there is $\delta > 0$ such that if $p, q \in E$ with $d_X(p, q) < \delta$, then $d_Y(f(p), f(q)) < \epsilon/2$. If $E \subset X$ witih $\diam E < \delta$, then $d_X(p, q) < \delta$ for all $p, q \in E$ and thus $d_Y(f(p), f(q)) < \epsilon/2$ for all $p, q \in E$. Hence \[\diam f(E) \leq \epsilon/2 < \epsilon.\]
+
+Conversely, suppose that for all $\epsilon > 0$ there is $\delta > 0$ such that if $E \subset X$ with $\diam E < \delta$, then $\diam f(E) < \epsilon$. Now if $\epsilon > 0$, pick $\delta > 0$ such that $\diam E < \delta$ implies $\diam f(E) < \epsilon$ for $E \subset X$. Then if $p, q \in E$ with $d_X(p, q) < \delta$, we have that $\diam\{p, q\} < \delta$ and thus $\diam\{f(p), f(q)\} < \epsilon$. Hence $d_Y(f(p), f(q)) < \epsilon$, and so $f$ is uniformly continuous.
+\end{ex}
+
+\begin{ex}
+Let $f: X \to Y$ be a continuous function of metric spaces with $X$ compact. We follow the hint (although we use limits of subsequences, rather than limit points of sets). Suppose for sake of contradiction that $f$ is not uniformly continuous. Then there is $\epsilon > 0$ such that there is no $\delta > 0$ for which if $p, q \in X$ with $d_X(p, q) < \delta$, then $d_Y(f(p), f(q)) < \epsilon$. Thus for each $n \in \NN$, there are $p_n, q_n \in X$ with $d_X(p_n, q_n) < 1/n$ and $d_Y(f(p), f(q)) \geq \epsilon$. By Theorem 3.6(a), there is a subsequence $\{p_{n_k}\}_{k \in \NN}$ of $\{p_n\}_{n \in \NN}$ converging to some $p \in X$. By Theorem 3.6(a), we may also assume WLOG (by taking a further subsequence) that also $\{q_{n_k}\}_{k \in \NN}$ converges to some $q \in X$. Now for all $k \in \NN$, we have \[d_X(p, q) \leq d_X(p, p_{n_k}) + d_X(p_{n_k}, q_{n_k}) + d_X(q_{n_k}, q).\] Taking $k \to \infty$, we conclude that $d_X(p, q) = 0$ and so $p = q$.
+
+Let $\delta > 0$ such that if $p' \in X$ with $d_X(p, p') < \delta$, then $d_Y(f(p), f(p')) < \epsilon/2$. Since \[\lim_{k\to\infty}p_{n_k} = \lim_{k\to\infty}q_{n_k} = p,\] there is $k \in \NN$ such that \[d_X(p_{n_k}, p), d_X(q_{n_k}, p) < \delta.\] Then \[d_Y(f(p), f(p_{n_k})), d_Y(f(p), f(q_{n_k})) < \frac{\epsilon}{2},\] so
+\begin{align*}
+d_X(f(p_{n_k}), f(q_{n_k})) & \leq d_X(f(p_{n_k}), f(p)) + d(f(p), f(q_{n_k}))\\
+& < \frac{\epsilon}{2} + \frac{\epsilon}{2}\\
+& = \epsilon.
+\end{align*}
+This contradicts the choice of $\{p_n\}_{n \in \NN}$ and $\{q_n\}_{n \in \NN}$, and so in fact there exists $\delta > 0$ such that if $p, q \in X$ with $d_X(p, q) < \delta$, then $d_Y(f(p), f(q)) < \epsilon$. That is, $f$ is uniformly continuous.
+\end{ex}
+
+\begin{ex}
+Let $\{x_n\}_{n \in \NN}$ be a Cauchy sequence in $X$, and let $\epsilon > 0$. Since $f$ is uniformly continuous, there exists $\delta > 0$ such that if $p, q \in X$ with $d_X(p, q) < \delta$, then $d_Y(f(p), f(q)) < \epsilon$. Since $\{x_n\}_{n \in \NN}$ is Cauchy, there is $N \in \NN$ such that $d_X(x_n, x_m) < \delta$ for $n, m \geq N$. Thus for $n, m \geq N$, we have $d_Y(f(x_n), f(x_m)) < \epsilon$, and so $\{f(x_n)\}_{n \in \NN}$ is Cauchy. [TODO: Exercise 13]
+\end{ex}
+
+\begin{ex}
+Let $f: X \to Y$ and $g: Y \to Z$ be uniformly continuous functions of metric spaces. We claim that $h = g\circ f: X \to Z$ is also uniformly continuous. Indeed, let $\epsilon > 0$. Then by uniform continuity of $g$, there is $\eta > 0$ such that $d_Z(h(p), h(q)) < \epsilon$ whenever $p, q \in X$ such that $d_Y(f(p), f(q)) < \eta$. By uniform continuity of $f$, there is $\delta > 0$ such that $d_Y(f(p), f(q)) < \eta$ whenever $p, q \in X$ such that $d_X(p, q) < \delta$. Hence for $p, q \in X$ with $d_X(p, q) < \delta$, we have $d_Z(h(p), h(q)) < \epsilon$. Thus $h$ is uniformly continuous.
+\end{ex}
+
+\begin{ex}
+We follow the hint. Let $p \in X$. Then for all $n \in \NN$, \[\diam(B_{1/n}(p)\cap E) \leq \diam(B_{1/n}(p)) = \frac{2}{n}.\] If $\epsilon > 0$, then by Exercise 4.9, there is $N \in \NN$ such that \[\diam(f(B_{1/n}(p)\cap E)) < \epsilon\] for all $n \geq N$. Then by Theorem 3.10(a), \[\lim_{n\to\infty}\diam(\bar{f(B_{1/n}(p)\cap E)}) = 0.\] On the other hand, each $B_{1/n}(p)\cap E$ is bounded and so $f(B_{1/n}(p)\cap E)$ is bounded by Exercise 4.8. Then by Theorem 2.41((a) $\implies$ (b)), $\bar{f(B_{1/n}(p)\cap E)}$ is compact for all $n \in \NN$. Since $B_{1/n}(p) \supset B_{1/(n+1)}(p)$ for all $n \in \NN$, we have \[f(B_{1/n}(p)\cap E) \supset f(B_{1/(n+1)}(p)\cap E).\] Finally, each $\bar{f(B_{1/n}(p)\cap E)}$ is nonempty since $E$ is dense in $X$. Then by Theorem 2.27(c), \[\bar{f(B_{1/n}(p)\cap E)} \supset \bar{f(B_{1/(n+1)}(p)\cap E)}\] for all $n \in \NN$. Now by Theorem 3.10(b), there is $g(p) \in \RR$ such that \[\bigcap_{n \in \NN}\bar{f(B_{1/n}(p)\cap E)} = \{g(p)\}.\]
+
+We claim that $g: X \to \RR$ is a continuous extension of $f$. If $p \in E$, then $f(p) \in \bar{f(B_{1/n}(p)\cap E)}$ for all $n \in \NN$ and hence $g(p) = f(p)$. That is, $g$ extends $f$ to $X$. Now fix $p \in X$ and let $\epsilon > 0$. By Exercise 4.10, there is $\delta > 0$ such that $\diam f(F) < \epsilon/3$ whenever $F \subset E$ with $\diam F < \delta$. Suppose $q \in X$ with $d_X(p, q) < \delta$. Then letting $n \in \NN$ such that $2/n < \delta$, we have \[\diam f(B_{1/n}(p)\cap E) < \frac{\epsilon}{3}\] and so \[\diam\bar{f(B_{1/n}(p)\cap E)} < \frac{\epsilon}{3}\] by Theorem 3.10(a). Similarly, \[\diam\bar{f(B_{1/n}(q)\cap E)} < \frac{\epsilon}{3}.\]Since $E$ is dense in $X$, there are $p', q' \in E$ such that $p' \in B_{1/n}(p)\cap E$ and $q' \in B_{1/n}(q)\cap E$. Then \[g(p), f(p') \in \bar{f(B_{1/n}(p)\cap E)}\] and \[g(q), f(q') \in \bar{f(B_{1/n}(p)\cap E)}\] implies \[d_Y(g(p), f(p')), d_Y(g(q), f(q')) < \frac{\epsilon}{3}.\] Hence
+\begin{align*}
+d_Y(g(p), g(q)) & \leq d_Y(g(p), g(p')) + d_Y(g(p'), g(q')) + d_Y(g(q'), g(q))\\
+& = d_Y(g(p), f(p')) + d_Y(f(p'), f(q')) + d_Y(g(q), g(q'))\\
+& < \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3}\\
+& = \epsilon.
+\end{align*}
+Thus $f$ is continuous at $p$, and so $f$ is continuous on $X$.
+
+The proof above remains valid with modification when the range space $\RR$ is replaced by $\RR^k$ for any $k \in \NN$. [TODO: compact metric space, complete metric space, any metric space]
+\end{ex}
+
+\begin{ex}
+Let $g: I \to \RR$ be given by $g(x) = f(x) - x$ for all $x \in I$; we wish to show that $g(x) = 0$ for some $x \in I$. Then $g$ is continuous by Theorem 4.9. We have that \[g(0) = f(0) \in [0, 1]\] and \[g(1) = f(1) - 1 \in [-1, 0].\] If $g(0) = 0$ or $g(1) = 0$, we are done, so suppose $g(0), g(1) \not = 0$. Then $g(0) > 0 > g(1)$, so by Theorem 4.23, there is $x \in (0, 1)$ such that $g(x) = 0$ as desired.
+\end{ex}
+
+\begin{ex}
+Let $f: \RR \to \RR$ is an open continuous function. For any reals $x < y$, we have that $f((x, y))$ is open, so \[\inf_{[x, y]}f, \sup_{[x, y]}f \not \in f((x, y))\] as $\inf_{[x, y]}f$ and $\sup_{[x, y]}f$ cannot be interior points of $f((x, y))$. But by Theorem 2.40 and Theorem 4.16, \[\inf_{[x, y]}f, \sup_{[x, y]}f \in f([x, y]).\] Thus \[\inf_{[x, y]}f, \sup_{[x, y]}f \in \{f(x), f(y)\},\] so we either have that for all $z \in (x, y)$, \[f(x) < f(z) < f(y)\] or for all $z \in (x, y)$, \[f(x) > f(z) > f(y).\]
+
+If $f$ is monotonic on $\ZZ$, then the above property shows that $f$ is monotonic on $\RR$. Suppose for sake of contradiction that $f$ is not monotonic on $\ZZ$, and so there is $n \in \ZZ$ such that \[f(n) > f(n-1), f(n+1)\] or \[f(n) < f(n-1), f(n+1).\] WLOG, suppose that $f(n) > f(n-1), f(n+1)$. Then \[\sup_{[n-1, n+1]}f \geq f(n) > f(n-1), f(n+1)\] implies that \[\sup_{[n-1, n+1]}f \not \in \{f(n-1), f(n+1)\},\] a contradiction. Hence $f$ is monotonic on $\RR$ as desired.
 \end{ex}
 
 \begin{ex}
@@ -15,55 +116,13 @@
 \end{ex}
 
 \begin{ex}
+We follow the hint. Let $E$ be the set of all $x \in (a, b)$ such that $f(x-)$ and $f(x+)$ exist with $f(x-) < f(x+)$. For any $x \in E$, there is $p \in \QQ$ such that $f(x-) < p < f(x+)$. Since $f(x-) < p$, there is $\delta > 0$ such that if $t \in (a, b)$ with $x - \delta < t < x$, then $f(t) < p$. Then if $q \in \QQ$ such that $a, x-\delta < q < x$, we have that if $q < t < x$ then $f(t) < p$. Similarly, from $f(x+) > p$ there is $r \in \QQ$ such that $x < r < b$ and if $x < t < r$, then $f(t) > p$. Let $g(x) = (p, q, r)$.
 
-\end{ex}
+Suppose for sake of contradiction that there are distinct $x, y \in E$ with $g(x) = g(y)$, and let \[g(x) = g(y) = (p, q, r).\] Suppose, WLOG, that $x < y$. Then there is $z \in \RR$ such that $x < z < y$. Thus \[a < q < x < z < y < r < b\] implies both that $f(z) > p$ (as $a < q < z < y$) and $f(z) < p$ (as $x < z < r < b$), a contradiction. Then $x = y$, so $g$ is injective. Then $E$ is in bijection with a subset of $\QQ^3$, so by Theorem 2.13, its Corollary, and Theorem 2.8, $E$ is at most countable. By an analogous argument, the set $E'$ of $x \in (a, b)$ for which $f(x-)$ and $f(x+)$ exist with $f(x-) > f(x+)$ is at most countable.
 
-\begin{ex}
+Let $F$ denote the set of $x \in (a, b)$ such that $\lim_{t \to x}f(t)$ exists but $\lim_{t\to x}f(t) < f(x)$. Then for any $x \in F$, there are $p, q, r \in \QQ$ such that \[\lim_{t\to x}f(t) < p < f(x)\] and \[a < q < x < r < b,\] and such that if $q < t < x$ or $x < t < r$, then $f(t) < p$. Let $h(x) = (p, q, r)$; we claim that $h: F \to \QQ^3$ is injective. Suppose for sake of contradiction that $x, y \in F$ such that $h(x) = h(y)$ with $x \not = y$, and let \[h(x) = h(y) = (p, q, r).\] We suppose, WLOG, that $x < y$. Then \[a < q < x < y < r < b\] implies that $f(x) < p$, as $q < x < y$. But $h(x) = (p, q, r)$ implies that $p < f(x)$, so this is a contradiction. Thus $h$ is injective, and so $F$ is in bijection with a subset of $\QQ^3$. By Theorem 2.13, its Corollary, and Theorem 2.8, $F$ is at most countable. Similarly, the set $F'$ of all $x \in (a, b)$ such that $f(x-)$ and $f(x+)$ exist with $f(x) < f(x-) = f(x+)$ is at most countable.
 
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
-\end{ex}
-
-\begin{ex}
-
+Finally, the set $E\cup E'\cup F\cup F'$ of all simple discontinuities of $f$ on $(a, b)$ is at most countable by the Corollary to Theorem 2.12.
 \end{ex}
 
 \begin{ex}
